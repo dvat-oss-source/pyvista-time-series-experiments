@@ -110,3 +110,17 @@ without committing to how temporal datasets are stored. Build its production
 version on the container path's small read-by-index contract, while keeping the
 fixed-mesh path as an optimized source. Gate a public API on real scalar mapper,
 widget cleanup, and image-regression coverage.
+
+## Notebook checks
+
+Open `exploration/test_time_series_controller.ipynb` using this branch's Python
+kernel and run all cells in order. The notebook uses real PyVista datasets,
+explicit assertions, and static visualizations without downloads.
+An optional final cell opens a desktop slider when `RUN_INTERACTIVE` is enabled.
+
+Notebook schema validation and compilation of every code cell pass. Sequential
+execution was attempted and stops in the setup cell: the installed
+`pyvista_validation.check` lacks `_is_real`. Behavioral and rendering cells have
+not run in this environment. The notebooks contain no saved execution outputs.
+The lint, docstyle and doctest gates were reattempted offline: build requirements
+lack cached `setuptools>=77.0.3`, and Vale is absent.
