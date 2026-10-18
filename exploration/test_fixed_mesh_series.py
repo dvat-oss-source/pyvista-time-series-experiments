@@ -1,5 +1,7 @@
 """Behavioral checks for the temporal-array experiment."""
 
+from __future__ import annotations
+
 import numpy as np
 import pytest
 import pyvista as pv
@@ -62,7 +64,7 @@ def test_invalid_shapes(shape):
         )
 
 
-@pytest.mark.parametrize('time,method', [(0.5, 'exact'), (-1, 'linear'), (np.nan, 'exact')])
+@pytest.mark.parametrize(('time', 'method'), [(0.5, 'exact'), (-1, 'linear'), (np.nan, 'exact')])
 def test_invalid_selection(time, method):
     """Reject missing exact samples and extrapolation."""
     series = FixedMeshSeries(pv.Plane(), times=[0, 1])

@@ -76,48 +76,10 @@ representation of time series. Its strongest use case is simulation output with
 stable topology and many scalar/vector samples; it offers substantial storage
 savings with a small conceptual API.
 
-## Validation
+## Verification
 
-Run from the worktree root:
-
-```sh
-python3 -m pytest -q -o addopts='' exploration/test_fixed_mesh_series.py
-```
-
-The behavioral checks cover irregular-time scalar/vector interpolation, explicit
-associations, static arrays, source and returned-frame ownership, invalid shapes,
-invalid times, exact-time failures, and extrapolation rejection. Python compilation
-and `git diff --check` pass. Runtime tests cannot start because system Python has
-no pytest; importing the checkout also encounters the installed
-`pyvista_validation` version mismatch (`_is_real` cannot be imported).
-
-Required gates were attempted with `UV_OFFLINE=1` and a temporary uv cache to avoid
-network installs. `make lint`, `make doctest`, and scoped `make test-core` stop at
-uncached `setuptools>=77.0.3`. `make docstyle` stops because Vale is absent. None of
-these gates passed, so this branch is an exploration rather than merge-ready work.
-
-Additional executed smoke verification: `python3 exploration/smoke_fixed_mesh_series.py`
-passes using installed NumPy plus a minimal in-memory mesh double, with no PyVista
-or pytest dependency. It executes scalar/vector interpolation, irregular time
-spacing, association handling, source/frame/timestamp ownership, and invalid
-times/shapes/dtypes/methods/selections. This verifies the NumPy logic only; real
-PyVista dataset assignment and VTK buffer ownership remain unverified. Query
-selection currently expects a scalar numeric time; array-shaped query validation
-would need tightening before any public API proposal.
-
-## Notebook verification
-
-Open `exploration/test_time_series_arrays.ipynb` and run all cells in order.
-All default code cells passed in a fresh Jupyter kernel using Python 3.13,
-NumPy 2.2.6, VTK 9.7.1, this branch's PyVista 0.50.dev0, and the repository-pinned
-`pyvista-validation==0.5.4`. The compatible dependency was installed into
-`/private/tmp/pyvista-notebook-verify`, a temporary virtual environment inheriting
-the machine's existing packages. The global environment was not modified.
-
-The notebook includes saved execution counts, successful assertion outputs, and
-one static PNG figure, inspected after execution. No downloads of example data
-are needed. Notebook schema and code compilation checks pass.
-
-Repository-wide lint, docstyle and doctest gates remain blocked when reattempted
-offline: the uv cache lacks `setuptools>=77.0.3`, and Vale is absent. Notebook
-execution passing does not establish that these broader gates pass.
+The real-data tests and executed notebook pass. The scoped repository target
+passes 26 cases on this branch, and full lint and documentation-style checks
+pass. The complete docstring suite has three failures reproduced on unchanged
+main. See [VERIFICATION.md](VERIFICATION.md) for counts, coverage, commands,
+environment details and remaining limits.

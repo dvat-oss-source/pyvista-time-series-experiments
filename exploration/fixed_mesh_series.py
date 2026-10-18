@@ -1,5 +1,7 @@
 """Explore temporal arrays without changing PyVista's public namespace."""
 
+from __future__ import annotations
+
 import numpy as np
 import pyvista as pv
 
@@ -34,8 +36,8 @@ class FixedMeshSeries:
             ('cell', cell_data, mesh.n_cells),
         ):
             arrays = {}
-            for name, values in ({} if data is None else data).items():
-                values = np.asarray(values)
+            for name, source_values in ({} if data is None else data).items():
+                values = np.asarray(source_values)
                 if (
                     values.ndim not in (2, 3)
                     or values.shape[:2] != (len(times), count)

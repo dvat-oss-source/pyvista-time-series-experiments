@@ -3,6 +3,8 @@
 These checks do not verify PyVista array assignment or VTK buffer ownership.
 """
 
+from __future__ import annotations
+
 import copy
 import importlib.util
 from pathlib import Path
@@ -71,12 +73,14 @@ def main():
     returned_times[:] = -1
     np.testing.assert_array_equal(series.times, [1, 5])
     for invalid in [[], [0, 0], [1, 0], [0, np.nan], [[0, 1]]]:
-        check_raises(lambda: series_type(Mesh(), times=invalid))
+        check_raises(lambda invalid=invalid: series_type(Mesh(), times=invalid))
     for invalid in [np.zeros((2, 3)), np.zeros((2, 4, 2)), np.full((2, 4), 'x')]:
-        check_raises(lambda: series_type(Mesh(), times=[0, 1], point_data={'x': invalid}))
+        check_raises(
+            lambda invalid=invalid: series_type(Mesh(), times=[0, 1], point_data={'x': invalid})
+        )
     for query, method in [(2, 'exact'), (0, 'linear'), (np.nan, 'exact'), (1, 'bad')]:
-        check_raises(lambda: series.at_time(query, method=method))
-    print('Temporal array NumPy logic smoke checks passed; PyVista integration unverified.')
+        check_raises(lambda query=query, method=method: series.at_time(query, method=method))
+    print('NumPy stand-in checks passed; see test_real_integration.py for PyVista coverage.')
 
 
 if __name__ == '__main__':
