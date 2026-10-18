@@ -33,7 +33,10 @@ class TimeController:
         self.scalars = scalars
         self.index = 0
         mesh = self._load(0)
-        self.actor = pl.add_mesh(mesh, scalars=scalars, preference='point', clim=self.clim)
+        self._frame = mesh
+        self.actor = pl.add_mesh(
+            mesh, scalars=scalars, preference='point', clim=self.clim, static=False
+        )
         self.slider = None
         if len(self.times) > 1:
             self.slider = pl.add_slider_widget(
@@ -79,6 +82,7 @@ class TimeController:
         if index == self.index:
             return
         mesh = self._load(index)
+        self._frame = mesh
         self.actor.mapper.dataset = mesh
         self.actor.mapper.scalar_range = self.clim
         self.index = index
