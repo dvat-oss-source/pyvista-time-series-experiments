@@ -90,3 +90,16 @@ reports Vale missing. No dependencies were installed and no CI was triggered.
 was also attempted; this Python has no pytest installed.
 Before production, run real ImageData/PolyData/MultiBlock and file-backed reader
 tests and all repository gates in a compatible development environment.
+
+## Notebook checks
+
+Open `exploration/test_time_series_container.ipynb` using this branch's Python
+kernel and run all cells in order. The notebook uses real PyVista datasets,
+explicit assertions, and static visualizations without downloads.
+
+Notebook schema validation and compilation of every code cell pass. Sequential
+execution was attempted and stops in the setup cell: the installed
+`pyvista_validation.check` lacks `_is_real`. Behavioral and rendering cells have
+not run in this environment. The notebooks contain no saved execution outputs.
+The lint, docstyle and doctest gates were reattempted offline: build requirements
+lack cached `setuptools>=77.0.3`, and Vale is absent.
