@@ -84,25 +84,6 @@ sample time and index, or use a discrete index slider with actual-time labels.
 - Integrate as `pl.add_time_series(...)` only after agreeing on a source protocol,
   widget lifecycle, and whether the returned object owns actors and readers.
 
-## Validation
-
-`python3 -m exploration.test_time_controller` passes five dependency-free
-behavioral checks, covering nearest selection for irregular timestamps, tie and
-endpoint policies, frame loading, stable actor and camera references, fixed
-color limits, invalid timestamps and selections, missing point arrays, reader
-restoration after success and failure, and the single-frame case. These doubles
-test controller decisions; they do not prove rendering or VTK mapper behavior.
-The runnable demonstration ends in `pl.show()`; no image baseline was generated.
-
-Required `make lint`, `make doctest`, and scoped `make test-plotting` were attempted.
-Their default UV cache was inaccessible in the sandbox. Repeating with a local
-cache and offline mode reached dependency resolution, but `setuptools>=77.0.3`
-was unavailable in that cache. `make docstyle` reports Vale is not installed.
-The system Python cannot import this checkout because the installed
-`pyvista_validation.check` lacks `_is_real`; pytest is also absent. These gates
-and a real render remain unverified. No dependencies were downloaded and no CI
-was used.
-
 ## Recommendation
 
 Use this as the fastest user-facing prototype: it demonstrates a useful feature
@@ -111,27 +92,10 @@ version on the container path's small read-by-index contract, while keeping the
 fixed-mesh path as an optimized source. Gate a public API on real scalar mapper,
 widget cleanup, and image-regression coverage.
 
-## Notebook verification
+## Verification
 
-Open `exploration/test_time_series_controller.ipynb` and run all cells in order.
-All default code cells passed in a fresh Jupyter kernel using Python 3.13,
-NumPy 2.2.6, VTK 9.7.1, this branch's PyVista 0.50.dev0, and the repository-pinned
-`pyvista-validation==0.5.4`. The compatible dependency was installed into
-`/private/tmp/pyvista-notebook-verify`, a temporary virtual environment inheriting
-the machine's existing packages. The global environment was not modified.
-
-The notebook includes saved execution counts, successful assertion outputs, and
-one static PNG figure, inspected after execution. No downloads of example data
-are needed. Notebook schema and code compilation checks pass.
-
-Real mapper checks exposed a frame-wrapper lifetime issue: the controller retains
-the displayed frame and uses a dynamic mapper. Assertions cover displayed scalar
-values and points, stable actor/camera/color limits, lazy selection and changed,
-nonblank rendered pixels. The test surface avoids an edge-on final view. These
-pixel checks are smoke checks, not comparisons against an image baseline.
-The optional desktop slider cell remains disabled during automated execution;
-manual mouse interaction has not been verified. Cross-review found no blockers.
-
-Repository-wide lint, docstyle and doctest gates remain blocked when reattempted
-offline: the uv cache lacks `setuptools>=77.0.3`, and Vale is absent. Notebook
-execution passing does not establish that these broader gates pass.
+The real-data tests and executed notebook pass. The scoped repository target
+passes 15 cases on this branch, and full lint and documentation-style checks
+pass. The complete docstring suite has three failures reproduced on unchanged
+main. See [VERIFICATION.md](VERIFICATION.md) for counts, coverage, commands,
+environment details and remaining limits.

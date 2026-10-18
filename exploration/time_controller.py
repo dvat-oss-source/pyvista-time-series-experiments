@@ -1,5 +1,7 @@
 """Explore a slider controller without adding public PyVista API."""
 
+from __future__ import annotations
+
 import math
 
 
@@ -17,7 +19,7 @@ class TimeController:
         if not self.times or not all(math.isfinite(value) for value in self.times):
             msg = 'Times must be nonempty and finite.'
             raise ValueError(msg)
-        if any(right <= left for left, right in zip(self.times, self.times[1:])):
+        if any(right <= left for left, right in zip(self.times, self.times[1:], strict=False)):
             msg = 'Times must be strictly increasing.'
             raise ValueError(msg)
         self.clim = tuple(float(value) for value in clim)

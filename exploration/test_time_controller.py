@@ -1,21 +1,11 @@
 """Test controller decisions with plotting doubles; no render baseline is claimed."""
 
-import contextlib
+from __future__ import annotations
+
 from types import SimpleNamespace
 
 from exploration.time_controller import TimeController
-
-
-@contextlib.contextmanager
-def raises(error, *, match):
-    """Check exception type and message without requiring test dependencies."""
-    try:
-        yield
-    except error as exc:
-        assert match in str(exc)
-    else:
-        msg = f"Expected {error.__name__}"
-        raise AssertionError(msg)
+import pytest
 
 
 class Frame:
@@ -29,7 +19,9 @@ class Frame:
     def copy(self, *, deep):
         """Return an independent frame wrapper."""
         frame = Frame(self.value)
-        frame.point_data = self.point_data.copy()
+        frame.point_data = {
+            name: values.copy() if deep else values for name, values in self.point_data.items()
+        }
         return frame
 
     def set_active_scalars(self, name, *, preference):
@@ -97,7 +89,7 @@ def test_invalid_times():
     """Reject ambiguous or unusable timestamps before creating an actor."""
     for times in [[], [0, 0], [1, 0], [float('nan')]]:
         pl = Scene()
-        with raises(ValueError, match='Times must'):
+        with pytest.raises(ValueError, match='Times must'):
             TimeController(pl, times, Frame, scalars='temperature', clim=(0, 1))
         assert pl.actor_count == 0
 
@@ -128,7 +120,7 @@ def test_reader_restores_time_after_success_and_failure():
     controller = TimeController.from_reader(pl, reader, scalars='temperature', clim=(0, 2))
     assert reader.active_time_value == 0.2
     original = controller.actor.mapper.dataset
-    with raises(OSError, match='Unreadable frame'):
+    with pytest.raises(OSError, match='Unreadable frame'):
         controller.select_time(1)
     assert reader.active_time_value == 0.2
     assert controller.actor.mapper.dataset is original
@@ -144,6 +136,7 @@ def test_single_frame_has_no_slider():
 
 def test_failed_selection_preserves_scene():
     """Reject invalid queries and missing scalars without replacing the dataset."""
+
     def load(index):
         """Return a second frame without the requested array."""
         frame = Frame(index)
@@ -155,9 +148,9 @@ def test_failed_selection_preserves_scene():
     controller = TimeController(pl, [0, 1], load, scalars='temperature', clim=(0, 2))
     original = controller.actor.mapper.dataset
     for value in (float('nan'), float('inf')):
-        with raises(ValueError, match='Selected time must be finite'):
+        with pytest.raises(ValueError, match='Selected time must be finite'):
             controller.select_time(value)
-    with raises(ValueError, match='has no point array'):
+    with pytest.raises(ValueError, match='has no point array'):
         controller.select_time(1)
     assert controller.index == 0
     assert controller.actor.mapper.dataset is original

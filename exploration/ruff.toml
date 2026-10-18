@@ -1,0 +1,8 @@
+# Exploratory scripts follow the repository's example annotation/import conventions.
+extend = "../pyproject.toml"
+
+[lint.per-file-ignores]
+"*.ipynb" = ["ANN", "E402", "S101", "T20"]
+"*.py" = ["ANN", "INP", "PLC0415", "T20"]
+"smoke*.py" = ["S101"]
+"test*.py" = ["S101"]
