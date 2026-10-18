@@ -104,3 +104,16 @@ times/shapes/dtypes/methods/selections. This verifies the NumPy logic only; real
 PyVista dataset assignment and VTK buffer ownership remain unverified. Query
 selection currently expects a scalar numeric time; array-shaped query validation
 would need tightening before any public API proposal.
+
+## Notebook checks
+
+Open `exploration/test_time_series_arrays.ipynb` using this branch's Python
+kernel and run all cells in order. The notebook uses real PyVista datasets,
+explicit assertions, and static visualizations without downloads.
+
+Notebook schema validation and compilation of every code cell pass. Sequential
+execution was attempted and stops in the setup cell: the installed
+`pyvista_validation.check` lacks `_is_real`. Behavioral and rendering cells have
+not run in this environment. The notebooks contain no saved execution outputs.
+The lint, docstyle and doctest gates were reattempted offline: build requirements
+lack cached `setuptools>=77.0.3`, and Vale is absent.
