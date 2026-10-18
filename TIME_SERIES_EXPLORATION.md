@@ -91,15 +91,19 @@ was also attempted; this Python has no pytest installed.
 Before production, run real ImageData/PolyData/MultiBlock and file-backed reader
 tests and all repository gates in a compatible development environment.
 
-## Notebook checks
+## Notebook verification
 
-Open `exploration/test_time_series_container.ipynb` using this branch's Python
-kernel and run all cells in order. The notebook uses real PyVista datasets,
-explicit assertions, and static visualizations without downloads.
+Open `exploration/test_time_series_container.ipynb` and run all cells in order.
+All default code cells passed in a fresh Jupyter kernel using Python 3.13,
+NumPy 2.2.6, VTK 9.7.1, this branch's PyVista 0.50.dev0, and the repository-pinned
+`pyvista-validation==0.5.4`. The compatible dependency was installed into
+`/private/tmp/pyvista-notebook-verify`, a temporary virtual environment inheriting
+the machine's existing packages. The global environment was not modified.
 
-Notebook schema validation and compilation of every code cell pass. Sequential
-execution was attempted and stops in the setup cell: the installed
-`pyvista_validation.check` lacks `_is_real`. Behavioral and rendering cells have
-not run in this environment. The notebooks contain no saved execution outputs.
-The lint, docstyle and doctest gates were reattempted offline: build requirements
-lack cached `setuptools>=77.0.3`, and Vale is absent.
+The notebook includes saved execution counts, successful assertion outputs, and
+one static PNG figure, inspected after execution. No downloads of example data
+are needed. Notebook schema and code compilation checks pass.
+
+Repository-wide lint, docstyle and doctest gates remain blocked when reattempted
+offline: the uv cache lacks `setuptools>=77.0.3`, and Vale is absent. Notebook
+execution passing does not establish that these broader gates pass.
