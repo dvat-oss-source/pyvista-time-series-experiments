@@ -1,15 +1,20 @@
 """Explore time-indexed PyVista snapshots without exporting a package API."""
 
-from collections.abc import Callable
-from collections.abc import Sequence
+from __future__ import annotations
+
 import math
+from typing import TYPE_CHECKING
 from typing import Protocol
+
+if TYPE_CHECKING:
+    from collections.abc import Callable
+    from collections.abc import Sequence
 
 
 class Snapshot(Protocol):
     """Describe the copying operation supplied by PyVista data objects."""
 
-    def copy(self, *, deep: bool = True) -> 'Snapshot':
+    def copy(self, *, deep: bool = True) -> Snapshot:
         """Return a copy of the data object."""
         ...
 
@@ -23,13 +28,13 @@ class TimeSeries:
         if not self._times or any(not math.isfinite(value) for value in self._times):
             msg = 'Times must be nonempty and finite.'
             raise ValueError(msg)
-        if any(left >= right for left, right in zip(self._times, self._times[1:])):
+        if any(left >= right for left, right in zip(self._times, self._times[1:], strict=False)):
             msg = 'Times must be strictly increasing.'
             raise ValueError(msg)
         self._load_frame = load_frame
 
     @classmethod
-    def from_datasets(cls, times: Sequence[float], datasets: Sequence[Snapshot]) -> 'TimeSeries':
+    def from_datasets(cls, times: Sequence[float], datasets: Sequence[Snapshot]) -> TimeSeries:
         """Own deep copies of in-memory frames, allowing different topology per frame."""
         if len(times) != len(datasets):
             msg = 'Times and datasets must have equal lengths.'
@@ -39,7 +44,7 @@ class TimeSeries:
         return series
 
     @classmethod
-    def from_reader(cls, reader) -> 'TimeSeries':
+    def from_reader(cls, reader) -> TimeSeries:
         """Adapt a dedicated TimeReader while restoring its selected time after reads."""
         times = tuple(reader.time_values)
 

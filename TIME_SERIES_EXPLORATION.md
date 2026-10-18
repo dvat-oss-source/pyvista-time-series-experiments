@@ -72,38 +72,10 @@ selection plus a dedicated-reader adapter; add plotting as a separate consumer.
 This provides the broadest foundation if changing geometry is a real use case.
 For fixed geometry alone, the arrays branch can store much less data.
 
-## Validation
+## Verification
 
-Run `python3 exploration/test_time_series.py`. Dependency-free stand-ins check
-ownership, changing payload sizes, negative indices, exact lookup, invalid times,
-invalid indices, lazy reads, reader selection restoration, output buffer reuse
-and failed reads. These establish temporal semantics; they do not replace real
-PyVista reader/dataset integration tests.
-
-Actual PyVista import is blocked by the environment's installed
-`pyvista_validation.check` lacking `_is_real`. `make lint`, `make doctest`, and
-`make test-core ARGS='exploration/test_time_series.py'` were attempted offline;
-uv cannot resolve uncached `setuptools>=77.0.3`. `make docstyle` was attempted and
-reports Vale missing. No dependencies were installed and no CI was triggered.
-`python3 -m compileall -q exploration` passed.
-`python3 -m pytest --noconftest -o addopts='' exploration/test_time_series.py`
-was also attempted; this Python has no pytest installed.
-Before production, run real ImageData/PolyData/MultiBlock and file-backed reader
-tests and all repository gates in a compatible development environment.
-
-## Notebook verification
-
-Open `exploration/test_time_series_container.ipynb` and run all cells in order.
-All default code cells passed in a fresh Jupyter kernel using Python 3.13,
-NumPy 2.2.6, VTK 9.7.1, this branch's PyVista 0.50.dev0, and the repository-pinned
-`pyvista-validation==0.5.4`. The compatible dependency was installed into
-`/private/tmp/pyvista-notebook-verify`, a temporary virtual environment inheriting
-the machine's existing packages. The global environment was not modified.
-
-The notebook includes saved execution counts, successful assertion outputs, and
-one static PNG figure, inspected after execution. No downloads of example data
-are needed. Notebook schema and code compilation checks pass.
-
-Repository-wide lint, docstyle and doctest gates remain blocked when reattempted
-offline: the uv cache lacks `setuptools>=77.0.3`, and Vale is absent. Notebook
-execution passing does not establish that these broader gates pass.
+The real-data tests and executed notebook pass. The scoped repository target
+passes 7 cases on this branch, and full lint and documentation-style checks
+pass. The complete docstring suite has three failures reproduced on unchanged
+main. See [VERIFICATION.md](VERIFICATION.md) for counts, coverage, commands,
+environment details and remaining limits.
