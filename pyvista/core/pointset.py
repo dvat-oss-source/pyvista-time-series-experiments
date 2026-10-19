@@ -2434,17 +2434,13 @@ class PolyData(_PointSetBase, PolyDataFilters, _vtk.vtkPolyData):
 
         Examples
         --------
+        >>> import numpy as np
         >>> import pyvista as pv
         >>> sphere = pv.Sphere()
-        >>> sphere.point_normals
-        pyvista_ndarray([[ 0.        ,  0.        ,  1.        ],
-                         [ 0.        ,  0.        , -1.        ],
-                         [ 0.10811902,  0.        ,  0.99413794],
-                         ...,
-                         [ 0.31232402, -0.06638652, -0.9476532 ],
-                         [ 0.21027282, -0.04469487, -0.97662055],
-                         [ 0.10575636, -0.02247921, -0.99413794]],
-                        shape=(842, 3), dtype=float32)
+        >>> np.asarray(sphere.point_normals[:3]).round(3)
+        array([[ 0.   ,  0.   ,  1.   ],
+               [ 0.   ,  0.   , -1.   ],
+               [ 0.108,  0.   ,  0.994]], dtype=float32)
 
         """
         if self.point_data.active_normals is not None:
