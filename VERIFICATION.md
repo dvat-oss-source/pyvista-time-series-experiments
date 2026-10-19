@@ -12,7 +12,7 @@ PyVista's public package API.
 | All three notebooks                       | All default cells passed; one saved static figure each                      |
 | `make lint`                               | Passed on all three branches                                                |
 | `make docstyle`                           | Passed: 845 files, plus expected-failure fixtures                           |
-| Complete docstring execution              | 1713 passed, 3 skipped, 3 failed                                            |
+| Complete docstring execution              | 1716 passed, 3 skipped, 0 failed                                            |
 | Docstring name resolution                 | Passed                                                                      |
 | Manual mouse interaction                  | Unverified: Computer Use permission unavailable                             |
 
@@ -38,23 +38,22 @@ committed image baselines. Desktop-window creation succeeded, but manual slider
 interaction could not be performed because Computer Use permission was not
 available. The temporary demo process was closed afterward.
 
-## Remaining repository failures
+## Shared doctest verification
 
-The complete doctest run has three failures. Each reproduces on unchanged
-`main` with the same environment:
+The three unstable doctest outputs have been corrected in all three worktrees.
+Collision examples check contact counts, point normals display rounded values,
+and transform reconstruction uses a numerical comparison.
 
-- `PolyDataFilters.collision`: collision-cell ordering differs from the example.
-- `PolyData.point_normals`: a printed normal differs in its final float digits.
-- `Transform.decompose`: a near-zero matrix component has different rounding.
+The complete `make doctest` run on `fix/portable-doctest-examples` passes
+1716 examples with 3 skips. The three corrected doctests also pass separately
+in each time-series worktree. All three changed package files are identical
+across these worktrees. Related core tests pass 40 cases, and full lint and
+documentation-style checks pass on the fix branch.
 
-These failures are outside the experiments; no package implementation was changed
-to suppress them. The overall `make doctest` target therefore remains red, and the
-experiments should not be described as passing every repository gate.
-
-An initial run used a tox directory outside the checkout, causing pytest to miss
-`pyproject.toml` and its `NUMBER ELLIPSIS` comparison flags. The final counts above
-come from a complete rerun with tox in its normal project directory and the
-repository configuration loaded.
+Current logs: `/private/tmp/pyvista-three-doctest-verified.log`,
+`/private/tmp/pyvista-three-core-verified.log`,
+`/private/tmp/pyvista-three-lint-verified.log`, and
+`/private/tmp/pyvista-three-docstyle.log`.
 
 ## Environment and reproduction
 

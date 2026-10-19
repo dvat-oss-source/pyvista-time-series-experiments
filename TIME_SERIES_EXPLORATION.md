@@ -96,6 +96,6 @@ widget cleanup, and image-regression coverage.
 
 The real-data tests and executed notebook pass. The scoped repository target
 passes 15 cases on this branch, and full lint and documentation-style checks
-pass. The complete docstring suite has three failures reproduced on unchanged
-main. See [VERIFICATION.md](VERIFICATION.md) for counts, coverage, commands,
+pass. The complete docstring suite passes 1716 examples with 3 skips after the
+shared doctest corrections. See [VERIFICATION.md](VERIFICATION.md) for counts, coverage, commands,
 environment details and remaining limits.
