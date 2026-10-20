@@ -1,0 +1,26 @@
+[
+  {
+    "worktree": "/private/tmp/pyvista-time-series-arrays",
+    "branch": "feat/time-series-arrays",
+    "commit": "f03e34fcadbb101f097d4e16b057a08b78c673fa",
+    "nodes": 21529,
+    "edges": 41655,
+    "graph": "/private/tmp/pyvista-time-series-arrays/graphify-out/graph.json"
+  },
+  {
+    "worktree": "/private/tmp/pyvista-time-series-container",
+    "branch": "feat/time-series-container",
+    "commit": "590242ad73b885418595724e600a78be5620904c",
+    "nodes": 21530,
+    "edges": 41657,
+    "graph": "/private/tmp/pyvista-time-series-container/graphify-out/graph.json"
+  },
+  {
+    "worktree": "/private/tmp/pyvista-time-series-controller",
+    "branch": "feat/time-series-controller",
+    "commit": "4cbe78ae5a73ad9b6e134195ddc3b7ac45b3a421",
+    "nodes": 21542,
+    "edges": 41670,
+    "graph": "/private/tmp/pyvista-time-series-controller/graphify-out/graph.json"
+  }
+]
