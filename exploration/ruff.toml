@@ -6,3 +6,4 @@ extend = "../pyproject.toml"
 "*.py" = ["ANN", "INP", "PLC0415", "T20"]
 "smoke*.py" = ["S101"]
 "test*.py" = ["S101"]
+"validate*.py" = ["S101"]

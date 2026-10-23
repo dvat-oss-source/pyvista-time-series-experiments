@@ -12,14 +12,17 @@ class ReaderSource:
     """Adapt a dedicated TimeReader without caching or converting its files.
 
     ``block`` explicitly selects one top-level spatial part of MultiBlock
-    output. ``scalars`` names the point array consumed by TimeController.
+    output. ``scalars`` names the array in the explicit ``preference`` association.
     Returned frames own their buffers and may be modified independently.
     Dataset metadata is preserved; simulation timestamps are in ``times``.
     Reader access is synchronous and must not be shared between threads.
     """
 
-    def __init__(self, reader, *, scalars, block=None):
+    def __init__(self, reader, *, scalars, block=None, preference='point'):
         """Validate source metadata without reading result frames."""
+        if preference not in ('point', 'cell'):
+            msg = "Preference must be 'point' or 'cell'."
+            raise ValueError(msg)
         self.times = tuple(float(value) for value in reader.time_values)
         if (
             not self.times
@@ -31,6 +34,7 @@ class ReaderSource:
         self.reader = reader
         self.scalars = scalars
         self.block = block
+        self.preference = preference
 
     def frame(self, index):
         """Read an exact indexed sample and detach it before restoring time."""
@@ -59,8 +63,9 @@ class ReaderSource:
             if not isinstance(mesh, pv.DataSet):
                 msg = 'The selected spatial part must be a dataset, not a null or composite block.'
                 raise TypeError(msg)
-            if self.scalars not in mesh.point_data:
-                msg = f'Frame {index} has no point array {self.scalars!r}.'
+            data = mesh.point_data if self.preference == 'point' else mesh.cell_data
+            if self.scalars not in data:
+                msg = f'Frame {index} has no {self.preference} array {self.scalars!r}.'
                 raise ValueError(msg)
             return mesh.copy(deep=True)
         finally:
