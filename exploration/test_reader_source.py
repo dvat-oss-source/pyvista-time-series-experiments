@@ -3,15 +3,19 @@
 from __future__ import annotations
 
 import gc
+from pathlib import Path
+import subprocess
+import sys
 from types import SimpleNamespace
+from unittest.mock import Mock
 import weakref
 
 import numpy as np
 import pytest
 import pyvista as pv
 
-from reader_source import ReaderSource
-from time_controller import TimeController
+from exploration import ReaderSource
+from exploration import TimeController
 
 
 @pytest.fixture
@@ -356,3 +360,66 @@ def test_finite_extreme_time_clamps(result_path):
     )
     ctl.select_time(1.7e308)
     assert ctl.index == 1
+
+
+def test_repository_root_api(result_path):
+    """Use the documented package imports and reader convenience method."""
+    from exploration import ReaderSource as PackageSource
+    from exploration import TimeController as PackageController
+
+    source = PackageSource(pv.get_reader(result_path), block=0, scalars='value')
+    ctl = PackageController.from_reader(
+        Scene(), pv.get_reader(result_path), block=0, scalars='value', clim=(0, 30)
+    )
+    for index in (2, 0, 1):
+        ctl.select_index(index)
+        expected = pv.read(result_path.parent / f'{index}.vtu')
+        assert_frame_equal(source.frame(index), expected)
+        assert_frame_equal(ctl.actor.mapper.dataset, expected)
+
+
+@pytest.mark.parametrize(
+    'entry', [['-m', 'exploration.play_reader'], ['exploration/play_reader.py']]
+)
+def test_command_line_entrypoints(entry, monkeypatch):
+    """Start both module and legacy script commands in a fresh interpreter."""
+    monkeypatch.delenv('PYTHONPATH', raising=False)
+    result = subprocess.run(
+        [sys.executable, *entry, '--help'],
+        cwd=Path(__file__).resolve().parents[1],
+        capture_output=True,
+        text=True,
+        check=True,
+        timeout=15,
+    )
+    assert '--scalars' in result.stdout
+    assert '--clim MIN MAX' in result.stdout
+
+
+@pytest.mark.parametrize('failure', ['load', 'show'])
+def test_player_closes_on_failure(result_path, monkeypatch, failure):
+    """Release plotter resources when loading or window display raises."""
+    from exploration import play_reader
+
+    pl = Scene()
+    pl.close = Mock()
+    pl.show = Mock(side_effect=OSError('Display failed.'))
+    monkeypatch.setattr(pv, 'Plotter', lambda: pl)
+    monkeypatch.setattr(
+        sys,
+        'argv',
+        [
+            'play_reader',
+            str(result_path),
+            '--scalars',
+            'missing' if failure == 'load' else 'value',
+            '--block',
+            '0',
+            '--clim',
+            '0',
+            '30',
+        ],
+    )
+    with pytest.raises((ValueError, OSError), match=r'no point array|Display failed'):
+        play_reader.main()
+    pl.close.assert_called_once_with()

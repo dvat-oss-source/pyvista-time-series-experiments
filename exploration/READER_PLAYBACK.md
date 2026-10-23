@@ -10,7 +10,7 @@ PyVista core change. See [designs and evidence](TEMPORAL_DECISIONS.md).
 From this worktree's root, using the existing environment:
 
 ```sh
-PYTHONPATH=. ../pyvista/.venv/bin/python exploration/play_reader.py \
+../pyvista/.venv/bin/python -m exploration.play_reader \
   "$HOME/Library/Caches/pyvista_3/PVD/wavy.zip.unzip/wavy.pvd" \
   --block 0 --scalars z --clim -1 1
 ```
@@ -18,11 +18,14 @@ PYTHONPATH=. ../pyvista/.venv/bin/python exploration/play_reader.py \
 Drag the slider to select a saved simulation sample. This is a cached wavy surface,
 not a validation of future heart or crash results.
 
-Run this short application from `exploration`, with this checkout on `PYTHONPATH`:
+The original `python exploration/play_reader.py ...` command also works. Both
+entry points close their plotter if loading or display fails.
+
+Run this short application from the repository root:
 
 ```python
 import pyvista as pv
-from time_controller import TimeController  # Project API
+from exploration import TimeController  # Project API
 
 pl = pv.Plotter()  # Public PyVista API
 controller = TimeController.from_reader(
@@ -95,7 +98,7 @@ today's child reader does not establish persistent selective I/O.
 A callable is enough for a project-specific spatial filter:
 
 ```python
-from reader_source import ReaderSource  # Project API
+from exploration import ReaderSource  # Project API
 
 source = ReaderSource(pv.get_reader('results.pvd'), block=0, scalars='temperature')
 

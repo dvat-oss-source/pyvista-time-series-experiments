@@ -209,7 +209,7 @@ here instead preserves exact source/display type and ownership comparisons.
 
 ### Local checks
 
-- 31 focused tests pass; 12 prior mechanism tests pass; 4 upstream PVD-reader tests
+- 36 focused tests pass; 12 prior mechanism tests pass; 4 upstream PVD-reader tests
   pass with one worker. Ruff check and formatting pass.
 - Three diagnostic mutations were tested outside the branch: shallow reader copies,
   skipped timestep selection, and retained initial plotter references. Each made
@@ -247,3 +247,15 @@ For a single prior performance cell, use desktop access and
 `PYTHONPATH=. ../pyvista/.venv/bin/python /Users/user/temporal-investigation/experiment.py lazy 16`.
 Use `arrays`, `eager`, or `mutable` and count `64` only if needed. Do not regenerate
 existing fixtures merely to repeat a benchmark.
+
+## Usability follow-up
+
+The project APIs are importable from the repository root with
+`from exploration import ReaderSource, TimeController`. The player supports
+`python -m exploration.play_reader` without configuring an import path and retains
+the original script entry point. Both paths close the plotter when loading or
+display fails. Numerical selection, ownership, filtering, and mapper replacement
+are unchanged. Five additional tests exercise package imports, both entry points,
+and failure cleanup. Independent review found no outstanding issues. Fresh wavy
+desktop rendering and dual-sphere direct-file comparisons passed through the package
+entry point; their records are `saved-results-final/usability-{render,dual}.json`.

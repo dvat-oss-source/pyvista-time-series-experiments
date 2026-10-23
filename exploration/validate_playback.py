@@ -21,10 +21,10 @@ import numpy as np
 import psutil
 import pyvista as pv
 
-from reader_source import ReaderSource
-from test_reader_source import Scene
-from test_reader_source import assert_frame_equal
-from time_controller import TimeController
+from exploration import ReaderSource
+from exploration import TimeController
+from exploration.test_reader_source import Scene
+from exploration.test_reader_source import assert_frame_equal
 
 
 def main():

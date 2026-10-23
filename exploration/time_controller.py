@@ -69,7 +69,10 @@ class TimeController:
     @classmethod
     def from_reader(cls, pl, reader, *, scalars, clim, block=None, preference='point'):
         """Adapt one explicitly selected spatial part using ReaderSource ownership."""
-        from reader_source import ReaderSource
+        if __package__:
+            from .reader_source import ReaderSource
+        else:
+            from reader_source import ReaderSource
 
         source = ReaderSource(reader, scalars=scalars, block=block, preference=preference)
         return cls(
