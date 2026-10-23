@@ -139,21 +139,22 @@ class TimeController:
 
 
 def demo():
-    """Display three irregularly spaced frames with changing geometry."""
-    mesh = pv.Plane(i_resolution=12, j_resolution=8)
-    mesh['temperature'] = mesh.points[:, 0]
-    frames = []
-    for displacement in (0.0, 0.2, 0.8):
-        frame = mesh.copy()
-        frame.points[:, 2] = displacement * frame.points[:, 0]
-        frame['temperature'] = frame['temperature'] + displacement
-        frames.append(frame)
+    """Create and display a sphere on demand at each of three sample times."""
+
+    def make_frame(index):
+        """Generate one demonstration mesh without retaining other samples."""
+        mesh = pv.Sphere(radius=0.5 + 0.1 * index)
+        mesh['height'] = mesh.points[:, 2]
+        return mesh
+
     pl = pv.Plotter()
-    controller = TimeController(
-        pl, [0.0, 0.2, 1.0], frames.__getitem__, scalars='temperature', clim=(-0.5, 1.5)
-    )
-    pl.camera_position = 'iso'
-    pl.show()
+    try:
+        controller = TimeController(
+            pl, [0.0, 0.2, 1.0], make_frame, scalars='height', clim=(-1, 1)
+        )
+        pl.show()
+    finally:
+        pl.close()
     return controller
 
 

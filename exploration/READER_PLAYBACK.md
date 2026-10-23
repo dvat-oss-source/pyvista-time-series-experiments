@@ -7,6 +7,52 @@ PyVista core change. See [designs and evidence](TEMPORAL_DECISIONS.md).
 
 ## Quick start
 
+Create and display a mesh exactly as in the
+[PyVista tutorial](https://tutorial.pyvista.org/):
+
+```python
+import pyvista as pv
+
+mesh = pv.Sphere()
+mesh.plot()
+```
+
+Run this in Python with PyVista installed. Mesh creation, filters, and `mesh.plot()`
+are ordinary public PyVista APIs and need no playback imports or setup.
+
+To try a time slider without files or downloads, run this complete example from
+this worktree's root:
+
+```python
+import pyvista as pv
+from exploration import TimeController  # Project API
+
+
+def make_frame(index):
+    mesh = pv.Sphere(radius=0.5 + 0.1 * index)
+    mesh['height'] = mesh.points[:, 2]
+    return mesh
+
+
+pl = pv.Plotter()
+controller = TimeController(pl, [0.0, 0.2, 1.0], make_frame, scalars='height', clim=(-1, 1))
+pl.show()
+```
+
+Drag the time slider to change the displayed mesh. Only the requested frame is
+created; the controller keeps one displayed frame. These generated spheres are a
+small UI demonstration, not a physical simulation. `height` supplies the point
+values for coloring, and `clim` fixes the color scale across samples. Use ordinary
+`pl.add_mesh(...)` calls for any static context before `pl.show()`.
+
+The same example is available as a script:
+
+```sh
+../pyvista/.venv/bin/python exploration/time_controller.py
+```
+
+## Display saved results
+
 From this worktree's root, using the existing environment:
 
 ```sh
