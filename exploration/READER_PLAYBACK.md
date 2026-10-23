@@ -7,6 +7,9 @@ PyVista core change. See [designs and evidence](TEMPORAL_DECISIONS.md).
 
 ## Quick start
 
+For inline animations, open [the 2D then 3D notebook](../mesh_animation.ipynb),
+select your Python kernel, and choose **Run All**. It needs no result files.
+
 Create and display a mesh exactly as in the
 [PyVista tutorial](https://tutorial.pyvista.org/):
 
