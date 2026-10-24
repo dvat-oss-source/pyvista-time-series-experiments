@@ -4,5 +4,6 @@ from __future__ import annotations
 
 from .reader_source import ReaderSource
 from .time_controller import TimeController
+from .time_series import TimeSeriesPlayer
 
-__all__ = ['ReaderSource', 'TimeController']
+__all__ = ['ReaderSource', 'TimeController', 'TimeSeriesPlayer']

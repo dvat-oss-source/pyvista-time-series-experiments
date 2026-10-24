@@ -118,6 +118,11 @@ class Scene:
         """Execute the native scalar pipeline; leave rasterization to desktop checks."""
         self.mapper.update()
 
+    def remove_actor(self, actor, *, render=False):
+        """Release this test scene's actor."""
+        assert render is False
+        assert actor.mapper is self.mapper
+
 
 def test_controller_uses_source_without_storage_specific_changes(result_path):
     """Verify the displayed mapper against original files after seeking."""
@@ -367,7 +372,11 @@ def test_repository_root_api(result_path):
     from exploration import ReaderSource as PackageSource
     from exploration import TimeController as PackageController
 
+    assert PackageSource is pv.TimeReaderSource
     source = PackageSource(pv.get_reader(result_path), block=0, scalars='value')
+    player = pv.TimeSeriesPlayer(
+        Scene(), source.times, source.frame, cycle_end=2, scalars='value', clim=(0, 30)
+    )
     ctl = PackageController.from_reader(
         Scene(), pv.get_reader(result_path), block=0, scalars='value', clim=(0, 30)
     )
@@ -376,6 +385,9 @@ def test_repository_root_api(result_path):
         expected = pv.read(result_path.parent / f'{index}.vtu')
         assert_frame_equal(source.frame(index), expected)
         assert_frame_equal(ctl.actor.mapper.dataset, expected)
+        player.seek_index(index)
+        assert_frame_equal(player.actor.mapper.dataset, expected)
+    player.close()
 
 
 @pytest.mark.parametrize(

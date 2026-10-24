@@ -1,0 +1,146 @@
+{
+  "conditions": "Python 3.13.6, non-editable wheel, no PYTHONPATH, macOS arm64, cached original heart frames, fresh process per run, 400x320 offscreen OpenGL and GIF writer",
+  "wheel_sha256": "27d5e7eb330b4ebf56307dbd3d42c4f0ce6deb89c65f5965e0ca85387aa11978",
+  "runs": {
+    "direct_5": {
+      "mode": "direct",
+      "cycles": 5,
+      "python": "3.13.6",
+      "pyvista": "0.50.dev0",
+      "vtk": "(9, 7, 1)",
+      "original_frame_count": 10,
+      "original_frame_bytes": 5307414,
+      "read_count": 51,
+      "logical_compressed_read_bytes": 27067699,
+      "initial_rss_bytes": 96518144,
+      "sampled_peak_rss_bytes": 271024128,
+      "os_peak_rss_bytes": 271024128,
+      "cycle_end_rss_bytes": [
+        266928128, 267370496, 267370496, 267370496, 267927552
+      ],
+      "post_close_rss_bytes": 270991360,
+      "gif_bytes": 342801,
+      "displayed_coordinate_sha256": [
+        "c39140685fd74180f08c805721972a3b6ac1b49e7d73ad0f09e9a66d510e3956",
+        "06408c7f314134c5f4abc245754e689725967442a7cc1d9897dcf033b2f1ef1c",
+        "298e412274b872c5a119117413c2a904359bf521761ece6716eef4e681c94cf3",
+        "c98ffee40d6a7522c48997ece38639bce69f8711c4694921ecb9de9dae473874",
+        "f63a54658a25f3f8f81e6c4b9e299f3ea40bd2e39c9dfd742fc01a6915416cb6",
+        "373b6c04cd74f66edc600a711b1a21658e2a507859b4b49cc3f5af007e8907fe",
+        "3fb7f085d025b7d65163c38f5655a614a58a7b623cc12519e65bae9053875b62",
+        "931528e67bf7e0dab6dbe1466ee93edd48344b084d3831432d0418e77e0be8d0",
+        "db7cd807f301d6f36858636c4202eb26fbd4c2b9683a7a0ddebd30f518918dcb",
+        "5cccb6bccd5bf1f1ec22dcfee7f64751453c64ad0100ead5b38599ff130da76d"
+      ]
+    },
+    "player_5": {
+      "mode": "player",
+      "cycles": 5,
+      "python": "3.13.6",
+      "pyvista": "0.50.dev0",
+      "vtk": "(9, 7, 1)",
+      "original_frame_count": 10,
+      "original_frame_bytes": 5307414,
+      "read_count": 50,
+      "logical_compressed_read_bytes": 26537070,
+      "initial_rss_bytes": 96534528,
+      "sampled_peak_rss_bytes": 270516224,
+      "os_peak_rss_bytes": 270516224,
+      "cycle_end_rss_bytes": [
+        266174464, 266665984, 266665984, 266665984, 266731520
+      ],
+      "post_close_rss_bytes": 270483456,
+      "gif_bytes": 342801,
+      "displayed_coordinate_sha256": [
+        "c39140685fd74180f08c805721972a3b6ac1b49e7d73ad0f09e9a66d510e3956",
+        "06408c7f314134c5f4abc245754e689725967442a7cc1d9897dcf033b2f1ef1c",
+        "298e412274b872c5a119117413c2a904359bf521761ece6716eef4e681c94cf3",
+        "c98ffee40d6a7522c48997ece38639bce69f8711c4694921ecb9de9dae473874",
+        "f63a54658a25f3f8f81e6c4b9e299f3ea40bd2e39c9dfd742fc01a6915416cb6",
+        "373b6c04cd74f66edc600a711b1a21658e2a507859b4b49cc3f5af007e8907fe",
+        "3fb7f085d025b7d65163c38f5655a614a58a7b623cc12519e65bae9053875b62",
+        "931528e67bf7e0dab6dbe1466ee93edd48344b084d3831432d0418e77e0be8d0",
+        "db7cd807f301d6f36858636c4202eb26fbd4c2b9683a7a0ddebd30f518918dcb",
+        "5cccb6bccd5bf1f1ec22dcfee7f64751453c64ad0100ead5b38599ff130da76d"
+      ]
+    },
+    "direct_50": {
+      "mode": "direct",
+      "cycles": 50,
+      "python": "3.13.6",
+      "pyvista": "0.50.dev0",
+      "vtk": "(9, 7, 1)",
+      "original_frame_count": 10,
+      "original_frame_bytes": 5307414,
+      "read_count": 501,
+      "logical_compressed_read_bytes": 265901329,
+      "initial_rss_bytes": 96272384,
+      "sampled_peak_rss_bytes": 271482880,
+      "os_peak_rss_bytes": 271482880,
+      "cycle_end_rss_bytes": [
+        267091968, 267468800, 267468800, 267468800, 267649024, 267649024,
+        267649024, 267681792, 267681792, 267681792, 267845632, 267845632,
+        267862016, 267862016, 267878400, 267878400, 268042240, 268042240,
+        268058624, 268058624, 268058624, 268058624, 268058624, 268058624,
+        268058624, 268107776, 268124160, 268124160, 268140544, 268173312,
+        268140544, 268140544, 268156928, 268304384, 268304384, 268304384,
+        268304384, 268304384, 268304384, 268304384, 268304384, 268304384,
+        268304384, 268304384, 268304384, 268304384, 268304384, 268337152,
+        268304384, 268304384
+      ],
+      "post_close_rss_bytes": 271450112,
+      "gif_bytes": 342801,
+      "displayed_coordinate_sha256": [
+        "c39140685fd74180f08c805721972a3b6ac1b49e7d73ad0f09e9a66d510e3956",
+        "06408c7f314134c5f4abc245754e689725967442a7cc1d9897dcf033b2f1ef1c",
+        "298e412274b872c5a119117413c2a904359bf521761ece6716eef4e681c94cf3",
+        "c98ffee40d6a7522c48997ece38639bce69f8711c4694921ecb9de9dae473874",
+        "f63a54658a25f3f8f81e6c4b9e299f3ea40bd2e39c9dfd742fc01a6915416cb6",
+        "373b6c04cd74f66edc600a711b1a21658e2a507859b4b49cc3f5af007e8907fe",
+        "3fb7f085d025b7d65163c38f5655a614a58a7b623cc12519e65bae9053875b62",
+        "931528e67bf7e0dab6dbe1466ee93edd48344b084d3831432d0418e77e0be8d0",
+        "db7cd807f301d6f36858636c4202eb26fbd4c2b9683a7a0ddebd30f518918dcb",
+        "5cccb6bccd5bf1f1ec22dcfee7f64751453c64ad0100ead5b38599ff130da76d"
+      ]
+    },
+    "player_50": {
+      "mode": "player",
+      "cycles": 50,
+      "python": "3.13.6",
+      "pyvista": "0.50.dev0",
+      "vtk": "(9, 7, 1)",
+      "original_frame_count": 10,
+      "original_frame_bytes": 5307414,
+      "read_count": 500,
+      "logical_compressed_read_bytes": 265370700,
+      "initial_rss_bytes": 96370688,
+      "sampled_peak_rss_bytes": 271204352,
+      "os_peak_rss_bytes": 271204352,
+      "cycle_end_rss_bytes": [
+        266518528, 267010048, 267190272, 267190272, 267190272, 267190272,
+        267190272, 267321344, 267321344, 267321344, 267321344, 267337728,
+        267337728, 267386880, 267403264, 267403264, 267419648, 267419648,
+        267419648, 267419648, 267419648, 267419648, 267419648, 267436032,
+        267452416, 267468800, 267468800, 267468800, 267485184, 267485184,
+        267485184, 267501568, 267501568, 267501568, 267501568, 267501568,
+        267501568, 267501568, 267501568, 267501568, 267501568, 267517952,
+        267517952, 267517952, 267550720, 267550720, 267550720, 267550720,
+        267550720, 267550720
+      ],
+      "post_close_rss_bytes": 271171584,
+      "gif_bytes": 342801,
+      "displayed_coordinate_sha256": [
+        "c39140685fd74180f08c805721972a3b6ac1b49e7d73ad0f09e9a66d510e3956",
+        "06408c7f314134c5f4abc245754e689725967442a7cc1d9897dcf033b2f1ef1c",
+        "298e412274b872c5a119117413c2a904359bf521761ece6716eef4e681c94cf3",
+        "c98ffee40d6a7522c48997ece38639bce69f8711c4694921ecb9de9dae473874",
+        "f63a54658a25f3f8f81e6c4b9e299f3ea40bd2e39c9dfd742fc01a6915416cb6",
+        "373b6c04cd74f66edc600a711b1a21658e2a507859b4b49cc3f5af007e8907fe",
+        "3fb7f085d025b7d65163c38f5655a614a58a7b623cc12519e65bae9053875b62",
+        "931528e67bf7e0dab6dbe1466ee93edd48344b084d3831432d0418e77e0be8d0",
+        "db7cd807f301d6f36858636c4202eb26fbd4c2b9683a7a0ddebd30f518918dcb",
+        "5cccb6bccd5bf1f1ec22dcfee7f64751453c64ad0100ead5b38599ff130da76d"
+      ]
+    }
+  }
+}

@@ -1,5 +1,9 @@
 # Temporal playback decision and evidence
 
+This document records the earlier slider and reader investigation. The
+[discrete playback API](TIME_SERIES_PLAYBACK.md) supersedes its conclusion that
+no package API was needed for externally driven play/pause/tick.
+
 ## Provenance and patch
 
 Branch `feat/saved-result-playback` is based on verified local `main` revision

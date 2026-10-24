@@ -18,7 +18,7 @@ class TimeController:
     Access must be synchronous on the plotter's thread.
     """
 
-    def __init__(self, pl, times, load_frame, *, scalars, clim, preference='point'):
+    def __init__(self, pl, times, load_frame, *, scalars, clim, preference='point', slider=True):
         """Create the actor and a time slider using public plotting methods."""
         if preference not in ('point', 'cell'):
             msg = "Preference must be 'point' or 'cell'."
@@ -57,7 +57,7 @@ class TimeController:
             show_vertices=False,
         )
         self.slider = None
-        if len(self.times) > 1:
+        if slider and len(self.times) > 1:
             self.slider = pl.add_slider_widget(
                 self.select_time,
                 [self.times[0], self.times[-1]],

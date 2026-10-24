@@ -1,9 +1,11 @@
 # Saved-result playback
 
-`ReaderSource` and `TimeController` are standalone **project APIs**, not public
-PyVista temporal APIs. They display saved results through one ordinary mesh actor.
-There is no physics engine, temporal interpolation, cache, converted storage, or
-PyVista core change. See [designs and evidence](TEMPORAL_DECISIONS.md).
+`TimeController` remains a standalone **project API** for the existing slider
+examples. `exploration.ReaderSource` imports the public `pv.TimeReaderSource`.
+`pv.TimeSeriesPlayer` provides discrete playback
+with an externally driven clock; see [its contract and measurements](TIME_SERIES_PLAYBACK.md).
+There is no physics engine, temporal interpolation, cache, or converted storage.
+The earlier [design investigation](TEMPORAL_DECISIONS.md) remains historical context.
 
 ## Quick start
 
