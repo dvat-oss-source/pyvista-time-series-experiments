@@ -45,6 +45,7 @@ See the API reference for more downloads:
    :toctree: _autosummary
 
    examples.downloads
+   examples.download_heart_motion
 
 Planets
 -------

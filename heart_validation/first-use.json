@@ -1,0 +1,35 @@
+{
+  "mode": "first-use",
+  "execution_directory": "/private/tmp/heart-refinement/first-use",
+  "kernel_executable": "/private/tmp/heart-3136-env/bin/python",
+  "kernel_isolated_mode": true,
+  "installed_library_path_checked": true,
+  "code_cells_executed": 2,
+  "cell_errors": 0,
+  "inline_gif_frames": 10,
+  "inline_gif_size": [400, 320],
+  "inline_gif_durations_ms": [50, 50, 50, 50, 50, 50, 50, 50, 50, 50],
+  "cycle_end_rss_bytes": [
+    295763968, 296681472, 296681472, 296681472, 296845312
+  ],
+  "cycle_end_growth_bytes": 1081344,
+  "growth_over_last_three_cycle_ends_bytes": 163840,
+  "displayed_coordinate_sha256": [
+    [0.0, "c39140685fd74180f08c805721972a3b6ac1b49e7d73ad0f09e9a66d510e3956"],
+    [0.1, "06408c7f314134c5f4abc245754e689725967442a7cc1d9897dcf033b2f1ef1c"],
+    [0.2, "298e412274b872c5a119117413c2a904359bf521761ece6716eef4e681c94cf3"],
+    [0.3, "c98ffee40d6a7522c48997ece38639bce69f8711c4694921ecb9de9dae473874"],
+    [0.4, "f63a54658a25f3f8f81e6c4b9e299f3ea40bd2e39c9dfd742fc01a6915416cb6"],
+    [0.5, "373b6c04cd74f66edc600a711b1a21658e2a507859b4b49cc3f5af007e8907fe"],
+    [0.6, "3fb7f085d025b7d65163c38f5655a614a58a7b623cc12519e65bae9053875b62"],
+    [0.7, "931528e67bf7e0dab6dbe1466ee93edd48344b084d3831432d0418e77e0be8d0"],
+    [0.8, "db7cd807f301d6f36858636c4202eb26fbd4c2b9683a7a0ddebd30f518918dcb"],
+    [0.9, "5cccb6bccd5bf1f1ec22dcfee7f64751453c64ad0100ead5b38599ff130da76d"]
+  ],
+  "memory": {
+    "peak_kernel_rss_bytes": 299532288,
+    "minimum_host_available_bytes": 6472581120,
+    "os_lifetime_peak_kernel_rss_bytes": 299532288
+  },
+  "stdout": "Python: 3.13.6\nInstalled PyVista: /private/tmp/heart-3136-env/lib/python3.13/site-packages/pyvista/__init__.py\n{'pyvista': '0.50.dev0', 'vtk': '9.7.1', 'numpy': '2.5.4', 'pyvista-zstd': '0.7.0', 'imageio': '2.38.1', 'pillow': '13.0.0', 'nbclient': '0.11.0'}\nFirst cached frame: /private/tmp/heart-refinement/fresh-cache/conrad-heart-v1.1/phase_00.pv\nSource phases: [0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9]\nDisplayed phase digests: [(0.0, 'c39140685fd74180f08c805721972a3b6ac1b49e7d73ad0f09e9a66d510e3956'), (0.1, '06408c7f314134c5f4abc245754e689725967442a7cc1d9897dcf033b2f1ef1c'), (0.2, '298e412274b872c5a119117413c2a904359bf521761ece6716eef4e681c94cf3'), (0.3, 'c98ffee40d6a7522c48997ece38639bce69f8711c4694921ecb9de9dae473874'), (0.4, 'f63a54658a25f3f8f81e6c4b9e299f3ea40bd2e39c9dfd742fc01a6915416cb6'), (0.5, '373b6c04cd74f66edc600a711b1a21658e2a507859b4b49cc3f5af007e8907fe'), (0.6, '3fb7f085d025b7d65163c38f5655a614a58a7b623cc12519e65bae9053875b62'), (0.7, '931528e67bf7e0dab6dbe1466ee93edd48344b084d3831432d0418e77e0be8d0'), (0.8, 'db7cd807f301d6f36858636c4202eb26fbd4c2b9683a7a0ddebd30f518918dcb'), (0.9, '5cccb6bccd5bf1f1ec22dcfee7f64751453c64ad0100ead5b38599ff130da76d')]\nCycle-end RSS (bytes): [295763968, 296681472, 296681472, 296681472, 296845312]\nCycle-end RSS (MiB): [282.06, 282.94, 282.94, 282.94, 283.09]\nCycle-end growth (MiB): 1.03\n"
+}

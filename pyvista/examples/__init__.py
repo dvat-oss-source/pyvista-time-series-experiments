@@ -12,6 +12,7 @@ from .cells import generate_cell_blocks as generate_cell_blocks
 from .cells import plot_cell as plot_cell
 from .downloads import *
 from .examples import *
+from .heart import download_heart_motion as download_heart_motion
 
 if TYPE_CHECKING:
     from typing import Any

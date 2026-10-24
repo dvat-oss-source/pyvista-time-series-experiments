@@ -1,0 +1,477 @@
+{
+  "source_archive_sha256": "4c68caa46eb96ee83f604011b2ace79c2e30297220f7e0cb2ae00b0bd7b03b87",
+  "source_archive_bytes": 78152158,
+  "source_uncompressed_bytes": 187859952,
+  "source_zip_members": 27,
+  "source_archive_license_members": [],
+  "source_configuration": {
+    "ANATOMICAL_COMPONENTS": "6",
+    "COMPONENT_ORDER": "myocardium rightAtrium leftAtrium rightVentricle aorta leftVentricle",
+    "CARDIAC_PHASES": "10",
+    "NUMBER_PRINCIPAL_COMPONENTS_EACH_PHASE": "16 16 16 16 16 16 16 16 16 16",
+    "TOTAL_VERTEX_COUNT": "16430",
+    "VERTEX_DIMENSION": "3",
+    "VERTEX_COMPONENT_OFFSETS": "0 4660 6140 7439 11253 12392",
+    "TOTAL_TRIANGLE_COUNT": "32836",
+    "TRIANGLE_COMPONENT_OFFSETS": "0 9316 12272 14866 22490 24764"
+  },
+  "original_to_cache_points_and_faces_exact_all_ten": true,
+  "original_to_displayed_points_exact_all_ten_both_runs": true,
+  "point_and_cell_labels_match_original_component_offsets": true,
+  "phase_metadata_exact": true,
+  "connectivity_order_fixed_across_all_ten": true,
+  "second_level_consensus_max_abs_weight": 0.0347484438480903,
+  "second_level_consensus_weight_norm": 0.16007368003044067,
+  "measurements": [
+    {
+      "phase": 0.0,
+      "maximum_coordinate_error": 0.0,
+      "parts": [
+        {
+          "name": "myocardium",
+          "boundary_or_nonmanifold_edges": 1,
+          "volume_ml_assuming_mm": null,
+          "rms_displacement_from_phase_zero_assuming_mm": 0.0
+        },
+        {
+          "name": "rightAtrium",
+          "boundary_or_nonmanifold_edges": 0,
+          "volume_ml_assuming_mm": 69.70991421551382,
+          "rms_displacement_from_phase_zero_assuming_mm": 0.0
+        },
+        {
+          "name": "leftAtrium",
+          "boundary_or_nonmanifold_edges": 0,
+          "volume_ml_assuming_mm": 65.65347462639782,
+          "rms_displacement_from_phase_zero_assuming_mm": 0.0
+        },
+        {
+          "name": "rightVentricle",
+          "boundary_or_nonmanifold_edges": 0,
+          "volume_ml_assuming_mm": 165.12320894896533,
+          "rms_displacement_from_phase_zero_assuming_mm": 0.0
+        },
+        {
+          "name": "aorta",
+          "boundary_or_nonmanifold_edges": 0,
+          "volume_ml_assuming_mm": 25.19678479030809,
+          "rms_displacement_from_phase_zero_assuming_mm": 0.0
+        },
+        {
+          "name": "leftVentricle",
+          "boundary_or_nonmanifold_edges": 0,
+          "volume_ml_assuming_mm": 149.8041285079746,
+          "rms_displacement_from_phase_zero_assuming_mm": 0.0
+        }
+      ]
+    },
+    {
+      "phase": 0.1,
+      "maximum_coordinate_error": 0.0,
+      "parts": [
+        {
+          "name": "myocardium",
+          "boundary_or_nonmanifold_edges": 1,
+          "volume_ml_assuming_mm": null,
+          "rms_displacement_from_phase_zero_assuming_mm": 1.5212054293337531
+        },
+        {
+          "name": "rightAtrium",
+          "boundary_or_nonmanifold_edges": 0,
+          "volume_ml_assuming_mm": 76.61273991730508,
+          "rms_displacement_from_phase_zero_assuming_mm": 1.6268110895483372
+        },
+        {
+          "name": "leftAtrium",
+          "boundary_or_nonmanifold_edges": 0,
+          "volume_ml_assuming_mm": 71.2528211300039,
+          "rms_displacement_from_phase_zero_assuming_mm": 1.5051908594402856
+        },
+        {
+          "name": "rightVentricle",
+          "boundary_or_nonmanifold_edges": 0,
+          "volume_ml_assuming_mm": 148.6613255795446,
+          "rms_displacement_from_phase_zero_assuming_mm": 1.780123546814242
+        },
+        {
+          "name": "aorta",
+          "boundary_or_nonmanifold_edges": 0,
+          "volume_ml_assuming_mm": 26.162479199136598,
+          "rms_displacement_from_phase_zero_assuming_mm": 1.0043874281183172
+        },
+        {
+          "name": "leftVentricle",
+          "boundary_or_nonmanifold_edges": 0,
+          "volume_ml_assuming_mm": 129.883519510163,
+          "rms_displacement_from_phase_zero_assuming_mm": 1.9195722091035787
+        }
+      ]
+    },
+    {
+      "phase": 0.2,
+      "maximum_coordinate_error": 0.0,
+      "parts": [
+        {
+          "name": "myocardium",
+          "boundary_or_nonmanifold_edges": 1,
+          "volume_ml_assuming_mm": null,
+          "rms_displacement_from_phase_zero_assuming_mm": 3.889466276089677
+        },
+        {
+          "name": "rightAtrium",
+          "boundary_or_nonmanifold_edges": 0,
+          "volume_ml_assuming_mm": 79.88529145547028,
+          "rms_displacement_from_phase_zero_assuming_mm": 3.514007256686301
+        },
+        {
+          "name": "leftAtrium",
+          "boundary_or_nonmanifold_edges": 0,
+          "volume_ml_assuming_mm": 80.2974098399654,
+          "rms_displacement_from_phase_zero_assuming_mm": 2.7749442618581854
+        },
+        {
+          "name": "rightVentricle",
+          "boundary_or_nonmanifold_edges": 0,
+          "volume_ml_assuming_mm": 124.70002805252948,
+          "rms_displacement_from_phase_zero_assuming_mm": 4.651119176479009
+        },
+        {
+          "name": "aorta",
+          "boundary_or_nonmanifold_edges": 0,
+          "volume_ml_assuming_mm": 25.818149230238692,
+          "rms_displacement_from_phase_zero_assuming_mm": 2.182755277221435
+        },
+        {
+          "name": "leftVentricle",
+          "boundary_or_nonmanifold_edges": 0,
+          "volume_ml_assuming_mm": 99.52592153583802,
+          "rms_displacement_from_phase_zero_assuming_mm": 5.321732358958809
+        }
+      ]
+    },
+    {
+      "phase": 0.3,
+      "maximum_coordinate_error": 0.0,
+      "parts": [
+        {
+          "name": "myocardium",
+          "boundary_or_nonmanifold_edges": 1,
+          "volume_ml_assuming_mm": null,
+          "rms_displacement_from_phase_zero_assuming_mm": 5.696999376920109
+        },
+        {
+          "name": "rightAtrium",
+          "boundary_or_nonmanifold_edges": 0,
+          "volume_ml_assuming_mm": 77.80770686711936,
+          "rms_displacement_from_phase_zero_assuming_mm": 4.805254054439147
+        },
+        {
+          "name": "leftAtrium",
+          "boundary_or_nonmanifold_edges": 0,
+          "volume_ml_assuming_mm": 86.68085108654897,
+          "rms_displacement_from_phase_zero_assuming_mm": 4.3504345143486
+        },
+        {
+          "name": "rightVentricle",
+          "boundary_or_nonmanifold_edges": 0,
+          "volume_ml_assuming_mm": 117.78366363504794,
+          "rms_displacement_from_phase_zero_assuming_mm": 6.465435627600212
+        },
+        {
+          "name": "aorta",
+          "boundary_or_nonmanifold_edges": 0,
+          "volume_ml_assuming_mm": 25.588834037276182,
+          "rms_displacement_from_phase_zero_assuming_mm": 4.91898812728288
+        },
+        {
+          "name": "leftVentricle",
+          "boundary_or_nonmanifold_edges": 0,
+          "volume_ml_assuming_mm": 80.92281855175136,
+          "rms_displacement_from_phase_zero_assuming_mm": 7.944382736103974
+        }
+      ]
+    },
+    {
+      "phase": 0.4,
+      "maximum_coordinate_error": 0.0,
+      "parts": [
+        {
+          "name": "myocardium",
+          "boundary_or_nonmanifold_edges": 1,
+          "volume_ml_assuming_mm": null,
+          "rms_displacement_from_phase_zero_assuming_mm": 6.203589276814142
+        },
+        {
+          "name": "rightAtrium",
+          "boundary_or_nonmanifold_edges": 0,
+          "volume_ml_assuming_mm": 76.58465033746052,
+          "rms_displacement_from_phase_zero_assuming_mm": 4.573744057583637
+        },
+        {
+          "name": "leftAtrium",
+          "boundary_or_nonmanifold_edges": 0,
+          "volume_ml_assuming_mm": 90.73453586952047,
+          "rms_displacement_from_phase_zero_assuming_mm": 4.854099437109559
+        },
+        {
+          "name": "rightVentricle",
+          "boundary_or_nonmanifold_edges": 0,
+          "volume_ml_assuming_mm": 119.2331479818429,
+          "rms_displacement_from_phase_zero_assuming_mm": 7.0964640795668466
+        },
+        {
+          "name": "aorta",
+          "boundary_or_nonmanifold_edges": 0,
+          "volume_ml_assuming_mm": 25.620006804994304,
+          "rms_displacement_from_phase_zero_assuming_mm": 5.492498480986714
+        },
+        {
+          "name": "leftVentricle",
+          "boundary_or_nonmanifold_edges": 0,
+          "volume_ml_assuming_mm": 75.99366240484433,
+          "rms_displacement_from_phase_zero_assuming_mm": 8.552877696044453
+        }
+      ]
+    },
+    {
+      "phase": 0.5,
+      "maximum_coordinate_error": 0.0,
+      "parts": [
+        {
+          "name": "myocardium",
+          "boundary_or_nonmanifold_edges": 1,
+          "volume_ml_assuming_mm": null,
+          "rms_displacement_from_phase_zero_assuming_mm": 4.703019534796253
+        },
+        {
+          "name": "rightAtrium",
+          "boundary_or_nonmanifold_edges": 0,
+          "volume_ml_assuming_mm": 75.69590710034878,
+          "rms_displacement_from_phase_zero_assuming_mm": 4.674567612060803
+        },
+        {
+          "name": "leftAtrium",
+          "boundary_or_nonmanifold_edges": 0,
+          "volume_ml_assuming_mm": 90.23940140916115,
+          "rms_displacement_from_phase_zero_assuming_mm": 3.8745044088492833
+        },
+        {
+          "name": "rightVentricle",
+          "boundary_or_nonmanifold_edges": 0,
+          "volume_ml_assuming_mm": 127.36770196181679,
+          "rms_displacement_from_phase_zero_assuming_mm": 5.15510199256915
+        },
+        {
+          "name": "aorta",
+          "boundary_or_nonmanifold_edges": 0,
+          "volume_ml_assuming_mm": 26.059127691039123,
+          "rms_displacement_from_phase_zero_assuming_mm": 4.465615110624603
+        },
+        {
+          "name": "leftVentricle",
+          "boundary_or_nonmanifold_edges": 0,
+          "volume_ml_assuming_mm": 83.7896665521573,
+          "rms_displacement_from_phase_zero_assuming_mm": 6.720869098159
+        }
+      ]
+    },
+    {
+      "phase": 0.6,
+      "maximum_coordinate_error": 0.0,
+      "parts": [
+        {
+          "name": "myocardium",
+          "boundary_or_nonmanifold_edges": 1,
+          "volume_ml_assuming_mm": null,
+          "rms_displacement_from_phase_zero_assuming_mm": 4.0929121661743695
+        },
+        {
+          "name": "rightAtrium",
+          "boundary_or_nonmanifold_edges": 0,
+          "volume_ml_assuming_mm": 80.70351774813288,
+          "rms_displacement_from_phase_zero_assuming_mm": 4.486478359565107
+        },
+        {
+          "name": "leftAtrium",
+          "boundary_or_nonmanifold_edges": 0,
+          "volume_ml_assuming_mm": 87.5563183221332,
+          "rms_displacement_from_phase_zero_assuming_mm": 3.6066444933844997
+        },
+        {
+          "name": "rightVentricle",
+          "boundary_or_nonmanifold_edges": 0,
+          "volume_ml_assuming_mm": 132.45227319966892,
+          "rms_displacement_from_phase_zero_assuming_mm": 4.228888413984084
+        },
+        {
+          "name": "aorta",
+          "boundary_or_nonmanifold_edges": 0,
+          "volume_ml_assuming_mm": 25.899352003127365,
+          "rms_displacement_from_phase_zero_assuming_mm": 2.476685008184242
+        },
+        {
+          "name": "leftVentricle",
+          "boundary_or_nonmanifold_edges": 0,
+          "volume_ml_assuming_mm": 97.69377204761545,
+          "rms_displacement_from_phase_zero_assuming_mm": 5.329795716063908
+        }
+      ]
+    },
+    {
+      "phase": 0.7,
+      "maximum_coordinate_error": 0.0,
+      "parts": [
+        {
+          "name": "myocardium",
+          "boundary_or_nonmanifold_edges": 1,
+          "volume_ml_assuming_mm": null,
+          "rms_displacement_from_phase_zero_assuming_mm": 3.2160306744867437
+        },
+        {
+          "name": "rightAtrium",
+          "boundary_or_nonmanifold_edges": 0,
+          "volume_ml_assuming_mm": 83.96306469281313,
+          "rms_displacement_from_phase_zero_assuming_mm": 3.5967590721795264
+        },
+        {
+          "name": "leftAtrium",
+          "boundary_or_nonmanifold_edges": 0,
+          "volume_ml_assuming_mm": 87.28469630287756,
+          "rms_displacement_from_phase_zero_assuming_mm": 3.31308336067129
+        },
+        {
+          "name": "rightVentricle",
+          "boundary_or_nonmanifold_edges": 0,
+          "volume_ml_assuming_mm": 137.13495600441905,
+          "rms_displacement_from_phase_zero_assuming_mm": 3.4398816561165404
+        },
+        {
+          "name": "aorta",
+          "boundary_or_nonmanifold_edges": 0,
+          "volume_ml_assuming_mm": 26.539074137424265,
+          "rms_displacement_from_phase_zero_assuming_mm": 1.9717972597430995
+        },
+        {
+          "name": "leftVentricle",
+          "boundary_or_nonmanifold_edges": 0,
+          "volume_ml_assuming_mm": 112.57793175163894,
+          "rms_displacement_from_phase_zero_assuming_mm": 3.8252954377259254
+        }
+      ]
+    },
+    {
+      "phase": 0.8,
+      "maximum_coordinate_error": 0.0,
+      "parts": [
+        {
+          "name": "myocardium",
+          "boundary_or_nonmanifold_edges": 1,
+          "volume_ml_assuming_mm": null,
+          "rms_displacement_from_phase_zero_assuming_mm": 2.7633092546302196
+        },
+        {
+          "name": "rightAtrium",
+          "boundary_or_nonmanifold_edges": 0,
+          "volume_ml_assuming_mm": 80.09978745077893,
+          "rms_displacement_from_phase_zero_assuming_mm": 3.3385056030707743
+        },
+        {
+          "name": "leftAtrium",
+          "boundary_or_nonmanifold_edges": 0,
+          "volume_ml_assuming_mm": 84.44479059927671,
+          "rms_displacement_from_phase_zero_assuming_mm": 2.8498216141545867
+        },
+        {
+          "name": "rightVentricle",
+          "boundary_or_nonmanifold_edges": 0,
+          "volume_ml_assuming_mm": 147.74735130492644,
+          "rms_displacement_from_phase_zero_assuming_mm": 2.767987602737265
+        },
+        {
+          "name": "aorta",
+          "boundary_or_nonmanifold_edges": 0,
+          "volume_ml_assuming_mm": 26.014627119806953,
+          "rms_displacement_from_phase_zero_assuming_mm": 1.887075350101734
+        },
+        {
+          "name": "leftVentricle",
+          "boundary_or_nonmanifold_edges": 0,
+          "volume_ml_assuming_mm": 123.88859698513568,
+          "rms_displacement_from_phase_zero_assuming_mm": 2.869968444100922
+        }
+      ]
+    },
+    {
+      "phase": 0.9,
+      "maximum_coordinate_error": 0.0,
+      "parts": [
+        {
+          "name": "myocardium",
+          "boundary_or_nonmanifold_edges": 1,
+          "volume_ml_assuming_mm": null,
+          "rms_displacement_from_phase_zero_assuming_mm": 1.0358318591680205
+        },
+        {
+          "name": "rightAtrium",
+          "boundary_or_nonmanifold_edges": 0,
+          "volume_ml_assuming_mm": 67.89723945260927,
+          "rms_displacement_from_phase_zero_assuming_mm": 1.1974057734421466
+        },
+        {
+          "name": "leftAtrium",
+          "boundary_or_nonmanifold_edges": 0,
+          "volume_ml_assuming_mm": 68.52984522135044,
+          "rms_displacement_from_phase_zero_assuming_mm": 0.8784429539578328
+        },
+        {
+          "name": "rightVentricle",
+          "boundary_or_nonmanifold_edges": 0,
+          "volume_ml_assuming_mm": 166.76610501680125,
+          "rms_displacement_from_phase_zero_assuming_mm": 1.0833986197651317
+        },
+        {
+          "name": "aorta",
+          "boundary_or_nonmanifold_edges": 0,
+          "volume_ml_assuming_mm": 24.785407742780237,
+          "rms_displacement_from_phase_zero_assuming_mm": 0.8654938568215359
+        },
+        {
+          "name": "leftVentricle",
+          "boundary_or_nonmanifold_edges": 0,
+          "volume_ml_assuming_mm": 145.55322094184868,
+          "rms_displacement_from_phase_zero_assuming_mm": 0.9342195032346841
+        }
+      ]
+    }
+  ],
+  "lv_edv_ml_assuming_mm": 149.8041285079746,
+  "lv_esv_ml_assuming_mm": 75.99366240484433,
+  "lv_ed_phase": 0.0,
+  "lv_es_phase": 0.4,
+  "lv_ef_percent": 49.271316377105784,
+  "provider_separate_mean_phantom_ef_percent": 52,
+  "ef_difference_percentage_points": 2.7286836228942164,
+  "independent_volume_method": "NumPy oriented tetrahedron sum; checked against PyVista volume",
+  "coordinate_unit_status": "mm inferred from CT/model scale; original files untagged",
+  "timing_status": "normalized phase only; display period chosen, no physiological timing claim",
+  "anatomy_source": "original cnfg.ccc component order and offsets",
+  "correspondence_evidence": "provider registration; matching topology alone is insufficient",
+  "physiological_validation": false,
+  "environment": {
+    "python": "3.13.6",
+    "library_path": "/private/tmp/heart-3136-env/lib/python3.13/site-packages/pyvista/__init__.py",
+    "pyvista": "0.50.dev0",
+    "vtk": "9.7.1",
+    "numpy": "2.5.4",
+    "pyvista-zstd": "0.7.0",
+    "imageio": "2.38.1",
+    "pillow": "13.0.0",
+    "nbclient": "0.11.0",
+    "psutil": "7.2.2",
+    "ipykernel": "7.4.0",
+    "pooch": "1.9.0",
+    "pyvista-validation": "0.5.4",
+    "nbformat": "5.11.1",
+    "jupyter-client": "8.10.0"
+  }
+}

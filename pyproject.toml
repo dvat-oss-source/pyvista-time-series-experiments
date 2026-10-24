@@ -601,6 +601,7 @@ pyvista = "pv"
 'benchmarks/*' = ['ANN', 'S101']
 'doc/*' = ['ANN', 'INP', 'PLC0415']
 'doc/make_dev_wheel.py' = ['S607'] # git comes from PATH
+'heart_animation.ipynb' = ['S101', 'T20']
 # A command-line script: it reports what it runs, like `make` does.
 'doc/run_vale.py' = ['T20']
 'doc/source/make_tables.py' = [

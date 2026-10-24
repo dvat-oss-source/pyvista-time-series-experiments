@@ -1,0 +1,749 @@
+{
+  "branch": "v0.0.1",
+  "baseline_commit": "0685b320c21d7605ad2dfebc913001a44676b04b",
+  "installation": "Editable install from source snapshot, without a local wheel or pre-existing data cache",
+  "python": "3.13.5",
+  "pyvista": "0.50.dev0",
+  "notebook_sha256": "cc47d25c1b84e27a0de1d2f974da9c703adc8190c189ae189019afa4e56fa946",
+  "runtime_source_sha256": {
+    "pyvista/__init__.py": "9240fa071933d87310c684a6edeac3bc4a464242f1c5cf19cd28d59588d6d519",
+    "pyvista/__main__.py": "6ee7fbd08cfddbaf4281e6be1b4cb1e73a858598be99aa1f54de7f04fb450148",
+    "pyvista/_cli/__init__.py": "c641213b50fe94407b5778268a9e6e699ed27f697ad9faeb3bfc9e840e732217",
+    "pyvista/_cli/app.py": "a8c82afec9d87d427198985bac87eb5a9cb5e07d090205d8ffe39f3346205fa9",
+    "pyvista/_cli/compare.py": "1b6a7a689c38aaed9fd2caf16189016d0b584eab499d8bb28f1f79978558b114",
+    "pyvista/_cli/convert.py": "82a55beebf7bcfb745f0d73fb55f3ff5f93ecb9712f2d844a0b50ae54bb6671a",
+    "pyvista/_cli/plot.py": "2254431c60072346d46562485da2eb6e5b7fdc7d5284537e212314b27050050b",
+    "pyvista/_cli/report.py": "0eb0c1fadf29a05d1ee820c7170aa076057c19f74d2b9db1f4eadbecaf1288ee",
+    "pyvista/_cli/utils.py": "e0a933954eee03fc2b75e6e0278adbc9262e1ebfe8a58730a7d02e67106b28fb",
+    "pyvista/_cli/validate.py": "6ee9fe220b5ec0a04f9ad500471429cc3752459937097da2aad48ed35c84594e",
+    "pyvista/_deprecate_positional_args.py": "db81d652bd03091cceb60f81d109b48a00c5e1e47a93369396634c8d88f0cc6e",
+    "pyvista/_plot.py": "7d6dc18e3a35b079c114b49362f596d4f43085820f46cdc3bc1f34a35a6e1390",
+    "pyvista/_version.py": "5ab6372f7e24a5074f83f7e2f05efaba5446cbe94dc659ad7bb94528aaba796d",
+    "pyvista/_vtk.py": "36cd4127d9f1f54961146ecbcd0260c0bc9c27c4120f33592dc18587d4e8d033",
+    "pyvista/_warn_external.py": "1cd58c766a3f712cb6052708e119ebd4bd28cfc8cb6e6ab5b2629668db0c942e",
+    "pyvista/conftest.py": "9829f5fb17347d2214e6b6c82a901da319ab45ab23d290eb49bdcad5c18a946f",
+    "pyvista/core/__init__.py": "e30e57263440f77da95dcdf03c4b2fca5fe11d1249344ed3ba85cc21bd9f5aae",
+    "pyvista/core/_typing_core/__init__.py": "c87831dcb7f824ead23a8dbd66dad9a7f3fd20f70da0ed56cdb11b69f5869ff4",
+    "pyvista/core/_typing_core/_aliases.py": "84f5cd8adf592c61d3ee7e2668f071109ad399dac73d5aa38f85e8dda375929d",
+    "pyvista/core/_typing_core/_array_types.py": "18c65c23e66c4be799b9e44f8d23a1cb187b00280b95f4c65b9fd142baf738ea",
+    "pyvista/core/_typing_core/_dataset_types.py": "0aeeb551bb73f7f2b2e3d05d46560198c5eae090943b4217d221cea8de2d3d3b",
+    "pyvista/core/_typing_core/_deprecated.py": "e53aa50ab010edebdc53171773eceafcde13cd87d9fad8d7e39fbc3d07a61a8e",
+    "pyvista/core/_vtk_utilities.py": "836fd51d65265d5c45fe141b328cc2121c6ee050ddc5362a89d44fbfe5758694",
+    "pyvista/core/cell.py": "b8c1b5c67c4c4954730f512476f83cc7e0f9b94529a07c616b3c4c229165b9ff",
+    "pyvista/core/celltype.py": "963a74d4796a8d9989d251cff715beaddfdd40ac6f877d7cbcc1c89d0b88c7c7",
+    "pyvista/core/composite.py": "37772a025267a0d0ac5d37119b0988d4c5b4b90f92b09303aae2c59dc9d9d042",
+    "pyvista/core/config.py": "e6ae3f842289f03eea6bd0474ec435289f55ca4f67791a93e323eb250f3cf6de",
+    "pyvista/core/dataobject.py": "fad8e2a7ea4b7e6444898e242c6f15cafaab7a2a5989b7cc45b991dd2b5dfb41",
+    "pyvista/core/dataset.py": "346e8a56dd474e7e70dfdce897806606aa4b0105dc1491399dddf13b6cdf89f9",
+    "pyvista/core/datasetattributes.py": "6d35e27db312d3f58cfaf27201bc0917094fd3d50aab5a27df9d765f9f5a2f61",
+    "pyvista/core/errors.py": "b8a663487b8576af9287215090f2876f3b7f662fe0644ffdafd642572799402a",
+    "pyvista/core/filters/__init__.py": "e24befcdaf730880f1908383a3313c1b9b6173798a72b3b72867ef04f7003971",
+    "pyvista/core/filters/composite.py": "c02f4061a83fc8f457d365d8b417b8bb66641664e1af993d4dfc8bc9ca284bd2",
+    "pyvista/core/filters/data_object.py": "f8816781d73aac578f5c0c3abf251529b719e7eef0e12a4d1e1359328b8b6a0f",
+    "pyvista/core/filters/data_set.py": "133f1f2793042b19ccd52ef09a6fd74c30e0bb635dffd8d3b7f42f04fb4cdb3a",
+    "pyvista/core/filters/image_data.py": "600c141b78399c804be2a8bee3e64f7f0d4b08cdb99dc9b0d923cb6459c49d65",
+    "pyvista/core/filters/poly_data.py": "75f631e35513aaf24ae2dcf4810ff6b447cb432ee75f5057c13f7c50ae1c8287",
+    "pyvista/core/filters/rectilinear_grid.py": "8bae609f9c087fbb48467a246672e232cb370ebe9ce41ca2ed5317cccb9c5202",
+    "pyvista/core/filters/structured_grid.py": "2db8721e3817ced9eb3fddfe8e104395e924c3ec77a6332ae6b204cbbdb8f64e",
+    "pyvista/core/filters/unstructured_grid.py": "49f6d441845d8fe75c55165979aa78c242b023906cbd3b06405bd409aa9f9934",
+    "pyvista/core/formatting_html.py": "add803f07f141620b80df4f3af053e7b21de5879c693b4ffb1e25b2490585405",
+    "pyvista/core/grid.py": "a17f3face8808a05e620d831c4499b814cf4a2b77176c952fe36763180c9e9d6",
+    "pyvista/core/objects.py": "a2e79affdc380d8a959c7785b9b6e3e1481ccb42a43959098edf38834ea6516a",
+    "pyvista/core/partitioned.py": "37636d412a91a8fa87ca09d48a1219bde04f904c6625a4b37bb706be04e6ac95",
+    "pyvista/core/pointset.py": "8b9449f1938ce5b1690b8351c9d884c51189ef925474a8f904684eeb2a011261",
+    "pyvista/core/pyvista_ndarray.py": "9388f26f4967089f4f3879a2277776d3ee239f742cb92b67c53bb30df0aa51c3",
+    "pyvista/core/static/__init__.py": "9d6908d7b4c8932409b30bab92a24bde37550b38fbbb725629d38fc4a3cb20ec",
+    "pyvista/core/static/mesh_icons/__init__.py": "81057f84c9e5e43c6ad05d9676ccdfe9f97948b5e09463ab9cc4f2cbfe0694ec",
+    "pyvista/core/utilities/__init__.py": "68e138597d366a6271292e981171b38c1d7b77ff8a4178300def7aed96cfad61",
+    "pyvista/core/utilities/_cell_lengths.py": "d15423ee298b6862738caa95903f455bc65bee74cad6193ffb613cdb60ee6274",
+    "pyvista/core/utilities/_file_formats.py": "263c41b953022b60883a4c531f0f00892efdc7ad2c56616b26b10900e16cc014",
+    "pyvista/core/utilities/_optional_formats.py": "7284b20d546d6a7b60d3e082a759ee434e52bde8f42a725627f69e7c5b8abfaa",
+    "pyvista/core/utilities/_registry_helpers.py": "6fe1ef15f6692ffb97f052715fe930f614681269e80a6693e6323e92574b7bde",
+    "pyvista/core/utilities/accessor_registry.py": "124c91ef008c20d0f75bce6967d470e8c0b58e9725f678c980a73f3ce29f29b2",
+    "pyvista/core/utilities/arrays.py": "d7bee0ff398f03e0553ebe68e5c5f01ed5959de9d426ee1142e7e9abf38120b4",
+    "pyvista/core/utilities/cell_quality.py": "d36a0d617713a87d14a32667942b97284dbbf3bc1432c1c2dff2ac5d00278467",
+    "pyvista/core/utilities/cells.py": "78c0502f92e92bfd1461cb824ac80bae17f2b2954a4df50d8621d5d1ebbe0a57",
+    "pyvista/core/utilities/docs.py": "0a197c28a0c242f6f46e74024175524e02df37a099a4cec37fdcaa01c62faaab",
+    "pyvista/core/utilities/features.py": "38a83d25eec1ef8fbd4cdc3a82a041818f717d89ca83589af8fb68ad8a331cac",
+    "pyvista/core/utilities/fileio.py": "3046f09b25070975799539a49d8611ccabe800309a1e9ca08d0c2b752a5f15a9",
+    "pyvista/core/utilities/geometric_objects.py": "be1423a2b6e0fc57f666fc5eedfe9918eb6e226eecd75233c421eca3fca9d978",
+    "pyvista/core/utilities/geometric_sources.py": "56d5a1c8d35a3ece6d21db2f8ff9cc00f2c458bb6813ee75030e1f8ae40c266a",
+    "pyvista/core/utilities/helpers.py": "3d91ef858fb8c7dafb53c15fc5ef13b1b4a7eec3776d9f7862ca88bed5ff0420",
+    "pyvista/core/utilities/image_sources.py": "4625f175f650aef4bb5301b767d11c19f87e3297ee301b1e254b04cf97892c00",
+    "pyvista/core/utilities/misc.py": "fbb9d1340141d907e31d33058cb426d3a3ae15d611586750b4ab9aa9adcfc5e3",
+    "pyvista/core/utilities/observers.py": "62bc8fc948a6395969d8e2f1ccca333d200efb1d5af948902bdc7ce6a87f3d7f",
+    "pyvista/core/utilities/parametric_objects.py": "bcec1ba66d10203ed3dfd615030f40002e93cd3dc21fb12af3bd049257e43219",
+    "pyvista/core/utilities/points.py": "d4f5fa51ef469a42e4c799bf877bc030f38ad139577d57ae3aae7b5e442ae3e2",
+    "pyvista/core/utilities/reader.py": "6f42b4f418287400b459ddfcd2fcc5ac84709d56f953cfffc37ea91635b636af",
+    "pyvista/core/utilities/reader_registry.py": "b12427f815412892c1fbfd5c143f4d4ee959292fc434697f8a6307f8efa280e6",
+    "pyvista/core/utilities/state_manager.py": "4b944449a4c6c7fca212d04021aa6c3a14c1d5a10ef7926e37566eb19a4884e4",
+    "pyvista/core/utilities/transform.py": "eadb75a7339c16a36eada5e32e08ec8f9e8611ad126207810cc8e402409bd0b7",
+    "pyvista/core/utilities/transformations.py": "78a44b37caa542f57c33648acfcb85a189b3c0452b88b14b184c29b9c339662d",
+    "pyvista/core/utilities/writer.py": "84b6a3c49eb7a03f718ab739c521b184d058d7ec5367d7e0804b30ad5bb6c4a9",
+    "pyvista/core/utilities/writer_registry.py": "d760e412a23467bc254bc3a88cb3fab230017233d14607c6c1426d5eb85fab22",
+    "pyvista/core/wrappers.py": "6d2a9281915f32d362b50a7786c4ac968cf3ed96f0b1203b02213350d7ff91f4",
+    "pyvista/demos/__init__.py": "79bb8d935e97026e2499ab3f1631ba80bc79db71eff527b3bbee05453b1f6999",
+    "pyvista/demos/demos.py": "8251dacb392efde99eb69d6dc7392da26f01d61a04f8744c14c6623da422a7bd",
+    "pyvista/demos/logo.py": "844a2d831ed6a80d367727ffd36dd2e49d2c2052c21194739dc55c769405b83a",
+    "pyvista/errors.py": "186b3eb537dae42cffec356cc70413943f9567aeb8ea216a81a0880fe59981de",
+    "pyvista/examples/__init__.py": "a4439e07dcc997e697dc8e5357d85d043baafb19c747d29efeaa7baa3a82e9ae",
+    "pyvista/examples/_dataset_loader.py": "7d72bc27192df28cca14de5f4e3ba673b730efbcdfd3b051e75dc8944e5e7b20",
+    "pyvista/examples/_get_example.py": "e87b4f37e401ca4dec27a49fbfb53f2a0b42ae6610adbc9e0f2c7822d14d959e",
+    "pyvista/examples/cells.py": "86fafb4b14ea92e6485dae36d213c7c2fe17eda12bb3fbf92e8442bad29168cb",
+    "pyvista/examples/download_3ds.py": "84aab8fa3725b41375fa67d51e4f52472569817abe5aee1830c0b1e524d9e0bf",
+    "pyvista/examples/downloads.py": "8c3bdfe36e5afa1dd4f55fb92789912bdc6d62241efd9735e38625f07b2bdf08",
+    "pyvista/examples/examples.py": "516407a96fe10d1a33ec977f8a6bc8118dcbe6d1d023e1c387db1e4ec3b46394",
+    "pyvista/examples/gltf.py": "c22131f0630933f7d443f8a3873d5febd2faba42a8e9447f3a3ea07e5eba8f7a",
+    "pyvista/examples/heart.py": "6a72eb89e2d4ccec42a5edad08783771d00efa33237dbdd734decb3a95136eea",
+    "pyvista/examples/planets.py": "3bfbf03d0d8c8039710af855c720ae645285f426546d7a191985d18b214d5332",
+    "pyvista/examples/vrml.py": "fa3061a761034cff64b81eab178a13321f0b03924be7e563afc06289902082a1",
+    "pyvista/ext/__init__.py": "857583aa852c34d42f68677c794194b99f726a254ace32bf80e2fcbac7e524bd",
+    "pyvista/ext/_autoenum.py": "eacd4549955e2db46c7af3d80d012ccfe82c93ce309f2f7941e969dfc75d73b7",
+    "pyvista/ext/_autoinherit.py": "a3a6a0cd5f21fbf5080de43c68299bb950ce09d9857cf24fb14e63ac76d69b23",
+    "pyvista/ext/_embed_py_file.py": "b6f56c4e81f4e3e4e90c1476a4dbccdbf995b00ae8bcc807bb7ae27df6519ded",
+    "pyvista/ext/plot_directive.py": "3fd4e626cbca16233257945706785ea381254ed2272070b00899227015176779",
+    "pyvista/ext/viewer_directive.py": "cdc91ed050709a2107261120da39673ffc715c63398eb91cda2fe2ed1d8acd5e",
+    "pyvista/jupyter/__init__.py": "c8f63775ba93f588c8fc5e7bdfd993a735a6e6b9d9f2db7d4313f14e2e8e80b4",
+    "pyvista/jupyter/notebook.py": "4138d518e47c45b28ded7868376587aab5802d57ec4dbaad22f79f333d44e628",
+    "pyvista/plotting/__init__.py": "b94d831616da9d24682ff48688bb59c6d7407acab16e25c68e4c9b32b179005e",
+    "pyvista/plotting/_plotting.py": "2d65b7039891a0ccd1755dcfea2c513b5080cc9c7386cd91359d76bdb57a15fa",
+    "pyvista/plotting/_property.py": "7081c4d6f623a2d3847003cc7d4f72bed69b485a1b12e8721f4c4b91572c9bc1",
+    "pyvista/plotting/_rendering_imports.py": "57e77180f7c32cb3530f0d2a34b8b509769fd8187e0bfca232d3c6de132e6851",
+    "pyvista/plotting/_typing.py": "bff9cf68e9156fbab41ab75c35765758dcef96506baecb458112bdbf9d71cd69",
+    "pyvista/plotting/actor.py": "59a844fcf627d0cff58258bcb1b3419579a531c709210963088e4d9cf3023b68",
+    "pyvista/plotting/actor_properties.py": "2dfb10a84eee541122194dff16451096c5eca37f2061aba25de0f474abd9f663",
+    "pyvista/plotting/affine_widget.py": "800fe05bc6531265fce36f21e35c0177cb1f0cf18dcc356d831f5d1b0c1798f4",
+    "pyvista/plotting/axes.py": "265a37a32170f049d4623872aa80f94bf7784a43966671bcd8548f7294766605",
+    "pyvista/plotting/axes_actor.py": "4d801171ebe5b08ca4634a313063d1b4b05d4c6fc4dffcc6d815a417f7963117",
+    "pyvista/plotting/axes_assembly.py": "63e0fd9ba666b2c42677a9a669144c51a2e1d66cab7f2c738977c9284a54efe6",
+    "pyvista/plotting/background_renderer.py": "80490a074b39fc65e69d2cbc350657673e3920ce5a9f64307b4bd68bfd0871eb",
+    "pyvista/plotting/camera.py": "286cbcb5bd465f6bc48470f92bf0a20810e6a21c683bf71d00718d85e0fd2102",
+    "pyvista/plotting/charts.py": "dc08ac840b7249c4690472ce0e3ea048f5ccb7bcec7142d42e0b07803473db72",
+    "pyvista/plotting/colors.py": "70fd14d2b17aa2b87e8ed27e4a6964bc08862e2054e0f1b336b15ec48bfc204c",
+    "pyvista/plotting/component_registry.py": "5523ac3119bb47f53761b2f6d25bb374f4f7ff6491dc7cbf76e975f2b276d4f1",
+    "pyvista/plotting/composite_mapper.py": "55de638305dc66a6dce1847f521c3e79535845ed6525ccee1fea1cebc84d0736",
+    "pyvista/plotting/cube_axes_actor.py": "57e0b8e52122a887da46f8fc82dc89b086f5236b0dc026bc1672fe91524dbdb1",
+    "pyvista/plotting/errors.py": "b45cd8f9137a3d8f4c979b4f5b8f82cc413915066c65923205c8d7966706cb21",
+    "pyvista/plotting/follower.py": "ca8933e78de1d2d2a29f46bca2c30d57a1982924719520a54c774446a39d9cfa",
+    "pyvista/plotting/helpers.py": "d3687f531c1afff0ab0ce6d1d5b7d68930180e68d1a5e668cb0865d9c7138b4b",
+    "pyvista/plotting/interactor_style_registry.py": "05df2ae2ae74448b5623d98bd3e36ad92a00a443111d5ca8addedebc02981c1e",
+    "pyvista/plotting/lights.py": "0a3d82e0804ae1338e0aceaaa0a3ded73365cb626ee6a44d70777f4f181182fd",
+    "pyvista/plotting/lookup_table.py": "de4a79759c5ea79b0326ccbeacbdf94267131c45d1379c50fd139e7600976e37",
+    "pyvista/plotting/mapper.py": "d99f589077675cbe25be6ba23ff41cbc5f3148a533408aa65217ce324ebdb551",
+    "pyvista/plotting/opts.py": "452e47ad1a5337bdde8aa505badec149eddc3491100e08ab6437cf6a3f1a0fe9",
+    "pyvista/plotting/picking.py": "12b96088ec484b251ef296a33e49f26df79523fd4088310f1e962d5c96a85d7f",
+    "pyvista/plotting/plot_compare.py": "96895eefd8586e7466256a5086bfc85791b9d3c722c65aa20378d226c9f04802",
+    "pyvista/plotting/plotter.py": "cfc720582f4be2c7e0ea211c751e1c0fede445754d8692aaf9173befc813d1e4",
+    "pyvista/plotting/plotting/__init__.py": "bb241237c5b74fbf785db2000db226a44d4c1d94853950988828385b9ac5ee41",
+    "pyvista/plotting/prop3d.py": "0479532492da5080da94e501c6b6ce5e9ede7644f65a4cebdf29b9e1cd294055",
+    "pyvista/plotting/prop_collection.py": "5df57b2bc3f95979747669cbd05e623eca51d8ef3dce2c74fe4c90b7a248fbb5",
+    "pyvista/plotting/render_passes.py": "bdec0b2faf4918d0b0cc3cbca7b75094dce8f2bcbaee7b07e90033c38dfbd099",
+    "pyvista/plotting/render_window_interactor.py": "27e7b1724647ce6c1e6d434c1e5db6fe483e6a49d9ca774f2b7cf06fc8a38cc5",
+    "pyvista/plotting/renderer.py": "02ec85fd1118794e831f066c704efda54ad95f09ff2311e0745a17f1c035c8bf",
+    "pyvista/plotting/renderers.py": "e18fe73380ff458db6e7a24d0481492885889ab03b7ba6ee3997aadbf1490a2e",
+    "pyvista/plotting/scalar_bars.py": "0b60b1bc6214a64fcf0d27f86efbace5c2d6b1fadde9c78a6a182bcc733411f2",
+    "pyvista/plotting/text.py": "ee7c003046a042ed9906252fc0b5825d0d2deafa8f4e6b5257e0d93c346e296e",
+    "pyvista/plotting/texture.py": "2fb9af7c3e38b2fcd51e7248d9d7618cc01a1ea21301da6120eb6a7eb8081ebd",
+    "pyvista/plotting/theme_registry.py": "bfe0053f54b4eda866c4a6c9acadc6ca522624e1983f254eb3e25a72d24b4083",
+    "pyvista/plotting/themes.py": "cd45166d98d0d7800196dfacbab240886e5f80105fce474a31ddb6552306f377",
+    "pyvista/plotting/tools.py": "1ee2b791769450a305e709f416b7a386f459151d7d410f1597882388e8116282",
+    "pyvista/plotting/utilities/__init__.py": "c1d34594d08de88aebdc9a281f758f39d654134838b8e4b1376f75d3e6a96e23",
+    "pyvista/plotting/utilities/algorithms.py": "aa6a6160dea2a347fb21b369f234a4adf2e4e00875803b6bcaa8c391cd55136d",
+    "pyvista/plotting/utilities/cubemap.py": "71f70283fe68591be12421b519a1530151ebc11014b4b0af81bf38a31f675848",
+    "pyvista/plotting/utilities/gl_checks.py": "1455e24c7bc0bb296e0eb5cd545fa624039146cb035b476be10ac83369b83683",
+    "pyvista/plotting/utilities/regression.py": "312e5404514199e4b00099db33d89ab5e1253463725b48cd9d77d5613dbc7746",
+    "pyvista/plotting/utilities/sphinx_gallery.py": "7b70faec1bf9e7cc04acefaa443aea3ff25dc3021b2b9f75072b84f3a59734ac",
+    "pyvista/plotting/volume.py": "63df5f5bfab9bf5b7baed5c360d56c041ac282c876dd4542eebb5d9eb0e79bbd",
+    "pyvista/plotting/volume_property.py": "7e1c8438c09d466d71b0443c1b87fc2225e19186be4e4d340e9da320e5090546",
+    "pyvista/plotting/widgets.py": "d3e8a1a9fbe7105a3e40c6e97a6ba4c00428ac81977e6e25a570e9dac3743139",
+    "pyvista/report.py": "05fd82f001e74c2955e204c76cbe03a84f882be54d93dc838b81c8ee6c9e8045",
+    "pyvista/trame/__init__.py": "cdfd992d712697d1e8f5f1a5fbd262f24519b479c57d5c6ad71bfae8c7d13e73",
+    "pyvista/trame/jupyter.py": "a468b323a0cca316d01f3e50059112e853b7f225bc7828193e829ce0cee673ba",
+    "pyvista/trame/ui/__init__.py": "ec2a127a8882df878e8d099ed0033709f76ab81d45f66b54df402c3d32ac83c6",
+    "pyvista/trame/ui/base_viewer.py": "aa040a4cf39ccad9c70cfdcd6bc17174e176648c0a96db427a7c92b6690c33c8",
+    "pyvista/trame/ui/vuetify2.py": "d831086c18cff62edbf3ad44103494f00d2d856b8b422ff0907ecb7522bee665",
+    "pyvista/trame/ui/vuetify3.py": "617ae9ea26f144865c5e95eb963a0dda844f11363b5e9926c448f1489cc36927",
+    "pyvista/trame/views.py": "05fe9ccb8498d30b1d883cecc592dec88edfa05f8bbcbbdd7aa67f7629416f92",
+    "pyvista/typing/__init__.py": "5fdd3d767039d4d51e23d851e067cf7abaeef7a8c4ad713608dd46d4ee82a83d",
+    "pyvista/typing/mypy_plugin.py": "8a72d8a310d6a093096416f0304b28cc369e8132e17b28807dee44689e6fbc82",
+    "pyvista/utilities/__init__.py": "a26e583a303bb5ee67910e0455874b35e7291c7e2d5e787b3a5aff34c4626e4a",
+    "pyvista/utilities/algorithms.py": "252480083bb5bbf28de32ef36cce16f2491bf0e87f52111d96a6c302930cd2fa",
+    "pyvista/utilities/arrays.py": "252480083bb5bbf28de32ef36cce16f2491bf0e87f52111d96a6c302930cd2fa",
+    "pyvista/utilities/cell_type_helper.py": "252480083bb5bbf28de32ef36cce16f2491bf0e87f52111d96a6c302930cd2fa",
+    "pyvista/utilities/cells.py": "252480083bb5bbf28de32ef36cce16f2491bf0e87f52111d96a6c302930cd2fa",
+    "pyvista/utilities/common.py": "252480083bb5bbf28de32ef36cce16f2491bf0e87f52111d96a6c302930cd2fa",
+    "pyvista/utilities/docs.py": "252480083bb5bbf28de32ef36cce16f2491bf0e87f52111d96a6c302930cd2fa",
+    "pyvista/utilities/errors.py": "252480083bb5bbf28de32ef36cce16f2491bf0e87f52111d96a6c302930cd2fa",
+    "pyvista/utilities/features.py": "252480083bb5bbf28de32ef36cce16f2491bf0e87f52111d96a6c302930cd2fa",
+    "pyvista/utilities/fileio.py": "252480083bb5bbf28de32ef36cce16f2491bf0e87f52111d96a6c302930cd2fa",
+    "pyvista/utilities/geometric_objects.py": "252480083bb5bbf28de32ef36cce16f2491bf0e87f52111d96a6c302930cd2fa",
+    "pyvista/utilities/helpers.py": "252480083bb5bbf28de32ef36cce16f2491bf0e87f52111d96a6c302930cd2fa",
+    "pyvista/utilities/misc.py": "252480083bb5bbf28de32ef36cce16f2491bf0e87f52111d96a6c302930cd2fa",
+    "pyvista/utilities/parametric_objects.py": "252480083bb5bbf28de32ef36cce16f2491bf0e87f52111d96a6c302930cd2fa",
+    "pyvista/utilities/reader.py": "252480083bb5bbf28de32ef36cce16f2491bf0e87f52111d96a6c302930cd2fa",
+    "pyvista/utilities/regression.py": "252480083bb5bbf28de32ef36cce16f2491bf0e87f52111d96a6c302930cd2fa",
+    "pyvista/utilities/sphinx_gallery.py": "252480083bb5bbf28de32ef36cce16f2491bf0e87f52111d96a6c302930cd2fa",
+    "pyvista/utilities/transformations.py": "252480083bb5bbf28de32ef36cce16f2491bf0e87f52111d96a6c302930cd2fa",
+    "pyvista/utilities/wrappers.py": "252480083bb5bbf28de32ef36cce16f2491bf0e87f52111d96a6c302930cd2fa",
+    "pyvista/utilities/xvfb.py": "252480083bb5bbf28de32ef36cce16f2491bf0e87f52111d96a6c302930cd2fa"
+  },
+  "first_use": {
+    "mode": "first-use",
+    "execution_directory": "/private/tmp/heart-clone-verification/first-use",
+    "kernel_executable": "/private/tmp/heart-clone-env/bin/python",
+    "kernel_isolated_mode": true,
+    "installed_library_path_checked": true,
+    "code_cells_executed": 2,
+    "cell_errors": 0,
+    "inline_gif_frames": 10,
+    "inline_gif_size": [400, 320],
+    "inline_gif_durations_ms": [50, 50, 50, 50, 50, 50, 50, 50, 50, 50],
+    "cycle_end_rss_bytes": [
+      270647296, 271450112, 271450112, 271466496, 272007168
+    ],
+    "cycle_end_growth_bytes": 1359872,
+    "growth_over_last_three_cycle_ends_bytes": 557056,
+    "displayed_coordinate_sha256": [
+      [0.0, "c39140685fd74180f08c805721972a3b6ac1b49e7d73ad0f09e9a66d510e3956"],
+      [0.1, "06408c7f314134c5f4abc245754e689725967442a7cc1d9897dcf033b2f1ef1c"],
+      [0.2, "298e412274b872c5a119117413c2a904359bf521761ece6716eef4e681c94cf3"],
+      [0.3, "c98ffee40d6a7522c48997ece38639bce69f8711c4694921ecb9de9dae473874"],
+      [0.4, "f63a54658a25f3f8f81e6c4b9e299f3ea40bd2e39c9dfd742fc01a6915416cb6"],
+      [0.5, "373b6c04cd74f66edc600a711b1a21658e2a507859b4b49cc3f5af007e8907fe"],
+      [0.6, "3fb7f085d025b7d65163c38f5655a614a58a7b623cc12519e65bae9053875b62"],
+      [0.7, "931528e67bf7e0dab6dbe1466ee93edd48344b084d3831432d0418e77e0be8d0"],
+      [0.8, "db7cd807f301d6f36858636c4202eb26fbd4c2b9683a7a0ddebd30f518918dcb"],
+      [0.9, "5cccb6bccd5bf1f1ec22dcfee7f64751453c64ad0100ead5b38599ff130da76d"]
+    ],
+    "memory": {
+      "peak_kernel_rss_bytes": 274350080,
+      "minimum_host_available_bytes": 2032467968,
+      "os_lifetime_peak_kernel_rss_bytes": 274497536
+    },
+    "stdout": "Python: 3.13.5\nInstalled PyVista: /private/tmp/heart-clone-check/pyvista/__init__.py\n{'pyvista': '0.50.dev0', 'vtk': '9.7.1', 'numpy': '2.5.4', 'pyvista-zstd': '0.7.0', 'imageio': '2.38.1', 'pillow': '13.0.0', 'nbclient': '0.11.0'}\nFirst cached frame: /private/tmp/heart-clone-verification/fresh-cache/conrad-heart-v1.1/phase_00.pv\nMatplotlib is building the font cache; this may take a moment.\nSource phases: [0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9]\nDisplayed phase digests: [(0.0, 'c39140685fd74180f08c805721972a3b6ac1b49e7d73ad0f09e9a66d510e3956'), (0.1, '06408c7f314134c5f4abc245754e689725967442a7cc1d9897dcf033b2f1ef1c'), (0.2, '298e412274b872c5a119117413c2a904359bf521761ece6716eef4e681c94cf3'), (0.3, 'c98ffee40d6a7522c48997ece38639bce69f8711c4694921ecb9de9dae473874'), (0.4, 'f63a54658a25f3f8f81e6c4b9e299f3ea40bd2e39c9dfd742fc01a6915416cb6'), (0.5, '373b6c04cd74f66edc600a711b1a21658e2a507859b4b49cc3f5af007e8907fe'), (0.6, '3fb7f085d025b7d65163c38f5655a614a58a7b623cc12519e65bae9053875b62'), (0.7, '931528e67bf7e0dab6dbe1466ee93edd48344b084d3831432d0418e77e0be8d0'), (0.8, 'db7cd807f301d6f36858636c4202eb26fbd4c2b9683a7a0ddebd30f518918dcb'), (0.9, '5cccb6bccd5bf1f1ec22dcfee7f64751453c64ad0100ead5b38599ff130da76d')]\nCycle-end RSS (bytes): [270647296, 271450112, 271450112, 271466496, 272007168]\nCycle-end RSS (MiB): [258.11, 258.88, 258.88, 258.89, 259.41]\nCycle-end growth (MiB): 1.3\n"
+  },
+  "cached_offline": {
+    "mode": "cached-offline",
+    "execution_directory": "/private/tmp/heart-clone-verification/cached-offline",
+    "kernel_executable": "/private/tmp/heart-clone-env/bin/python",
+    "kernel_isolated_mode": true,
+    "installed_library_path_checked": true,
+    "code_cells_executed": 2,
+    "cell_errors": 0,
+    "inline_gif_frames": 10,
+    "inline_gif_size": [400, 320],
+    "inline_gif_durations_ms": [50, 50, 50, 50, 50, 50, 50, 50, 50, 50],
+    "cycle_end_rss_bytes": [
+      287817728, 289652736, 289832960, 289832960, 290029568
+    ],
+    "cycle_end_growth_bytes": 2211840,
+    "growth_over_last_three_cycle_ends_bytes": 196608,
+    "displayed_coordinate_sha256": [
+      [0.0, "c39140685fd74180f08c805721972a3b6ac1b49e7d73ad0f09e9a66d510e3956"],
+      [0.1, "06408c7f314134c5f4abc245754e689725967442a7cc1d9897dcf033b2f1ef1c"],
+      [0.2, "298e412274b872c5a119117413c2a904359bf521761ece6716eef4e681c94cf3"],
+      [0.3, "c98ffee40d6a7522c48997ece38639bce69f8711c4694921ecb9de9dae473874"],
+      [0.4, "f63a54658a25f3f8f81e6c4b9e299f3ea40bd2e39c9dfd742fc01a6915416cb6"],
+      [0.5, "373b6c04cd74f66edc600a711b1a21658e2a507859b4b49cc3f5af007e8907fe"],
+      [0.6, "3fb7f085d025b7d65163c38f5655a614a58a7b623cc12519e65bae9053875b62"],
+      [0.7, "931528e67bf7e0dab6dbe1466ee93edd48344b084d3831432d0418e77e0be8d0"],
+      [0.8, "db7cd807f301d6f36858636c4202eb26fbd4c2b9683a7a0ddebd30f518918dcb"],
+      [0.9, "5cccb6bccd5bf1f1ec22dcfee7f64751453c64ad0100ead5b38599ff130da76d"]
+    ],
+    "memory": {
+      "peak_kernel_rss_bytes": 292241408,
+      "minimum_host_available_bytes": 6914736128,
+      "os_lifetime_peak_kernel_rss_bytes": 292241408
+    },
+    "stdout": "Python: 3.13.5\nInstalled PyVista: /private/tmp/heart-clone-check/pyvista/__init__.py\n{'pyvista': '0.50.dev0', 'vtk': '9.7.1', 'numpy': '2.5.4', 'pyvista-zstd': '0.7.0', 'imageio': '2.38.1', 'pillow': '13.0.0', 'nbclient': '0.11.0'}\nFirst cached frame: /private/tmp/heart-clone-verification/fresh-cache/conrad-heart-v1.1/phase_00.pv\nSource phases: [0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9]\nDisplayed phase digests: [(0.0, 'c39140685fd74180f08c805721972a3b6ac1b49e7d73ad0f09e9a66d510e3956'), (0.1, '06408c7f314134c5f4abc245754e689725967442a7cc1d9897dcf033b2f1ef1c'), (0.2, '298e412274b872c5a119117413c2a904359bf521761ece6716eef4e681c94cf3'), (0.3, 'c98ffee40d6a7522c48997ece38639bce69f8711c4694921ecb9de9dae473874'), (0.4, 'f63a54658a25f3f8f81e6c4b9e299f3ea40bd2e39c9dfd742fc01a6915416cb6'), (0.5, '373b6c04cd74f66edc600a711b1a21658e2a507859b4b49cc3f5af007e8907fe'), (0.6, '3fb7f085d025b7d65163c38f5655a614a58a7b623cc12519e65bae9053875b62'), (0.7, '931528e67bf7e0dab6dbe1466ee93edd48344b084d3831432d0418e77e0be8d0'), (0.8, 'db7cd807f301d6f36858636c4202eb26fbd4c2b9683a7a0ddebd30f518918dcb'), (0.9, '5cccb6bccd5bf1f1ec22dcfee7f64751453c64ad0100ead5b38599ff130da76d')]\nCycle-end RSS (bytes): [287817728, 289652736, 289832960, 289832960, 290029568]\nCycle-end RSS (MiB): [274.48, 276.23, 276.41, 276.41, 276.59]\nCycle-end growth (MiB): 2.11\n"
+  },
+  "independent_source_comparison": {
+    "source_archive_sha256": "4c68caa46eb96ee83f604011b2ace79c2e30297220f7e0cb2ae00b0bd7b03b87",
+    "source_archive_bytes": 78152158,
+    "source_uncompressed_bytes": 187859952,
+    "source_zip_members": 27,
+    "source_archive_license_members": [],
+    "source_configuration": {
+      "ANATOMICAL_COMPONENTS": "6",
+      "COMPONENT_ORDER": "myocardium rightAtrium leftAtrium rightVentricle aorta leftVentricle",
+      "CARDIAC_PHASES": "10",
+      "NUMBER_PRINCIPAL_COMPONENTS_EACH_PHASE": "16 16 16 16 16 16 16 16 16 16",
+      "TOTAL_VERTEX_COUNT": "16430",
+      "VERTEX_DIMENSION": "3",
+      "VERTEX_COMPONENT_OFFSETS": "0 4660 6140 7439 11253 12392",
+      "TOTAL_TRIANGLE_COUNT": "32836",
+      "TRIANGLE_COMPONENT_OFFSETS": "0 9316 12272 14866 22490 24764"
+    },
+    "original_to_cache_points_and_faces_exact_all_ten": true,
+    "original_to_displayed_points_exact_all_ten_both_runs": true,
+    "point_and_cell_labels_match_original_component_offsets": true,
+    "phase_metadata_exact": true,
+    "connectivity_order_fixed_across_all_ten": true,
+    "second_level_consensus_max_abs_weight": 0.0347484438480903,
+    "second_level_consensus_weight_norm": 0.16007368003044067,
+    "measurements": [
+      {
+        "phase": 0.0,
+        "maximum_coordinate_error": 0.0,
+        "parts": [
+          {
+            "name": "myocardium",
+            "boundary_or_nonmanifold_edges": 1,
+            "volume_ml_assuming_mm": null,
+            "rms_displacement_from_phase_zero_assuming_mm": 0.0
+          },
+          {
+            "name": "rightAtrium",
+            "boundary_or_nonmanifold_edges": 0,
+            "volume_ml_assuming_mm": 69.70991421551382,
+            "rms_displacement_from_phase_zero_assuming_mm": 0.0
+          },
+          {
+            "name": "leftAtrium",
+            "boundary_or_nonmanifold_edges": 0,
+            "volume_ml_assuming_mm": 65.65347462639782,
+            "rms_displacement_from_phase_zero_assuming_mm": 0.0
+          },
+          {
+            "name": "rightVentricle",
+            "boundary_or_nonmanifold_edges": 0,
+            "volume_ml_assuming_mm": 165.12320894896533,
+            "rms_displacement_from_phase_zero_assuming_mm": 0.0
+          },
+          {
+            "name": "aorta",
+            "boundary_or_nonmanifold_edges": 0,
+            "volume_ml_assuming_mm": 25.19678479030809,
+            "rms_displacement_from_phase_zero_assuming_mm": 0.0
+          },
+          {
+            "name": "leftVentricle",
+            "boundary_or_nonmanifold_edges": 0,
+            "volume_ml_assuming_mm": 149.8041285079746,
+            "rms_displacement_from_phase_zero_assuming_mm": 0.0
+          }
+        ]
+      },
+      {
+        "phase": 0.1,
+        "maximum_coordinate_error": 0.0,
+        "parts": [
+          {
+            "name": "myocardium",
+            "boundary_or_nonmanifold_edges": 1,
+            "volume_ml_assuming_mm": null,
+            "rms_displacement_from_phase_zero_assuming_mm": 1.5212054293337531
+          },
+          {
+            "name": "rightAtrium",
+            "boundary_or_nonmanifold_edges": 0,
+            "volume_ml_assuming_mm": 76.61273991730508,
+            "rms_displacement_from_phase_zero_assuming_mm": 1.6268110895483372
+          },
+          {
+            "name": "leftAtrium",
+            "boundary_or_nonmanifold_edges": 0,
+            "volume_ml_assuming_mm": 71.2528211300039,
+            "rms_displacement_from_phase_zero_assuming_mm": 1.5051908594402856
+          },
+          {
+            "name": "rightVentricle",
+            "boundary_or_nonmanifold_edges": 0,
+            "volume_ml_assuming_mm": 148.6613255795446,
+            "rms_displacement_from_phase_zero_assuming_mm": 1.780123546814242
+          },
+          {
+            "name": "aorta",
+            "boundary_or_nonmanifold_edges": 0,
+            "volume_ml_assuming_mm": 26.162479199136598,
+            "rms_displacement_from_phase_zero_assuming_mm": 1.0043874281183172
+          },
+          {
+            "name": "leftVentricle",
+            "boundary_or_nonmanifold_edges": 0,
+            "volume_ml_assuming_mm": 129.883519510163,
+            "rms_displacement_from_phase_zero_assuming_mm": 1.9195722091035787
+          }
+        ]
+      },
+      {
+        "phase": 0.2,
+        "maximum_coordinate_error": 0.0,
+        "parts": [
+          {
+            "name": "myocardium",
+            "boundary_or_nonmanifold_edges": 1,
+            "volume_ml_assuming_mm": null,
+            "rms_displacement_from_phase_zero_assuming_mm": 3.889466276089677
+          },
+          {
+            "name": "rightAtrium",
+            "boundary_or_nonmanifold_edges": 0,
+            "volume_ml_assuming_mm": 79.88529145547028,
+            "rms_displacement_from_phase_zero_assuming_mm": 3.514007256686301
+          },
+          {
+            "name": "leftAtrium",
+            "boundary_or_nonmanifold_edges": 0,
+            "volume_ml_assuming_mm": 80.2974098399654,
+            "rms_displacement_from_phase_zero_assuming_mm": 2.7749442618581854
+          },
+          {
+            "name": "rightVentricle",
+            "boundary_or_nonmanifold_edges": 0,
+            "volume_ml_assuming_mm": 124.70002805252948,
+            "rms_displacement_from_phase_zero_assuming_mm": 4.651119176479009
+          },
+          {
+            "name": "aorta",
+            "boundary_or_nonmanifold_edges": 0,
+            "volume_ml_assuming_mm": 25.818149230238692,
+            "rms_displacement_from_phase_zero_assuming_mm": 2.182755277221435
+          },
+          {
+            "name": "leftVentricle",
+            "boundary_or_nonmanifold_edges": 0,
+            "volume_ml_assuming_mm": 99.52592153583802,
+            "rms_displacement_from_phase_zero_assuming_mm": 5.321732358958809
+          }
+        ]
+      },
+      {
+        "phase": 0.3,
+        "maximum_coordinate_error": 0.0,
+        "parts": [
+          {
+            "name": "myocardium",
+            "boundary_or_nonmanifold_edges": 1,
+            "volume_ml_assuming_mm": null,
+            "rms_displacement_from_phase_zero_assuming_mm": 5.696999376920109
+          },
+          {
+            "name": "rightAtrium",
+            "boundary_or_nonmanifold_edges": 0,
+            "volume_ml_assuming_mm": 77.80770686711936,
+            "rms_displacement_from_phase_zero_assuming_mm": 4.805254054439147
+          },
+          {
+            "name": "leftAtrium",
+            "boundary_or_nonmanifold_edges": 0,
+            "volume_ml_assuming_mm": 86.68085108654897,
+            "rms_displacement_from_phase_zero_assuming_mm": 4.3504345143486
+          },
+          {
+            "name": "rightVentricle",
+            "boundary_or_nonmanifold_edges": 0,
+            "volume_ml_assuming_mm": 117.78366363504794,
+            "rms_displacement_from_phase_zero_assuming_mm": 6.465435627600212
+          },
+          {
+            "name": "aorta",
+            "boundary_or_nonmanifold_edges": 0,
+            "volume_ml_assuming_mm": 25.588834037276182,
+            "rms_displacement_from_phase_zero_assuming_mm": 4.91898812728288
+          },
+          {
+            "name": "leftVentricle",
+            "boundary_or_nonmanifold_edges": 0,
+            "volume_ml_assuming_mm": 80.92281855175136,
+            "rms_displacement_from_phase_zero_assuming_mm": 7.944382736103974
+          }
+        ]
+      },
+      {
+        "phase": 0.4,
+        "maximum_coordinate_error": 0.0,
+        "parts": [
+          {
+            "name": "myocardium",
+            "boundary_or_nonmanifold_edges": 1,
+            "volume_ml_assuming_mm": null,
+            "rms_displacement_from_phase_zero_assuming_mm": 6.203589276814142
+          },
+          {
+            "name": "rightAtrium",
+            "boundary_or_nonmanifold_edges": 0,
+            "volume_ml_assuming_mm": 76.58465033746052,
+            "rms_displacement_from_phase_zero_assuming_mm": 4.573744057583637
+          },
+          {
+            "name": "leftAtrium",
+            "boundary_or_nonmanifold_edges": 0,
+            "volume_ml_assuming_mm": 90.73453586952047,
+            "rms_displacement_from_phase_zero_assuming_mm": 4.854099437109559
+          },
+          {
+            "name": "rightVentricle",
+            "boundary_or_nonmanifold_edges": 0,
+            "volume_ml_assuming_mm": 119.2331479818429,
+            "rms_displacement_from_phase_zero_assuming_mm": 7.0964640795668466
+          },
+          {
+            "name": "aorta",
+            "boundary_or_nonmanifold_edges": 0,
+            "volume_ml_assuming_mm": 25.620006804994304,
+            "rms_displacement_from_phase_zero_assuming_mm": 5.492498480986714
+          },
+          {
+            "name": "leftVentricle",
+            "boundary_or_nonmanifold_edges": 0,
+            "volume_ml_assuming_mm": 75.99366240484433,
+            "rms_displacement_from_phase_zero_assuming_mm": 8.552877696044453
+          }
+        ]
+      },
+      {
+        "phase": 0.5,
+        "maximum_coordinate_error": 0.0,
+        "parts": [
+          {
+            "name": "myocardium",
+            "boundary_or_nonmanifold_edges": 1,
+            "volume_ml_assuming_mm": null,
+            "rms_displacement_from_phase_zero_assuming_mm": 4.703019534796253
+          },
+          {
+            "name": "rightAtrium",
+            "boundary_or_nonmanifold_edges": 0,
+            "volume_ml_assuming_mm": 75.69590710034878,
+            "rms_displacement_from_phase_zero_assuming_mm": 4.674567612060803
+          },
+          {
+            "name": "leftAtrium",
+            "boundary_or_nonmanifold_edges": 0,
+            "volume_ml_assuming_mm": 90.23940140916115,
+            "rms_displacement_from_phase_zero_assuming_mm": 3.8745044088492833
+          },
+          {
+            "name": "rightVentricle",
+            "boundary_or_nonmanifold_edges": 0,
+            "volume_ml_assuming_mm": 127.36770196181679,
+            "rms_displacement_from_phase_zero_assuming_mm": 5.15510199256915
+          },
+          {
+            "name": "aorta",
+            "boundary_or_nonmanifold_edges": 0,
+            "volume_ml_assuming_mm": 26.059127691039123,
+            "rms_displacement_from_phase_zero_assuming_mm": 4.465615110624603
+          },
+          {
+            "name": "leftVentricle",
+            "boundary_or_nonmanifold_edges": 0,
+            "volume_ml_assuming_mm": 83.7896665521573,
+            "rms_displacement_from_phase_zero_assuming_mm": 6.720869098159
+          }
+        ]
+      },
+      {
+        "phase": 0.6,
+        "maximum_coordinate_error": 0.0,
+        "parts": [
+          {
+            "name": "myocardium",
+            "boundary_or_nonmanifold_edges": 1,
+            "volume_ml_assuming_mm": null,
+            "rms_displacement_from_phase_zero_assuming_mm": 4.0929121661743695
+          },
+          {
+            "name": "rightAtrium",
+            "boundary_or_nonmanifold_edges": 0,
+            "volume_ml_assuming_mm": 80.70351774813288,
+            "rms_displacement_from_phase_zero_assuming_mm": 4.486478359565107
+          },
+          {
+            "name": "leftAtrium",
+            "boundary_or_nonmanifold_edges": 0,
+            "volume_ml_assuming_mm": 87.5563183221332,
+            "rms_displacement_from_phase_zero_assuming_mm": 3.6066444933844997
+          },
+          {
+            "name": "rightVentricle",
+            "boundary_or_nonmanifold_edges": 0,
+            "volume_ml_assuming_mm": 132.45227319966892,
+            "rms_displacement_from_phase_zero_assuming_mm": 4.228888413984084
+          },
+          {
+            "name": "aorta",
+            "boundary_or_nonmanifold_edges": 0,
+            "volume_ml_assuming_mm": 25.899352003127365,
+            "rms_displacement_from_phase_zero_assuming_mm": 2.476685008184242
+          },
+          {
+            "name": "leftVentricle",
+            "boundary_or_nonmanifold_edges": 0,
+            "volume_ml_assuming_mm": 97.69377204761545,
+            "rms_displacement_from_phase_zero_assuming_mm": 5.329795716063908
+          }
+        ]
+      },
+      {
+        "phase": 0.7,
+        "maximum_coordinate_error": 0.0,
+        "parts": [
+          {
+            "name": "myocardium",
+            "boundary_or_nonmanifold_edges": 1,
+            "volume_ml_assuming_mm": null,
+            "rms_displacement_from_phase_zero_assuming_mm": 3.2160306744867437
+          },
+          {
+            "name": "rightAtrium",
+            "boundary_or_nonmanifold_edges": 0,
+            "volume_ml_assuming_mm": 83.96306469281313,
+            "rms_displacement_from_phase_zero_assuming_mm": 3.5967590721795264
+          },
+          {
+            "name": "leftAtrium",
+            "boundary_or_nonmanifold_edges": 0,
+            "volume_ml_assuming_mm": 87.28469630287756,
+            "rms_displacement_from_phase_zero_assuming_mm": 3.31308336067129
+          },
+          {
+            "name": "rightVentricle",
+            "boundary_or_nonmanifold_edges": 0,
+            "volume_ml_assuming_mm": 137.13495600441905,
+            "rms_displacement_from_phase_zero_assuming_mm": 3.4398816561165404
+          },
+          {
+            "name": "aorta",
+            "boundary_or_nonmanifold_edges": 0,
+            "volume_ml_assuming_mm": 26.539074137424265,
+            "rms_displacement_from_phase_zero_assuming_mm": 1.9717972597430995
+          },
+          {
+            "name": "leftVentricle",
+            "boundary_or_nonmanifold_edges": 0,
+            "volume_ml_assuming_mm": 112.57793175163894,
+            "rms_displacement_from_phase_zero_assuming_mm": 3.8252954377259254
+          }
+        ]
+      },
+      {
+        "phase": 0.8,
+        "maximum_coordinate_error": 0.0,
+        "parts": [
+          {
+            "name": "myocardium",
+            "boundary_or_nonmanifold_edges": 1,
+            "volume_ml_assuming_mm": null,
+            "rms_displacement_from_phase_zero_assuming_mm": 2.7633092546302196
+          },
+          {
+            "name": "rightAtrium",
+            "boundary_or_nonmanifold_edges": 0,
+            "volume_ml_assuming_mm": 80.09978745077893,
+            "rms_displacement_from_phase_zero_assuming_mm": 3.3385056030707743
+          },
+          {
+            "name": "leftAtrium",
+            "boundary_or_nonmanifold_edges": 0,
+            "volume_ml_assuming_mm": 84.44479059927671,
+            "rms_displacement_from_phase_zero_assuming_mm": 2.8498216141545867
+          },
+          {
+            "name": "rightVentricle",
+            "boundary_or_nonmanifold_edges": 0,
+            "volume_ml_assuming_mm": 147.74735130492644,
+            "rms_displacement_from_phase_zero_assuming_mm": 2.767987602737265
+          },
+          {
+            "name": "aorta",
+            "boundary_or_nonmanifold_edges": 0,
+            "volume_ml_assuming_mm": 26.014627119806953,
+            "rms_displacement_from_phase_zero_assuming_mm": 1.887075350101734
+          },
+          {
+            "name": "leftVentricle",
+            "boundary_or_nonmanifold_edges": 0,
+            "volume_ml_assuming_mm": 123.88859698513568,
+            "rms_displacement_from_phase_zero_assuming_mm": 2.869968444100922
+          }
+        ]
+      },
+      {
+        "phase": 0.9,
+        "maximum_coordinate_error": 0.0,
+        "parts": [
+          {
+            "name": "myocardium",
+            "boundary_or_nonmanifold_edges": 1,
+            "volume_ml_assuming_mm": null,
+            "rms_displacement_from_phase_zero_assuming_mm": 1.0358318591680205
+          },
+          {
+            "name": "rightAtrium",
+            "boundary_or_nonmanifold_edges": 0,
+            "volume_ml_assuming_mm": 67.89723945260927,
+            "rms_displacement_from_phase_zero_assuming_mm": 1.1974057734421466
+          },
+          {
+            "name": "leftAtrium",
+            "boundary_or_nonmanifold_edges": 0,
+            "volume_ml_assuming_mm": 68.52984522135044,
+            "rms_displacement_from_phase_zero_assuming_mm": 0.8784429539578328
+          },
+          {
+            "name": "rightVentricle",
+            "boundary_or_nonmanifold_edges": 0,
+            "volume_ml_assuming_mm": 166.76610501680125,
+            "rms_displacement_from_phase_zero_assuming_mm": 1.0833986197651317
+          },
+          {
+            "name": "aorta",
+            "boundary_or_nonmanifold_edges": 0,
+            "volume_ml_assuming_mm": 24.785407742780237,
+            "rms_displacement_from_phase_zero_assuming_mm": 0.8654938568215359
+          },
+          {
+            "name": "leftVentricle",
+            "boundary_or_nonmanifold_edges": 0,
+            "volume_ml_assuming_mm": 145.55322094184868,
+            "rms_displacement_from_phase_zero_assuming_mm": 0.9342195032346841
+          }
+        ]
+      }
+    ],
+    "lv_edv_ml_assuming_mm": 149.8041285079746,
+    "lv_esv_ml_assuming_mm": 75.99366240484433,
+    "lv_ed_phase": 0.0,
+    "lv_es_phase": 0.4,
+    "lv_ef_percent": 49.271316377105784,
+    "provider_separate_mean_phantom_ef_percent": 52,
+    "ef_difference_percentage_points": 2.7286836228942164,
+    "independent_volume_method": "NumPy oriented tetrahedron sum; checked against PyVista volume",
+    "coordinate_unit_status": "mm inferred from CT/model scale; original files untagged",
+    "timing_status": "normalized phase only; display period chosen, no physiological timing claim",
+    "anatomy_source": "original cnfg.ccc component order and offsets",
+    "correspondence_evidence": "provider registration; matching topology alone is insufficient",
+    "physiological_validation": false,
+    "environment": {
+      "python": "3.13.5",
+      "library_path": "/private/tmp/heart-clone-check/pyvista/__init__.py",
+      "pyvista": "0.50.dev0",
+      "vtk": "9.7.1",
+      "numpy": "2.5.4",
+      "pyvista-zstd": "0.7.0",
+      "imageio": "2.38.1",
+      "pillow": "13.0.0",
+      "nbclient": "0.11.0",
+      "psutil": "7.2.2",
+      "ipykernel": "7.4.0",
+      "pooch": "1.9.0",
+      "pyvista-validation": "0.5.4",
+      "nbformat": "5.11.1",
+      "jupyter-client": "8.10.0"
+    }
+  },
+  "checks": {
+    "lint": "passed",
+    "docstyle": "passed",
+    "heart_tests": "46 passed",
+    "doctest_names": "3903 passed",
+    "doctest_modules": "1714 passed, 3 skipped, 3 failed; the same three failures reproduced on unchanged baseline",
+    "baseline_failures": [
+      "PolyDataFilters.collision",
+      "Transform.decompose",
+      "PolyData.point_normals"
+    ]
+  }
+}

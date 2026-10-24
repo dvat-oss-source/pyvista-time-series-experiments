@@ -143,3 +143,9 @@ doc/source/_extra/context7.json
 # Claude Code local state (skills under .claude/skills are tracked)
 .claude/*
 !.claude/skills/
+
+/.heart-data/
+
+/heart_preview.gif
+
+/.venv-heart/

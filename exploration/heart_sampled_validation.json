@@ -1,0 +1,92 @@
+{
+  "compared_indices": [0, 3, 9],
+  "coordinate_max_error_mm": 0.0,
+  "connectivity_equal_to_original": true,
+  "connectivity_fixed_across_phases": true,
+  "float64_preserved": true,
+  "phase_metadata_exact": true,
+  "boundary_or_nonmanifold_edge_counts": [
+    [1, 0, 0, 0, 0, 0],
+    [1, 0, 0, 0, 0, 0],
+    [1, 0, 0, 0, 0, 0]
+  ],
+  "myocardium_volume": "Not reported: source has an edge defect; source geometry is preserved.",
+  "part_names": [
+    "LV myocardium",
+    "Right atrium",
+    "Left atrium",
+    "Right ventricle",
+    "Aorta",
+    "Left ventricle"
+  ],
+  "part_vertex_counts": [4660, 1480, 1299, 3814, 1139, 4038],
+  "part_triangle_counts": [9316, 2956, 2594, 7624, 2274, 8072],
+  "part_volumes_ml": [
+    [
+      null,
+      69.70991421551382,
+      65.65347462639782,
+      165.12320894896533,
+      25.19678479030809,
+      149.8041285079746
+    ],
+    [
+      null,
+      77.80770686711936,
+      86.68085108654897,
+      117.78366363504794,
+      25.588834037276182,
+      80.92281855175136
+    ],
+    [
+      null,
+      67.89723945260927,
+      68.52984522135044,
+      166.76610501680125,
+      24.785407742780237,
+      145.55322094184868
+    ]
+  ],
+  "part_rms_displacement_from_phase_zero_mm": [
+    [0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+    [
+      5.696999376920109, 4.805254054439147, 4.3504345143486, 6.465435627600212,
+      4.91898812728288, 7.944382736103974
+    ],
+    [
+      1.0358318591680205, 1.1974057734421466, 0.8784429539578328,
+      1.0833986197651317, 0.8654938568215359, 0.9342195032346841
+    ]
+  ],
+  "anatomical_correspondence": "Source registration preserves vertex order; no interpolation used.",
+  "render": {
+    "preview_indices": [0, 2, 4, 6, 8],
+    "durations_seconds": [
+      0.1, 0.1, 0.09999999999999998, 0.10000000000000003, 0.09999999999999998
+    ],
+    "display_cycle_seconds": 0.5,
+    "render_size": [320, 256],
+    "mapper_coordinate_max_error_mm": 0.0,
+    "actor_and_mapper_reused": true,
+    "cycle_end_rss_bytes": [267976704, 268140544, 268140544],
+    "cycle_end_growth_bytes": 163840,
+    "interpolation": "none",
+    "time_basis": "source normalized cardiac phases; chosen display period"
+  },
+  "source_archive_sha256": "4c68caa46eb96ee83f604011b2ace79c2e30297220f7e0cb2ae00b0bd7b03b87",
+  "source_phases": [0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9],
+  "cache_bytes": 5305364,
+  "memory": {
+    "budget_bytes": 1073741824,
+    "host_reserve_bytes": 1073741824,
+    "initial_available_bytes": 4437819392,
+    "sampled_peak_rss_bytes": 268140544,
+    "lifetime_peak_rss_bytes": 268681216
+  },
+  "environment": {
+    "python": "3.13.5 (main, Jun 12 2025, 12:22:43) [Clang 20.1.4 ]",
+    "pyvista": "0.50.dev0",
+    "vtk": "(9, 7, 1)",
+    "platform": "macOS-27.0.1-arm64-arm-64bit-Mach-O"
+  }
+}

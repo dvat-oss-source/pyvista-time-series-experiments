@@ -1,0 +1,51 @@
+{
+  "branch": "v0.0.1",
+  "wheel_sha256": "a2ff8c27063e11b866936c95742c25cb692141fd589fb7560eb10171381a0017",
+  "wheel_matches_worktree_source": true,
+  "full_make_lint": "passed",
+  "new_files_all_applicable_precommit_hooks": "passed",
+  "make_docstyle": {
+    "status": "passed",
+    "files_checked": 847
+  },
+  "make_typecheck": {
+    "status": "passed",
+    "source_files_checked": 180,
+    "python": "3.14.8 (repository default)"
+  },
+  "make_test_core_scoped": {
+    "status": "passed",
+    "passed": 44
+  },
+  "installed_wheel_focused_tests_python3136": {
+    "status": "passed",
+    "passed": 7,
+    "junit_tests": 7
+  },
+  "notebook_public_imports_and_attributes": "passed",
+  "notebook_ruff": "passed; notebook-specific S101/T20 allowances in pyproject.toml",
+  "make_doctest": {
+    "passed": 1714,
+    "failed": 3,
+    "skipped": 3,
+    "static_names_passed": 3903
+  },
+  "doctest_failures_reproduced_on_main": [
+    "PolyDataFilters.collision",
+    "PolyData.point_normals",
+    "Transform.decompose"
+  ],
+  "unrelated_core_sources_unchanged": true,
+  "reference_source_commit": "9018413e8a8a5ed37cd29d9cbeeabeb75103cfd2",
+  "notebook_measurement": "10 ms RSS sampling plus fresh kernel OS high-water; no imposed ceiling",
+  "render_tests": "serial",
+  "portable_audit_tools_all_applicable_precommit_hooks": "passed",
+  "first_use_notebook": "passed with empty cache",
+  "cached_notebook": "passed with network proxies disabled",
+  "independent_original_comparison": "passed: every original phase, all source points and faces exact, displayed hashes exact in both runs",
+  "final_executed_notebook_source_matches_reviewed_notebook": true,
+  "final_delivered_files_all_applicable_precommit_hooks": "passed",
+  "notebook_input_file_sha256": "543ba250191a2610495be84a93747a7426ce9485b2a35339f1e8dae9d36e4d74",
+  "notebook_delivered_file_sha256": "14b0b50dc96d424e0e224ff93ca993bca42c1e4f17b412c160d9d14ed1800249",
+  "notebook_code_cells_sha256": "4f8fc2afd0b61b73dc4de5b4c9a6c56bc4e01dcb6143cbc3d3871b69d30d629b"
+}
