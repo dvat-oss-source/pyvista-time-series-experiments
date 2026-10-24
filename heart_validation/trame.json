@@ -1,0 +1,47 @@
+{
+  "base_commit": "4d592f01562cdac2ff4166c53dc9085ae51fa2f3",
+  "notebook_sha256": "11ffa8f0a104635721fefea20d9b64c43b30afa5e0d452ad2b4cbcf349bf7f57",
+  "package_source_unchanged": true,
+  "installation_command": "python3 -m pip install -e '.[io,jupyter]' jupyterlab psutil",
+  "python": "3.13.6",
+  "packages": {
+    "pyvista": "0.50.dev0",
+    "trame": "4.0.0",
+    "trame-pyvista": "0.2.1",
+    "trame-server": "4.1.0",
+    "trame-vuetify": "3.3.0",
+    "trame-vtk": "2.11.17",
+    "vtk": "9.7.1"
+  },
+  "ordinary_python_notebook": {
+    "code_cells_executed": 4,
+    "cell_errors": 0,
+    "kernel_isolated_mode": false,
+    "installed_library_path_checked": true,
+    "inline_gif_frames": 10
+  },
+  "trame_playback": {
+    "all_ten_phase_geometry_hashes_match_source": true,
+    "play_loops_all_ten_phases": true,
+    "pause_holds_frame": true,
+    "manual_phase_selection": [4, 9, 0],
+    "rapid_pause_play_restarts": true
+  },
+  "rendered_changed_pixels_phase_0_to_4": 171998,
+  "display_cell_reruns": 3,
+  "server_viewer_registries_before_and_after": [0, 0],
+  "playback_server_closed_after_checks": true,
+  "review": "Independent review found no remaining blockers after mapper and mesh lifetime checks.",
+  "checks": {
+    "lint": "Passed; SKIP=no-commit-to-branch respects the requested work on main.",
+    "docstyle": "Passed",
+    "test_core_heart": "7 passed",
+    "doctest_names": "3903 passed",
+    "doctest_modules": "1714 passed, 3 skipped, 3 pre-existing failures",
+    "pre_existing_doctest_failures": [
+      "PolyData.point_normals",
+      "Transform.decompose",
+      "PolyDataFilters.collision"
+    ]
+  }
+}
