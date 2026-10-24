@@ -36,13 +36,13 @@ if mode == 'first-use':
 directory = root / mode
 directory.mkdir(exist_ok=True)
 assert not any(directory.iterdir()), 'Execution directory must be empty.'
-kernel_directory = root / 'kernels' / 'pyvista-heart'
+kernel_directory = root / 'kernels' / 'python3'
 kernel_directory.mkdir(parents=True, exist_ok=True)
 (kernel_directory / 'kernel.json').write_text(
     json.dumps(
         {
-            'argv': [sys.executable, '-I', '-m', 'ipykernel_launcher', '-f', '{connection_file}'],
-            'display_name': 'PyVista heart (v0.0.1)',
+            'argv': [sys.executable, '-m', 'ipykernel_launcher', '-f', '{connection_file}'],
+            'display_name': 'Python 3 (ipykernel)',
             'language': 'python',
         }
     )
@@ -51,7 +51,7 @@ book = nbformat.read(args.notebook.resolve(), as_version=4)
 client = NotebookClient(
     book,
     timeout=900,
-    kernel_name='pyvista-heart',
+    kernel_name='python3',
     resources={'metadata': {'path': str(directory)}},
 )
 client.km = client.create_kernel_manager()
@@ -63,7 +63,6 @@ environment.update(
         'PYVISTA_USERDATA_PATH': str(cache),
         'PYVISTA_OFF_SCREEN': 'true',
         'MPLCONFIGDIR': str(root / 'matplotlib'),
-        'PYTHONNOUSERSITE': '1',
     }
 )
 if mode == 'cached-offline':
@@ -167,7 +166,7 @@ result = {
     'mode': mode,
     'execution_directory': str(directory),
     'kernel_executable': sys.executable,
-    'kernel_isolated_mode': True,
+    'kernel_isolated_mode': False,
     'installed_library_path_checked': True,
     'code_cells_executed': sum(cell.cell_type == 'code' for cell in book.cells),
     'cell_errors': 0,

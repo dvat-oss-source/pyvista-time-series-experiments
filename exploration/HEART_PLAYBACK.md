@@ -8,21 +8,21 @@ helpers remain as legacy artifacts and are not notebook dependencies.
 
 ## Run the Notebook
 
-The branch is `v0.0.1`; its package version is **0.50.dev0**. Install PyVista
-from the clone so the heart downloader is available. No wheel under `dist/`
-is required. Use Python 3.10 or newer from the checkout root:
+The branch is `v0.0.1`; its package version is **0.50.dev0**. Use your existing
+tutorial Python (3.10 or newer). Install the library from the clone so its normal
+package dependencies and heart downloader are available:
 
 ```sh
-python3 -m venv .venv-heart
-.venv-heart/bin/python -m pip install -e '.[io]' jupyterlab ipykernel psutil
-.venv-heart/bin/python -m ipykernel install --user --name pyvista-heart --display-name 'PyVista heart (v0.0.1)'
-.venv-heart/bin/jupyter lab heart_animation.ipynb
+python3 -m pip install -e '.[io]' jupyterlab psutil
+python3 -m jupyter lab heart_animation.ipynb
 ```
 
-Select **PyVista heart (v0.0.1)** and Run All. OpenGL is required. The first run
-downloads the original archive; later runs reuse the verified cache. Set
-`PYVISTA_USERDATA_PATH` before launching Jupyter to choose the cache directory.
-The notebook writes `heart_preview.gif` in its working directory and displays it inline.
+Select the same Python interpreter in the notebook editor and Run All. Restart an
+already running kernel after installation. No dedicated environment, custom kernel,
+or wheel under `dist/` is required. OpenGL is required. First use downloads the
+original archive; later runs reuse the verified cache. Set `PYVISTA_USERDATA_PATH`
+before launching Jupyter to choose the cache directory. The notebook writes
+`heart_preview.gif` in its working directory and displays it inline.
 
 ## Source and Interpretation
 

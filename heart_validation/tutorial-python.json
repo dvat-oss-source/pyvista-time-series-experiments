@@ -1,0 +1,77 @@
+{
+  "installation_command": "python3 -m pip install -e '.[io]' jupyterlab psutil",
+  "dedicated_environment_required": false,
+  "custom_kernel_required": false,
+  "runtime_source_commit": "23dada7bb2bc7a35f2a1d3cabea14ebedf864867",
+  "notebook_sha256": "6079af69c1039e4348ae97345afb6b376a188fa0920709b09b8f7fec1df56d11",
+  "first_use": {
+    "mode": "first-use",
+    "execution_directory": "/Users/user/ucsd/pyvista-saved-results/.heart-data/normal-python-validation/first-use",
+    "kernel_executable": "/usr/local/bin/python3",
+    "kernel_isolated_mode": false,
+    "installed_library_path_checked": true,
+    "code_cells_executed": 2,
+    "cell_errors": 0,
+    "inline_gif_frames": 10,
+    "inline_gif_size": [400, 320],
+    "inline_gif_durations_ms": [50, 50, 50, 50, 50, 50, 50, 50, 50, 50],
+    "cycle_end_rss_bytes": [
+      306364416, 308232192, 308264960, 308314112, 308789248
+    ],
+    "cycle_end_growth_bytes": 2424832,
+    "growth_over_last_three_cycle_ends_bytes": 524288,
+    "displayed_coordinate_sha256": [
+      [0.0, "c39140685fd74180f08c805721972a3b6ac1b49e7d73ad0f09e9a66d510e3956"],
+      [0.1, "06408c7f314134c5f4abc245754e689725967442a7cc1d9897dcf033b2f1ef1c"],
+      [0.2, "298e412274b872c5a119117413c2a904359bf521761ece6716eef4e681c94cf3"],
+      [0.3, "c98ffee40d6a7522c48997ece38639bce69f8711c4694921ecb9de9dae473874"],
+      [0.4, "f63a54658a25f3f8f81e6c4b9e299f3ea40bd2e39c9dfd742fc01a6915416cb6"],
+      [0.5, "373b6c04cd74f66edc600a711b1a21658e2a507859b4b49cc3f5af007e8907fe"],
+      [0.6, "3fb7f085d025b7d65163c38f5655a614a58a7b623cc12519e65bae9053875b62"],
+      [0.7, "931528e67bf7e0dab6dbe1466ee93edd48344b084d3831432d0418e77e0be8d0"],
+      [0.8, "db7cd807f301d6f36858636c4202eb26fbd4c2b9683a7a0ddebd30f518918dcb"],
+      [0.9, "5cccb6bccd5bf1f1ec22dcfee7f64751453c64ad0100ead5b38599ff130da76d"]
+    ],
+    "memory": {
+      "peak_kernel_rss_bytes": 310214656,
+      "minimum_host_available_bytes": 6238633984,
+      "os_lifetime_peak_kernel_rss_bytes": 310362112
+    },
+    "stdout": "Python: 3.13.6\nInstalled PyVista: /Users/user/ucsd/pyvista-saved-results/pyvista/__init__.py\n{'pyvista': '0.50.dev0', 'vtk': '9.7.1', 'numpy': '2.2.6', 'pyvista-zstd': '0.7.0', 'imageio': '2.38.1', 'pillow': '11.3.0', 'nbclient': '0.10.2'}\nFirst cached frame: /Users/user/ucsd/pyvista-saved-results/.heart-data/normal-python-validation/fresh-cache/conrad-heart-v1.1/phase_00.pv\nMatplotlib is building the font cache; this may take a moment.\nSource phases: [0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9]\nDisplayed phase digests: [(0.0, 'c39140685fd74180f08c805721972a3b6ac1b49e7d73ad0f09e9a66d510e3956'), (0.1, '06408c7f314134c5f4abc245754e689725967442a7cc1d9897dcf033b2f1ef1c'), (0.2, '298e412274b872c5a119117413c2a904359bf521761ece6716eef4e681c94cf3'), (0.3, 'c98ffee40d6a7522c48997ece38639bce69f8711c4694921ecb9de9dae473874'), (0.4, 'f63a54658a25f3f8f81e6c4b9e299f3ea40bd2e39c9dfd742fc01a6915416cb6'), (0.5, '373b6c04cd74f66edc600a711b1a21658e2a507859b4b49cc3f5af007e8907fe'), (0.6, '3fb7f085d025b7d65163c38f5655a614a58a7b623cc12519e65bae9053875b62'), (0.7, '931528e67bf7e0dab6dbe1466ee93edd48344b084d3831432d0418e77e0be8d0'), (0.8, 'db7cd807f301d6f36858636c4202eb26fbd4c2b9683a7a0ddebd30f518918dcb'), (0.9, '5cccb6bccd5bf1f1ec22dcfee7f64751453c64ad0100ead5b38599ff130da76d')]\nCycle-end RSS (bytes): [306364416, 308232192, 308264960, 308314112, 308789248]\nCycle-end RSS (MiB): [292.17, 293.95, 293.98, 294.03, 294.48]\nCycle-end growth (MiB): 2.31\n"
+  },
+  "cached_offline": {
+    "mode": "cached-offline",
+    "execution_directory": "/Users/user/ucsd/pyvista-saved-results/.heart-data/normal-python-validation/cached-offline",
+    "kernel_executable": "/usr/local/bin/python3",
+    "kernel_isolated_mode": false,
+    "installed_library_path_checked": true,
+    "code_cells_executed": 2,
+    "cell_errors": 0,
+    "inline_gif_frames": 10,
+    "inline_gif_size": [400, 320],
+    "inline_gif_durations_ms": [50, 50, 50, 50, 50, 50, 50, 50, 50, 50],
+    "cycle_end_rss_bytes": [
+      292978688, 294600704, 294600704, 294600704, 294977536
+    ],
+    "cycle_end_growth_bytes": 1998848,
+    "growth_over_last_three_cycle_ends_bytes": 376832,
+    "displayed_coordinate_sha256": [
+      [0.0, "c39140685fd74180f08c805721972a3b6ac1b49e7d73ad0f09e9a66d510e3956"],
+      [0.1, "06408c7f314134c5f4abc245754e689725967442a7cc1d9897dcf033b2f1ef1c"],
+      [0.2, "298e412274b872c5a119117413c2a904359bf521761ece6716eef4e681c94cf3"],
+      [0.3, "c98ffee40d6a7522c48997ece38639bce69f8711c4694921ecb9de9dae473874"],
+      [0.4, "f63a54658a25f3f8f81e6c4b9e299f3ea40bd2e39c9dfd742fc01a6915416cb6"],
+      [0.5, "373b6c04cd74f66edc600a711b1a21658e2a507859b4b49cc3f5af007e8907fe"],
+      [0.6, "3fb7f085d025b7d65163c38f5655a614a58a7b623cc12519e65bae9053875b62"],
+      [0.7, "931528e67bf7e0dab6dbe1466ee93edd48344b084d3831432d0418e77e0be8d0"],
+      [0.8, "db7cd807f301d6f36858636c4202eb26fbd4c2b9683a7a0ddebd30f518918dcb"],
+      [0.9, "5cccb6bccd5bf1f1ec22dcfee7f64751453c64ad0100ead5b38599ff130da76d"]
+    ],
+    "memory": {
+      "peak_kernel_rss_bytes": 297484288,
+      "minimum_host_available_bytes": 6936985600,
+      "os_lifetime_peak_kernel_rss_bytes": 297664512
+    },
+    "stdout": "Python: 3.13.6\nInstalled PyVista: /Users/user/ucsd/pyvista-saved-results/pyvista/__init__.py\n{'pyvista': '0.50.dev0', 'vtk': '9.7.1', 'numpy': '2.2.6', 'pyvista-zstd': '0.7.0', 'imageio': '2.38.1', 'pillow': '11.3.0', 'nbclient': '0.10.2'}\nFirst cached frame: /Users/user/ucsd/pyvista-saved-results/.heart-data/normal-python-validation/fresh-cache/conrad-heart-v1.1/phase_00.pv\nSource phases: [0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9]\nDisplayed phase digests: [(0.0, 'c39140685fd74180f08c805721972a3b6ac1b49e7d73ad0f09e9a66d510e3956'), (0.1, '06408c7f314134c5f4abc245754e689725967442a7cc1d9897dcf033b2f1ef1c'), (0.2, '298e412274b872c5a119117413c2a904359bf521761ece6716eef4e681c94cf3'), (0.3, 'c98ffee40d6a7522c48997ece38639bce69f8711c4694921ecb9de9dae473874'), (0.4, 'f63a54658a25f3f8f81e6c4b9e299f3ea40bd2e39c9dfd742fc01a6915416cb6'), (0.5, '373b6c04cd74f66edc600a711b1a21658e2a507859b4b49cc3f5af007e8907fe'), (0.6, '3fb7f085d025b7d65163c38f5655a614a58a7b623cc12519e65bae9053875b62'), (0.7, '931528e67bf7e0dab6dbe1466ee93edd48344b084d3831432d0418e77e0be8d0'), (0.8, 'db7cd807f301d6f36858636c4202eb26fbd4c2b9683a7a0ddebd30f518918dcb'), (0.9, '5cccb6bccd5bf1f1ec22dcfee7f64751453c64ad0100ead5b38599ff130da76d')]\nCycle-end RSS (bytes): [292978688, 294600704, 294600704, 294600704, 294977536]\nCycle-end RSS (MiB): [279.41, 280.95, 280.95, 280.95, 281.31]\nCycle-end growth (MiB): 1.91\n"
+  }
+}
