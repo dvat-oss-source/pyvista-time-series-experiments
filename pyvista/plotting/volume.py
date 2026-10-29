@@ -29,7 +29,7 @@ class Volume(Prop3D, _vtk.vtkVolume):
         super().__init__()
 
     @property
-    def mapper(self) -> _BaseMapper:  # numpydoc ignore=RT01
+    def mapper(self) -> _BaseMapper | None:  # numpydoc ignore=RT01
         """Return or set the mapper of the volume.
 
         Examples
@@ -53,7 +53,7 @@ class Volume(Prop3D, _vtk.vtkVolume):
         return self.GetMapper()  # type: ignore[return-value]
 
     @mapper.setter
-    def mapper(self, obj: _BaseMapper) -> None:
+    def mapper(self, obj: _BaseMapper | None) -> None:
         self.SetMapper(obj)  # type: ignore[arg-type]
 
     @property

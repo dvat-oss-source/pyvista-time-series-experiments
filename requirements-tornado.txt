@@ -1,0 +1,13 @@
+# From the repository root: python -m pip install -r requirements-tornado.txt
+# Use this checkout: the notebook requires the experimental TimeSeriesPlayer API.
+-e .[io,jupyter]
+numpy==2.5.3
+requests==2.34.2
+tqdm==4.70.1
+trame==3.13.2
+trame-server==3.12.5
+trame-vuetify==3.2.5
+trame-pyvista==0.1.7
+pyvista-zstd==0.4.2
+jupyterlab==4.6.4
+ipykernel==7.4.0

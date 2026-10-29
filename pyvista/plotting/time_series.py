@@ -13,6 +13,8 @@ from typing import cast
 
 import pyvista as pv
 
+__all__ = ['TimeReaderSource', 'TimeSeriesPlayer']
+
 if TYPE_CHECKING:
     from collections.abc import Callable
     from collections.abc import Sequence
@@ -21,6 +23,7 @@ if TYPE_CHECKING:
     from pyvista.core.utilities.reader import TimeReader
     from pyvista.plotting.actor import Actor
     from pyvista.plotting.plotter import Plotter
+    from pyvista.plotting.volume import Volume
 
 
 class TimeSeriesPlayer:
@@ -50,6 +53,15 @@ class TimeSeriesPlayer:
         Association of ``scalars``: ``'point'`` or ``'cell'``.
     clock : callable, optional
         Monotonic clock returning seconds. Defaults to :func:`time.monotonic`.
+    actor : pyvista.Actor or pyvista.Volume, optional
+        Existing actor to drive instead of creating a mesh actor. Rendering
+        properties are preserved. The player replaces its input and removes it
+        on close. Closing also disconnects a volume's mapper to release its
+        internal rendering inputs. Configure volume appearance with
+        ``pl.add_volume`` first.
+    render : bool, default: True
+        Render after each frame change. Disable when an external view performs
+        rendering and publishes the changed frame itself.
 
     Notes
     -----
@@ -75,6 +87,8 @@ class TimeSeriesPlayer:
         clim: Sequence[float],
         preference: Literal['point', 'cell'] = 'point',
         clock: Callable[[], float] | None = None,
+        actor: Actor | Volume | None = None,
+        render: bool = True,
     ) -> None:
         """Validate the sequence and display its first sample."""
         self.times = tuple(float(value) for value in times)
@@ -114,26 +128,44 @@ class TimeSeriesPlayer:
         self._cycle_seconds: float | None = None
         self._loop = True
         self._playing = False
+        self._render = render
         frame = self._load(0)
         self._frame: DataSet | None = frame
-        self._actor: Actor | None = pl.add_mesh(
-            frame,
-            scalars=scalars,
-            preference=preference,
-            clim=self.clim,
-            static=False,
-            rgb=False,
-            smooth_shading=False,
-            silhouette=False,
-            show_vertices=False,
-            show_scalar_bar=False,
+        self._actor: Actor | Volume | None = (
+            actor
+            if actor is not None
+            else pl.add_mesh(
+                frame,
+                scalars=scalars,
+                preference=preference,
+                clim=self.clim,
+                static=False,
+                rgb=False,
+                smooth_shading=False,
+                silhouette=False,
+                show_vertices=False,
+                show_scalar_bar=False,
+            )
         )
+        if actor is not None:
+            if actor.mapper is None:
+                msg = 'The playback actor has no mapper.'
+                raise ValueError(msg)
+            previous = actor.mapper.dataset
+            actor.mapper.dataset = frame
+            if pl.mesh is previous:
+                pl.mesh = frame
+            actor.mapper.scalar_range = self.clim
+            if isinstance(actor.mapper, pv.DataSetMapper):
+                actor.mapper.set_active_scalars(scalars, preference=preference)
+            elif isinstance(actor, pv.Volume):
+                actor.mapper.scalar_map_mode = preference
 
     @property
-    def actor(self) -> Actor:
+    def actor(self) -> Actor | Volume:
         """Return the actor displaying the current sample."""
         self._active()
-        return cast('Actor', self._actor)
+        return cast('Actor | Volume', self._actor)
 
     @property
     def index(self) -> int:
@@ -211,7 +243,8 @@ class TimeSeriesPlayer:
             pl.mesh = frame
         self._frame = frame
         self._index = index
-        pl.render()
+        if self._render:
+            pl.render()
 
     def seek_index(self, index: int) -> None:
         """Display an exact sample, rejecting invalid or out-of-range indices.
@@ -350,10 +383,17 @@ class TimeSeriesPlayer:
         if pl is None:
             return
         actor = self._actor
+        if isinstance(actor, pv.Volume) and actor.mapper is not None:
+            actor.mapper.dataset = None
         if actor is not None and not getattr(pl, '_closed', False):
             pl.remove_actor(actor, render=False)
             if getattr(pl, 'mapper', None) is actor.mapper:
                 pl.mapper = None
+        if isinstance(actor, pv.Volume):
+            # Smart volume mappers retain internal inputs after SetInputData(None).
+            actor.mapper = None
+        if getattr(pl, 'volume', None) is actor:
+            pl.volume = None
         if pl.mesh is self._frame:
             pl.mesh = None
         self._playing = False

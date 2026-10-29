@@ -46,6 +46,141 @@ def make_frame(index):
     return mesh
 
 
+def test_attached_actor_updates_plotter_mesh_reference():
+    """Release the input replaced when attaching to an existing actor."""
+    scene = Scene()
+    initial = make_frame(0)
+    values = np.zeros(initial.n_points, dtype=np.float32)
+    initial['value'] = values
+    actor = scene.add_mesh(initial, scalars='value', preference='point')
+    initial_values = weakref.ref(values)
+    del initial, values
+    player = pv.TimeSeriesPlayer(
+        scene,
+        [0, 1],
+        make_frame,
+        cycle_end=2,
+        scalars='value',
+        clim=(0, 1),
+        actor=actor,
+        render=False,
+    )
+    assert scene.mesh is actor.mapper.dataset
+    assert initial_values() is None
+    player.seek_index(1)
+    assert scene.mesh is actor.mapper.dataset
+    player.close()
+    assert scene.mesh is None
+
+
+def test_existing_actor_reuses_mapper():
+    """Attach playback without replacing an actor's configured appearance."""
+    scene = Scene()
+    initial = make_frame(0)
+    initial['other'] = np.ones(initial.n_points)
+    actor = scene.add_mesh(initial, scalars='other', preference='point')
+    mapper = actor.mapper
+    renders = []
+    scene.render = lambda: renders.append(True)
+    player = pv.TimeSeriesPlayer(
+        scene,
+        [0, 1],
+        make_frame,
+        cycle_end=2,
+        scalars='value',
+        clim=(0, 1),
+        actor=actor,
+        render=False,
+    )
+    player.seek_index(1)
+    assert mapper.array_name == 'value'
+    assert player.actor is actor
+    assert player.actor.mapper is mapper
+    np.testing.assert_array_equal(mapper.dataset['value'], make_frame(1)['value'])
+    player.step()
+    assert player.index == 0
+    player.close()
+    player.close()
+    assert not renders
+
+
+@pytest.mark.parametrize('plotter_closed', [False, True])
+@pytest.mark.parametrize('other_volume', [False, True])
+def test_volume_input_released_on_close(plotter_closed, other_volume):
+    """Closing detaches volume buffers even if a caller holds the actor."""
+
+    def load(index):
+        mesh = pv.ImageData(dimensions=(4, 3, 2))
+        mesh['value'] = np.full(mesh.n_points, index, dtype=np.float32)
+        return mesh
+
+    scene = Scene()
+    actor = pv.Volume()
+    mapper = pv.SmartVolumeMapper()
+    actor.mapper = mapper
+    mapper.lookup_table = pv.LookupTable()
+    scene.actor = actor
+    scene.volume = pv.Volume() if other_volume else actor
+    cached_volume = scene.volume
+    scene.mesh = None
+    player = pv.TimeSeriesPlayer(
+        scene, [0, 1], load, cycle_end=2, scalars='value', clim=(0, 1), actor=actor, render=False
+    )
+    player.seek_index(1)
+    np.testing.assert_array_equal(actor.mapper.dataset['value'], load(1)['value'])
+    scene._closed = plotter_closed
+    player.close()
+    player.close()
+    assert actor.mapper is None
+    assert scene.volume is (cached_volume if other_volume else None)
+
+
+def test_volume_buffers_shared_and_released_repeatedly():
+    """Share the displayed buffer and release it without collecting garbage."""
+    buffers = []
+
+    def load(index):
+        grid = pv.ImageData(dimensions=(4 + index, 3, 2))
+        values = np.full(grid.n_points, index, dtype=np.float32)
+        buffers.append(weakref.ref(values))
+        grid['value'] = values
+        return grid
+
+    for _ in range(3):
+        scene = Scene()
+        scene.mesh = load(0)
+        mapper = pv.SmartVolumeMapper()
+        mapper.lookup_table = pv.LookupTable()
+        mapper.dataset = scene.mesh
+        actor = pv.Volume()
+        actor.mapper = mapper
+        scene.actor = actor
+        scene.volume = actor
+        player = pv.TimeSeriesPlayer(
+            scene,
+            [0, 1, 2],
+            load,
+            cycle_end=3,
+            scalars='value',
+            clim=(0, 2),
+            actor=actor,
+            render=False,
+        )
+        for index in (2, 0, 1, 2, 0):
+            player.seek_index(index)
+            displayed = mapper.dataset['value']
+            assert np.shares_memory(displayed, buffers[-1]())
+            np.testing.assert_array_equal(displayed, index)
+            del displayed
+            assert sum(ref() is not None for ref in buffers) == 1
+        player.close()
+        player.close()
+        assert mapper.dataset is None
+        assert scene.mesh is None
+        assert scene.volume is None
+        assert all(ref() is None for ref in buffers)
+
+
 def test_exact_seek_and_irregular_timestamps():
     """Select exact and nearest samples without retaining prior frames."""
     calls = []
