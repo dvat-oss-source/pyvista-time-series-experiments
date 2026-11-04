@@ -1,0 +1,14 @@
+{
+  "name": "after_close",
+  "trigger": "after_close_snapshot",
+  "started": 1793750864.72434,
+  "footprint_at_start": 630605384,
+  "rss_at_start": 743636992,
+  "footprint_file": "snapshots/after_close-footprint.txt.gz",
+  "footprint_returncode": 0,
+  "footprint_tool_total": 630194176.0,
+  "vmmap_file": "snapshots/after_close-vmmap.txt.gz",
+  "vmmap_returncode": 0,
+  "footprint_at_end": 630605384,
+  "finished": 1793750865.553426
+}

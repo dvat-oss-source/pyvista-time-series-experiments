@@ -1,0 +1,14 @@
+{
+  "name": "third_cycle",
+  "trigger": "third_cycle_mid",
+  "started": 1793750856.51483,
+  "footprint_at_start": 625952304,
+  "rss_at_start": 738983936,
+  "footprint_file": "snapshots/third_cycle-footprint.txt.gz",
+  "footprint_returncode": 0,
+  "footprint_tool_total": 625999872.0,
+  "vmmap_file": "snapshots/third_cycle-vmmap.txt.gz",
+  "vmmap_returncode": 0,
+  "footprint_at_end": 625952304,
+  "finished": 1793750857.33745
+}

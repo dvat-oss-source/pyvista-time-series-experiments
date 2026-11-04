@@ -1,0 +1,14 @@
+{
+  "name": "peak",
+  "trigger": "footprint>450.0 MiB",
+  "started": 1793750823.332787,
+  "footprint_at_start": 474580432,
+  "rss_at_start": 587677696,
+  "footprint_file": "snapshots/peak-footprint.txt.gz",
+  "footprint_returncode": 0,
+  "footprint_tool_total": 481296384.0,
+  "vmmap_file": "snapshots/peak-vmmap.txt.gz",
+  "vmmap_returncode": 0,
+  "footprint_at_end": 481215952,
+  "finished": 1793750824.1614342
+}
