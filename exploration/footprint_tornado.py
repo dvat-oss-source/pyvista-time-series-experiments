@@ -127,22 +127,62 @@ _fp.mark('transform_ready', density_clim=list(density_clim), scale=_fp_scale,
 
 MAKE_CELL = r"""
 _fp_original_make = make_tornado_trame
+_fp_render_counts = []
+_fp.probes['render_events'] = lambda: [dict(count) for count in _fp_render_counts]
 async def make_tornado_trame():
     layout, close = await _fp_original_make()
     pl = inspect.getclosurevars(close).nonlocals['pl']
     if _fp_transform.levels:
         _fpk.fix_scalar_bar(pl, _fp_density_clim)
+    player = inspect.getclosurevars(close).nonlocals['player']
+    expected_size = (1100, 760)
+    count = dict(events=0, first_time_before=pl._first_time,
+                 expected_window_size=list(expected_size), render_requests=[],
+                 event_source='render_window.RenderEvent')
+    _fp_render_counts.append(count)
+    def rendered(*_args):
+        count['events'] += 1
+    # VTK emits RenderEvent on the window, not its renderers.
+    pl.render_window.AddObserver('RenderEvent', rendered)
+    # A browser normally initializes the view. Without one, render() is gated
+    # until show(); initialize publicly inside the startup/reopen interval.
+    pl.show(auto_close=False, interactive=False, jupyter_backend='none',
+            window_size=expected_size)
+    count['initial_events'] = count['events']
+    count['initial_index'] = player.index
+    count['first_time_after'] = pl._first_time
+    count['actual_window_size'] = list(pl.window_size)
+    count['suppress_rendering'] = pl.suppress_rendering
+    if not count['events'] or pl._first_time or tuple(pl.window_size) != expected_size:
+        _fp.mark('viewer_initialization_failed', kind='event')
+        raise RuntimeError(f'The headless view did not initialize: {count}.')
+    original_render = pl.render
+    def checked_render(*args, **kwargs):
+        '''Require an actual render for every notebook display request.'''
+        index = player.index
+        before = count['events']
+        result = original_render(*args, **kwargs)
+        delta = count['events'] - before
+        count['render_requests'].append(dict(index=index, events=delta))
+        if delta <= 0:
+            raise RuntimeError(f'Render request for frame {index} emitted no renderer event.')
+        return result
+    pl.render = checked_render
     _fp.plotter = weakref.ref(pl)
     return layout, close
 def _fp_nonlocal(name):
     return inspect.getclosurevars(close_tornado_trame).nonlocals[name]
 async def _fp_show(index):
+    previous = _fp_nonlocal('player').index
+    before = _fp_render_counts[-1]['events']
     tornado_ui.server.state.frame = index
     tornado_ui.server.state.flush()
     await asyncio.sleep(0)
     player = _fp_nonlocal('player')
     if player.index != index:
         raise RuntimeError(f'Trame seek to {index} displayed {player.index}.')
+    if previous != index and _fp_render_counts[-1]['events'] <= before:
+        raise RuntimeError(f'Trame seek to {index} did not emit a renderer event.')
     return player
 """
 
@@ -189,6 +229,7 @@ _fp.mark('seeking_done', seconds=_fp_seek_seconds)
 
 PLAYBACK_CELL = r"""
 _fp.mark('playback_%(cycle)d')
+_fp_render_start = _fp_render_counts[-1]['events']
 _fp_loop = asyncio.get_running_loop()
 _fp_start = _fp_loop.time()
 tornado_ui.server.state.playing = True
@@ -208,6 +249,8 @@ while _fp_loop.time() < _fp_deadline:
 del _fp_task
 if len(set(_fp_seen)) < 2:
     raise RuntimeError('The notebook timer did not advance frames.')
+if _fp_render_counts[-1]['events'] <= _fp_render_start:
+    raise RuntimeError('The notebook timer emitted no renderer events.')
 (Path(_fp_cfg['output']) / 'playback-%(cycle)d.json').write_text(json.dumps(_fp_seen))
 tornado_ui.server.state.playing = False
 tornado_ui.server.state.flush()
