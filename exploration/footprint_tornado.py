@@ -52,9 +52,10 @@ ALLOCATORS = {
     'jemalloc': '/opt/homebrew/lib/libjemalloc.dylib',
 }
 KERNEL_NAME = 'fp-tornado'
-# Headline timings; a peak snapshot (kernel suspended ~1 s) waits until they end. Other
-# phases may overlap a snapshot; summary.phases[].snapshot_overlap_s flags it.
-TIMED_PHASES = ('startup', 'seeking')
+# Phases inside a timed interval (preparation_s, startup_s, seek_s, reopen_s). Snapshots
+# suspend the kernel about 1 s, so none may run in them: the kernel gates before each
+# interval and the supervisor starts no snapshot until the next untimed phase.
+TIMED_PHASES = ('preparation', 'transform_ready', 'startup', 'seeking', 'reopen_')
 SCHEMA = 'tornado-footprint/1'
 MIB = 2**20
 IMAGE_FRAMES = (0, 32, 64, 96, 127)
@@ -177,6 +178,7 @@ _fp.mark('end', **_fp_final)
 """
 
 SEEK_CELL = r"""
+await _fp.gate()
 _fp.mark('seeking')
 _fp_t0 = time.perf_counter()
 for _fp_index in [*range(frame_count), 127, 0, 64, 1, 126, 0]:
@@ -218,6 +220,7 @@ _fp.mark('close_%(repeat)d')
 await close_tornado_trame()
 await close_tornado_trame()
 gc.collect()
+await _fp.gate()
 _fp.mark('reopen_%(repeat)d')
 tornado_ui, close_tornado_trame = await make_tornado_trame()
 gc.collect()
@@ -259,14 +262,14 @@ def worker(output):
     try:
         with client.setup_kernel():
             cell(SETUP_CELL % dict(config=str(output / 'config.json')))
-            cell("_fp.mark('preparation')")
+            cell("await _fp.gate()\n_fp.mark('preparation')")
             for index in range(original_count):
                 source = nb.cells[index].source
                 if nb.cells[index].cell_type != 'code':
                     continue
                 startup = 'tornado_ui, close_tornado_trame = await make_tornado_trame()' in source
                 if startup:
-                    cell("_fp.mark('startup')")
+                    cell("await _fp.gate()\n_fp.mark('startup')")
                 client.execute_cell(nb.cells[index], index)
                 if 'display_files, frame_records = prepare_display_cache()' in source:
                     cell(TRANSFORM_CELL)
@@ -483,10 +486,11 @@ def parse_footprint(text):
 class Snapshots:
     """Serialize footprint/vmmap snapshots in background threads."""
 
-    def __init__(self, output, kernel):
+    def __init__(self, output, kernel, *, enabled=True):
         """Write ``snapshots/<name>-<tool>.txt.gz`` and ``<name>.json`` / ``.done``."""
         self.folder = output / 'snapshots'
         self.folder.mkdir()
+        self.enabled = enabled
         self.kernel = kernel
         self.lock = threading.Lock()
         self.threads = []
@@ -498,8 +502,16 @@ class Snapshots:
         """Return the footprint captured by the latest finished peak snapshot."""
         return self.peak_history[-1]['footprint_at_start'] if self.peak_history else None
 
+    def active(self):
+        """Return whether a snapshot thread is still running."""
+        return any(thread.is_alive() for thread in self.threads)
+
     def take(self, name, pid, trigger):
-        """Start one snapshot without blocking the sampler."""
+        """Start one snapshot without blocking the sampler (no-op when disabled)."""
+        if not self.enabled:
+            # Release a kernel waiting on this snapshot; no tool is launched.
+            (self.folder / f'{name}.done').write_text('')
+            return
         if name == 'peak':
             # Re-snapshots overwrite the files; each one is at a higher running max.
             if self.peak_busy:
@@ -591,6 +603,7 @@ def supervise(args):
         reopens=args.reopens,
         peak_margin_mib=args.peak_margin_mib,
         peak_max_snapshots=args.peak_max_snapshots,
+        snapshots=args.snapshots,
         provenance=provenance(args.notebook.resolve()),
         image_frames=list(IMAGE_FRAMES),
         sample_interval=args.interval,
@@ -618,6 +631,8 @@ def supervise(args):
     peak_snapped = None
     peak_deferred = False
     peak_applied = 0
+    blocked = False
+    gate_pending = None
     snapshots = None
     samples = []
     marks = []
@@ -637,29 +652,42 @@ def supervise(args):
                 marks.append(record)
                 if pid is None:
                     pid = record['pid']
-                    snapshots = Snapshots(output, kernel)
+                    snapshots = Snapshots(output, kernel, enabled=args.snapshots == 'on')
                     if any(name in factors for name in ALLOCATORS):
                         snapshots.take('allocator', pid, 'start')
+                if record['kind'] == 'gate':
+                    # A timed interval follows: start nothing and release the kernel
+                    # once running snapshots finish.
+                    blocked = True
+                    gate_pending = record['phase']
                 if record.get('snapshot'):
+                    if blocked or timed:
+                        msg = f'Snapshot {record["snapshot"]!r} requested inside a timed interval.'
+                        raise RuntimeError(msg)
                     snapshots.take(record['snapshot'], pid, record['phase'])
                 if record['kind'] == 'phase':
                     timed = record['phase'].startswith(TIMED_PHASES)
+                    if not timed:
+                        blocked = False
                     if record['phase'] == 'viewer_ready':
                         tracking = True
                     if record['phase'] == 'diagnostic':
                         tracking = False
-                    if peak_deferred and not timed and not snapshots.peak_busy:
+                    if peak_deferred and not blocked and not timed and not snapshots.peak_busy:
                         snapshots.take('peak', pid, f'deferred to {record["phase"]}')
                         # Compare later samples against what this snapshot captures.
                         peak_snapped = current
                         peak_deferred = False
+            if gate_pending is not None and not snapshots.active():
+                (output / 'snapshots' / f'{gate_pending}.ok').write_text('')
+                gate_pending = None
             if pid is not None:
                 now = time.time()
                 values = kernel.rusage(pid)
                 if values is not None:
                     samples.append((now, *values))
                     current = values[0]
-                    if tracking:
+                    if tracking and snapshots.enabled:
                         if len(snapshots.peak_history) > peak_applied and not snapshots.peak_busy:
                             # The latest snapshot recorded the footprint when its tools
                             # started, which can be below its trigger on an oscillating series.
@@ -667,7 +695,7 @@ def supervise(args):
                             peak_snapped = snapshots.peak_captured()
                         room = len(snapshots.peak_history) < args.peak_max_snapshots
                         if room and (peak_snapped is None or values[0] >= peak_snapped + margin):
-                            if timed:
+                            if timed or blocked:
                                 peak_deferred = True
                             elif not snapshots.peak_busy:
                                 snapshots.take(
@@ -703,6 +731,12 @@ def supervise(args):
     )
     (output / 'summary.json').write_text(json.dumps(summary, indent=2))
     print(json.dumps(headline(summary), indent=2))
+    if summary['snapshot_overlaps_timed_phase']:
+        msg = (
+            'A snapshot overlapped a timed phase; timings in this run are invalid: '
+            f'{[w for w in summary["snapshot_windows"] if w["timed_phases"]]}'
+        )
+        raise SystemExit(msg)
     if returncode:
         msg = f'Notebook run failed; inspect {output / "worker.log"}'
         raise SystemExit(msg)
@@ -743,19 +777,43 @@ def summarize(output, *, config, kernelspec, samples, marks, snapshots, returnco
         return name
 
     labelled = [(phase_of(t), t, fp, rss) for t, fp, rss, _ in samples]
-    windows = [
-        (r['started'], r['finished'])
-        for r in snapshots.values()
+    named_windows = [
+        (name, r['started'], r['finished'])
+        for name, r in snapshots.items()
         if 'started' in r and 'finished' in r
     ]
     for name, record in snapshots.items():
         if name == 'peak':
             # Earlier peak snapshots were overwritten but still suspended the kernel.
-            windows += [(h['started'], h['finished']) for h in record.get('history', [])[:-1]]
+            named_windows += [
+                ('peak', h['started'], h['finished']) for h in record.get('history', [])[:-1]
+            ]
+    windows = [(a, b) for _, a, b in named_windows]
 
     def overlap(start, end):
         end = float('inf') if end is None else end
         return sum(max(0.0, min(end, b) - max(start, a)) for a, b in windows)
+
+    phase_spans = [
+        (
+            mark['phase'],
+            mark['time'],
+            phases[i + 1]['time'] if i + 1 < len(phases) else float('inf'),
+        )
+        for i, mark in enumerate(phases)
+    ]
+    snapshot_windows = []
+    for name, start, end in sorted(named_windows, key=lambda w: w[1]):
+        touched = [phase for phase, a, b in phase_spans if start < b and end > a]
+        snapshot_windows.append(
+            dict(
+                name=name,
+                started=start,
+                finished=end,
+                phases=touched,
+                timed_phases=[phase for phase in touched if phase.startswith(TIMED_PHASES)],
+            )
+        )
 
     table = []
     for index, mark in enumerate(phases):
@@ -982,6 +1040,10 @@ def summarize(output, *, config, kernelspec, samples, marks, snapshots, returnco
             interval_median_ms=1000 * statistics.median(intervals) if intervals else None,
             interval_max_ms=1000 * max(intervals) if intervals else None,
         ),
+        snapshots_mode=config['snapshots'],
+        snapshot_windows=snapshot_windows,
+        snapshot_overlaps_timed_phase=any(w['timed_phases'] for w in snapshot_windows),
+        timed_phase_prefixes=list(TIMED_PHASES),
         phases=table,
         events=[{k: m[k] for k in ('phase', 'time', 'snapshot')} for m in events],
     )
@@ -1077,6 +1139,12 @@ def main():
         type=int,
         default=8,
         help='bound on peak re-snapshots (each suspends the kernel about 1 s)',
+    )
+    run.add_argument(
+        '--snapshots',
+        choices=('on', 'off'),
+        default='on',
+        help='footprint/vmmap snapshots; use off for timed trials (sampling still runs)',
     )
     run.add_argument('--cycles', type=int, default=3)
     run.add_argument('--reopens', type=int, default=3)

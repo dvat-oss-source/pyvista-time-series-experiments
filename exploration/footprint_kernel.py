@@ -179,6 +179,7 @@ class Recorder:
         self.path = self.output / 'phases.jsonl'
         self.plotter = None
         self.probes = {}
+        self.gates = 0
 
     def mark(self, phase, *, kind='phase', snapshot=None, **extra):
         """Record a phase boundary (or an event) with in-kernel counters."""
@@ -218,15 +219,28 @@ class Recorder:
             stream.write(json.dumps(record) + '\n')
         return record
 
+    async def gate(self, timeout=300.0):
+        """Before a timed interval: wait until the supervisor has no snapshot running.
+
+        The supervisor also starts none until the next untimed phase mark.
+        """
+        self.gates += 1
+        name = f'gate_{self.gates}'
+        self.mark(name, kind='gate')
+        await self._wait(self.output / 'snapshots' / f'{name}.ok', timeout)
+
     async def wait_snapshot(self, name, timeout=300.0):
         """Block this cell until the supervisor finished snapshot ``name``."""
-        done = self.output / 'snapshots' / f'{name}.done'
+        await self._wait(self.output / 'snapshots' / f'{name}.done', timeout)
+
+    @staticmethod
+    async def _wait(path, timeout):
         deadline = time.monotonic() + timeout
-        while not done.exists():
+        while not path.exists():
             if time.monotonic() > deadline:
-                msg = f'Supervisor did not finish snapshot {name!r}.'
+                msg = f'Supervisor did not write {path.name}.'
                 raise TimeoutError(msg)
-            await asyncio.sleep(0.05)
+            await asyncio.sleep(0.01)
 
 
 def allocator_report():

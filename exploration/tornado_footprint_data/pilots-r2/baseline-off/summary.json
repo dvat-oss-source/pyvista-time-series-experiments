@@ -1,0 +1,1173 @@
+{
+  "schema": "tornado-footprint/1",
+  "status": "ok",
+  "returncode": 0,
+  "arm": "baseline",
+  "factors": [],
+  "kernel_pid": 75071,
+  "launched": 1793753216.0339022,
+  "python": "/Library/Frameworks/Python.framework/Versions/3.13/bin/python3.13",
+  "python_version": "3.13.6 (v3.13.6:4e665351082, Aug  6 2025, 11:22:35) [Clang 16.0.0 (clang-1600.0.26.6)]",
+  "pyvista": "/Users/dylanvatanapradit/pyvista/pyvista/__init__.py",
+  "kernel_env": {
+    "PYTHONPATH": "/Users/dylanvatanapradit/pyvista"
+  },
+  "prewarm": null,
+  "footprint": {
+    "peak": {
+      "mib": 481.5795440673828,
+      "time": 1793753223.95767,
+      "phase": "playback_0"
+    },
+    "workload_lifetime_max_mib": 481.5951690673828,
+    "diagnostic_peak": {
+      "mib": 1305.455093383789,
+      "time": 1793753272.147881,
+      "phase": "diagnostic"
+    },
+    "steady_mib": 457.4389190673828,
+    "steady": {
+      "n": 1230,
+      "median_mib": 457.4389190673828,
+      "p05_mib": 457.4076690673828,
+      "p95_mib": 457.4545440673828,
+      "max_mib": 457.4545440673828,
+      "min_mib": 457.4076690673828
+    },
+    "after_close_mib": 461.8451919555664,
+    "startup_max_mib": 232.68873596191406,
+    "peak_phase_p95_mib": 481.5639190673828,
+    "phase_max_mib": {
+      "start": 130.8760986328125,
+      "arm_ready": 132.7198486328125,
+      "preparation": 169.6573944091797,
+      "transform_ready": 169.1730194091797,
+      "startup": 232.68873596191406,
+      "viewer_ready": 232.61061096191406,
+      "seeking": 481.5014190673828,
+      "seeking_done": 481.5014190673828,
+      "playback_0": 481.5795440673828,
+      "playback_0_stop": 481.5482940673828,
+      "playback_1": 481.5795440673828,
+      "playback_1_stop": 457.4076690673828,
+      "playback_2": 457.4545440673828,
+      "close_0": 457.4389190673828,
+      "reopen_0": 458.9232940673828,
+      "close_1": 458.9389190673828,
+      "reopen_1": 460.4857940673828,
+      "close_2": 460.4857940673828,
+      "reopen_2": 461.8451919555664,
+      "final_close": 461.8451919555664,
+      "after_close": 461.8451919555664,
+      "after_close_snapshot": 461.8451919555664,
+      "diagnostic": 1305.455093383789,
+      "end": 1275.642593383789
+    },
+    "peak_snapshot_footprint_mib": null,
+    "peak_snapshot_gap_mib": null
+  },
+  "rss": {
+    "peak": {
+      "mib": 591.5625,
+      "time": 1793753239.486082,
+      "phase": "playback_1"
+    },
+    "workload_lifetime_max_mib": 591.5625,
+    "steady_mib": 566.828125,
+    "after_close_mib": 571.234375,
+    "phase_max_mib": {
+      "start": 203.703125,
+      "arm_ready": 206.4375,
+      "preparation": 251.40625,
+      "transform_ready": 251.0,
+      "startup": 340.359375,
+      "viewer_ready": 340.40625,
+      "seeking": 591.3125,
+      "seeking_done": 589.171875,
+      "playback_0": 591.515625,
+      "playback_0_stop": 589.21875,
+      "playback_1": 591.5625,
+      "playback_1_stop": 566.796875,
+      "playback_2": 569.1875,
+      "close_0": 566.84375,
+      "reopen_0": 569.125,
+      "close_1": 568.34375,
+      "reopen_1": 570.0625,
+      "close_2": 569.890625,
+      "reopen_2": 571.8125,
+      "final_close": 571.234375,
+      "after_close": 571.234375,
+      "after_close_snapshot": 571.234375,
+      "diagnostic": 1218.40625,
+      "end": 1186.65625
+    }
+  },
+  "footprint_minus_rss_mib": {
+    "steady": -109.38920593261719,
+    "after_close": -109.3891830444336
+  },
+  "accounting": {
+    "third_cycle_mid": {
+      "footprint_mib": 457.4389190673828,
+      "rss_mib": 566.828125,
+      "internal_mib": 456.453125,
+      "reusable_mib": 1.71875,
+      "reusable_peak_mib": 1.71875,
+      "compressed_mib": 0.0,
+      "purgeable_volatile_resident_mib": 0.0,
+      "resident_size_mib": 566.828125,
+      "resident_size_peak_mib": 591.5625,
+      "madvise": null
+    },
+    "after_close": {
+      "footprint_mib": 461.8451919555664,
+      "rss_mib": 571.234375,
+      "internal_mib": 460.84375,
+      "reusable_mib": 1.71875,
+      "reusable_peak_mib": 1.71875,
+      "compressed_mib": 0.0,
+      "purgeable_volatile_resident_mib": 0.0,
+      "resident_size_mib": 571.234375,
+      "resident_size_peak_mib": 591.5625,
+      "madvise": null
+    },
+    "after_close_snapshot": {
+      "footprint_mib": 461.8451919555664,
+      "rss_mib": 571.234375,
+      "internal_mib": 460.84375,
+      "reusable_mib": 1.71875,
+      "reusable_peak_mib": 1.71875,
+      "compressed_mib": 0.0,
+      "purgeable_volatile_resident_mib": 0.0,
+      "resident_size_mib": 571.234375,
+      "resident_size_peak_mib": 591.5625,
+      "madvise": null
+    },
+    "diagnostic": {
+      "footprint_mib": 461.8920669555664,
+      "rss_mib": 571.28125,
+      "internal_mib": 460.890625,
+      "reusable_mib": 1.71875,
+      "reusable_peak_mib": 1.71875,
+      "compressed_mib": 0.0,
+      "purgeable_volatile_resident_mib": 0.0,
+      "resident_size_mib": 571.28125,
+      "resident_size_peak_mib": 591.5625,
+      "madvise": null
+    }
+  },
+  "times": {
+    "preparation_s": 1.355241298675537,
+    "startup_s": 0.5624547004699707,
+    "seek_s": 1.3973617499868851,
+    "reopen_s": [
+      0.264678955078125,
+      0.2610816955566406,
+      0.26143527030944824
+    ],
+    "diagnostic_s": 13.096463203430176
+  },
+  "peak_margin_mib": 8.0,
+  "provenance": {
+    "notebook_sha256": "e250495f2369ea02becef3197fc614b785feec1fa40b513fea077c78b9cc0072",
+    "time_series_sha256": "a9c939856dc83800ac685945f219df58b963175219b2ea3898dd1e309edfc3c9",
+    "harness_sha256": "a9c6ba2cbf9e8093fa596d0cba0842d28cba8c757b1d1eef2508cd27d5bae516",
+    "kernel_module_sha256": "ec57e5e255f81c15940a797093603b725ca54a60190bf5617f3870828c50ee83",
+    "git_rev": "57145b68abac1974dc2554133291ee24ef9c0a5a",
+    "git_dirty": true,
+    "git_dirty_files": [
+      "M exploration/footprint_kernel.py",
+      " M exploration/footprint_tornado.py",
+      " M tornado_animation.ipynb"
+    ],
+    "interpreter": "/Library/Frameworks/Python.framework/Versions/3.13/bin/python3.13",
+    "interpreter_version": "3.13.6 (v3.13.6:4e665351082, Aug  6 2025, 11:22:35) [Clang 16.0.0 (clang-1600.0.26.6)]",
+    "versions": {
+      "pyvista": "0.50.dev0",
+      "vtk": "9.7.1",
+      "pyvista-zstd": "0.7.0",
+      "numpy": "2.2.6",
+      "trame": "4.0.0",
+      "trame-pyvista": "0.2.1",
+      "nbclient": "0.10.2"
+    },
+    "imported_versions": {
+      "pyvista": "0.50.dev0",
+      "vtk": "9.7.1",
+      "pyvista_zstd": "0.7.0",
+      "numpy": "2.2.6",
+      "trame": "4.0.0"
+    }
+  },
+  "snapshots": {},
+  "cross_check": {
+    "in_kernel": {
+      "repeats": 50,
+      "exact_equal": 50,
+      "bracketed": 50,
+      "max_abs_difference_bytes": 0,
+      "example": {
+        "rusage_before": 68125416,
+        "task_vm_info": 68125416,
+        "rusage_after": 68125416
+      }
+    },
+    "supervisor_vs_task_vm_info": [
+      {
+        "phase": "start",
+        "dt_ms": 7.683992385864258,
+        "task_vm_info_mib": 65.0319595336914,
+        "in_kernel_rusage_mib": 65.0319595336914,
+        "supervisor_mib": 65.8600845336914
+      },
+      {
+        "phase": "arm_ready",
+        "dt_ms": 0.8568763732910156,
+        "task_vm_info_mib": 132.6573486328125,
+        "in_kernel_rusage_mib": 132.6573486328125,
+        "supervisor_mib": 132.7042236328125
+      },
+      {
+        "phase": "gate_1",
+        "dt_ms": -3.4248828887939453,
+        "task_vm_info_mib": 132.7042236328125,
+        "in_kernel_rusage_mib": 132.7042236328125,
+        "supervisor_mib": 132.7042236328125
+      },
+      {
+        "phase": "preparation",
+        "dt_ms": 3.325223922729492,
+        "task_vm_info_mib": 132.7198486328125,
+        "in_kernel_rusage_mib": 132.7198486328125,
+        "supervisor_mib": 132.7354736328125
+      },
+      {
+        "phase": "transform_ready",
+        "dt_ms": -4.349231719970703,
+        "task_vm_info_mib": 168.7198944091797,
+        "in_kernel_rusage_mib": 168.7198944091797,
+        "supervisor_mib": 168.6261444091797
+      },
+      {
+        "phase": "gate_2",
+        "dt_ms": 0.026226043701171875,
+        "task_vm_info_mib": 169.1730194091797,
+        "in_kernel_rusage_mib": 169.1730194091797,
+        "supervisor_mib": 169.1730194091797
+      },
+      {
+        "phase": "startup",
+        "dt_ms": -0.5092620849609375,
+        "task_vm_info_mib": 169.1730194091797,
+        "in_kernel_rusage_mib": 169.1730194091797,
+        "supervisor_mib": 169.1730194091797
+      },
+      {
+        "phase": "viewer_ready",
+        "dt_ms": -3.159761428833008,
+        "task_vm_info_mib": 232.59498596191406,
+        "in_kernel_rusage_mib": 232.59498596191406,
+        "supervisor_mib": 232.56373596191406
+      },
+      {
+        "phase": "gate_3",
+        "dt_ms": 4.266023635864258,
+        "task_vm_info_mib": 232.59498596191406,
+        "in_kernel_rusage_mib": 232.59498596191406,
+        "supervisor_mib": 232.61061096191406
+      },
+      {
+        "phase": "seeking",
+        "dt_ms": 2.606630325317383,
+        "task_vm_info_mib": 232.61061096191406,
+        "in_kernel_rusage_mib": 232.61061096191406,
+        "supervisor_mib": 232.67311096191406
+      },
+      {
+        "phase": "seeking_done",
+        "dt_ms": 3.674030303955078,
+        "task_vm_info_mib": 481.4857940673828,
+        "in_kernel_rusage_mib": 481.4857940673828,
+        "supervisor_mib": 481.5014190673828
+      },
+      {
+        "phase": "playback_0",
+        "dt_ms": -0.4570484161376953,
+        "task_vm_info_mib": 481.5014190673828,
+        "in_kernel_rusage_mib": 481.5014190673828,
+        "supervisor_mib": 481.5014190673828
+      },
+      {
+        "phase": "playback_0_stop",
+        "dt_ms": 1.093149185180664,
+        "task_vm_info_mib": 481.5482940673828,
+        "in_kernel_rusage_mib": 481.5482940673828,
+        "supervisor_mib": 481.5482940673828
+      },
+      {
+        "phase": "playback_1",
+        "dt_ms": -3.451824188232422,
+        "task_vm_info_mib": 481.5482940673828,
+        "in_kernel_rusage_mib": 481.5482940673828,
+        "supervisor_mib": 481.5482940673828
+      },
+      {
+        "phase": "playback_1_stop",
+        "dt_ms": 3.9548873901367188,
+        "task_vm_info_mib": 457.4076690673828,
+        "in_kernel_rusage_mib": 457.4076690673828,
+        "supervisor_mib": 457.4076690673828
+      },
+      {
+        "phase": "playback_2",
+        "dt_ms": -0.35881996154785156,
+        "task_vm_info_mib": 457.4076690673828,
+        "in_kernel_rusage_mib": 457.4076690673828,
+        "supervisor_mib": 457.4076690673828
+      },
+      {
+        "phase": "third_cycle_mid",
+        "dt_ms": -0.6489753723144531,
+        "task_vm_info_mib": 457.4389190673828,
+        "in_kernel_rusage_mib": 457.4389190673828,
+        "supervisor_mib": 457.4389190673828
+      },
+      {
+        "phase": "playback_2_stop",
+        "dt_ms": 3.801107406616211,
+        "task_vm_info_mib": 457.4389190673828,
+        "in_kernel_rusage_mib": 457.4389190673828,
+        "supervisor_mib": 457.4389190673828
+      },
+      {
+        "phase": "close_0",
+        "dt_ms": 0.025987625122070312,
+        "task_vm_info_mib": 457.4389190673828,
+        "in_kernel_rusage_mib": 457.4389190673828,
+        "supervisor_mib": 457.4389190673828
+      },
+      {
+        "phase": "gate_4",
+        "dt_ms": -1.7919540405273438,
+        "task_vm_info_mib": 457.4389190673828,
+        "in_kernel_rusage_mib": 457.4389190673828,
+        "supervisor_mib": 457.4389190673828
+      },
+      {
+        "phase": "reopen_0",
+        "dt_ms": -2.988100051879883,
+        "task_vm_info_mib": 457.4389190673828,
+        "in_kernel_rusage_mib": 457.4389190673828,
+        "supervisor_mib": 457.4389190673828
+      },
+      {
+        "phase": "close_1",
+        "dt_ms": 0.23102760314941406,
+        "task_vm_info_mib": 458.9232940673828,
+        "in_kernel_rusage_mib": 458.9232940673828,
+        "supervisor_mib": 458.9232940673828
+      },
+      {
+        "phase": "gate_5",
+        "dt_ms": -1.432180404663086,
+        "task_vm_info_mib": 458.9389190673828,
+        "in_kernel_rusage_mib": 458.9389190673828,
+        "supervisor_mib": 458.9389190673828
+      },
+      {
+        "phase": "reopen_1",
+        "dt_ms": -2.598285675048828,
+        "task_vm_info_mib": 458.9389190673828,
+        "in_kernel_rusage_mib": 458.9389190673828,
+        "supervisor_mib": 458.9389190673828
+      },
+      {
+        "phase": "close_2",
+        "dt_ms": -3.787994384765625,
+        "task_vm_info_mib": 460.4857940673828,
+        "in_kernel_rusage_mib": 460.4857940673828,
+        "supervisor_mib": 460.4857940673828
+      },
+      {
+        "phase": "gate_6",
+        "dt_ms": 1.767873764038086,
+        "task_vm_info_mib": 460.4857940673828,
+        "in_kernel_rusage_mib": 460.4857940673828,
+        "supervisor_mib": 460.4857940673828
+      },
+      {
+        "phase": "reopen_2",
+        "dt_ms": 0.2741813659667969,
+        "task_vm_info_mib": 460.4857940673828,
+        "in_kernel_rusage_mib": 460.4857940673828,
+        "supervisor_mib": 460.4857940673828
+      },
+      {
+        "phase": "final_close",
+        "dt_ms": -3.0059814453125,
+        "task_vm_info_mib": 461.8451919555664,
+        "in_kernel_rusage_mib": 461.8451919555664,
+        "supervisor_mib": 461.8451919555664
+      },
+      {
+        "phase": "after_close",
+        "dt_ms": -4.263877868652344,
+        "task_vm_info_mib": 461.8451919555664,
+        "in_kernel_rusage_mib": 461.8451919555664,
+        "supervisor_mib": 461.8451919555664
+      },
+      {
+        "phase": "after_close_snapshot",
+        "dt_ms": 2.457141876220703,
+        "task_vm_info_mib": 461.8451919555664,
+        "in_kernel_rusage_mib": 461.8451919555664,
+        "supervisor_mib": 461.8451919555664
+      },
+      {
+        "phase": "diagnostic",
+        "dt_ms": 1.3320446014404297,
+        "task_vm_info_mib": 461.8920669555664,
+        "in_kernel_rusage_mib": 461.8920669555664,
+        "supervisor_mib": 461.8920669555664
+      },
+      {
+        "phase": "end",
+        "dt_ms": 3.5207271575927734,
+        "task_vm_info_mib": 1275.595718383789,
+        "in_kernel_rusage_mib": 1275.595718383789,
+        "supervisor_mib": 1275.595718383789
+      }
+    ],
+    "max_abs_diff_mib_within_10ms": 0.828125
+  },
+  "allocator": {
+    "registered_zones": [
+      [
+        "DefaultMallocZone",
+        "/usr/lib/system/libsystem_malloc.dylib"
+      ],
+      [
+        "objc-class_rw_t",
+        "/usr/lib/system/libsystem_malloc.dylib"
+      ]
+    ],
+    "zone_small": "DefaultMallocZone",
+    "zone_large": "DefaultMallocZone",
+    "zone_small_impl": "/usr/lib/system/libsystem_malloc.dylib",
+    "zone_large_impl": "/usr/lib/system/libsystem_malloc.dylib",
+    "allocator_images": []
+  },
+  "arm_state": {
+    "transform": {
+      "density_clim": [
+        0.0,
+        0.4541015625
+      ],
+      "scale": 1.0,
+      "crop_box": null,
+      "persistent_shape": [
+        168,
+        168,
+        226
+      ]
+    },
+    "end": {
+      "lazy": {
+        "requests": "loaded",
+        "filelock": "loaded"
+      }
+    },
+    "lazy_at_start": {
+      "requests": "absent",
+      "filelock": "absent"
+    },
+    "lazy_finder_installed": false,
+    "window_sizes": [
+      [
+        1100,
+        760
+      ]
+    ]
+  },
+  "playback": [
+    {
+      "cycle": 0,
+      "polls": 120,
+      "distinct_frames": 112
+    },
+    {
+      "cycle": 1,
+      "polls": 120,
+      "distinct_frames": 112
+    },
+    {
+      "cycle": 2,
+      "polls": 121,
+      "distinct_frames": 112
+    }
+  ],
+  "frames": {
+    "count": 128,
+    "canonical_digest": "9ac0e3c9a23b1564aba53209822354cf32ab7b99147ff853f79b02908861612f",
+    "raw_digest": "11fe3d8898362ea44ac44e1bda1424824c3b76ddc7fe048efb8ac0355d842252",
+    "dtypes": [
+      "float32"
+    ],
+    "shapes_distinct": 97,
+    "max_abs_error": 0.0,
+    "max_rmse": 0.0,
+    "nonzero_lost_total": 0,
+    "nonzero_outside_display_total": 0,
+    "max_abs_mass_difference": 0.0,
+    "max_displayed_outside_sum": 0.0,
+    "displayed_bytes_max": 24343200
+  },
+  "images": [
+    "frame-000.png",
+    "frame-032.png",
+    "frame-064.png",
+    "frame-096.png",
+    "frame-127.png"
+  ],
+  "sampling": {
+    "interval_target_s": 0.01,
+    "samples": 5841,
+    "interval_median_ms": 9.997129440307617,
+    "interval_max_ms": 16.469955444335938
+  },
+  "snapshots_mode": "off",
+  "snapshot_windows": [],
+  "snapshot_overlaps_timed_phase": false,
+  "timed_phase_prefixes": [
+    "preparation",
+    "transform_ready",
+    "startup",
+    "seeking",
+    "reopen_"
+  ],
+  "phases": [
+    {
+      "phase": "start",
+      "start": 1793753217.579987,
+      "seconds": 0.46712207794189453,
+      "footprint": {
+        "n": 46,
+        "median_mib": 107.82136535644531,
+        "p05_mib": 69.65702819824219,
+        "p95_mib": 127.6417007446289,
+        "max_mib": 130.8760986328125,
+        "min_mib": 65.8600845336914
+      },
+      "rss": {
+        "n": 46,
+        "median_mib": 172.234375,
+        "p05_mib": 89.25,
+        "p95_mib": 194.421875,
+        "max_mib": 203.703125,
+        "min_mib": 82.421875
+      },
+      "mark_footprint_mib": 65.0319595336914,
+      "snapshot_overlap_s": 0,
+      "mark_rss_mib": 81.546875
+    },
+    {
+      "phase": "arm_ready",
+      "start": 1793753218.0471091,
+      "seconds": 0.015531778335571289,
+      "footprint": {
+        "n": 2,
+        "median_mib": 132.7120361328125,
+        "p05_mib": 132.7042236328125,
+        "p95_mib": 132.7042236328125,
+        "max_mib": 132.7198486328125,
+        "min_mib": 132.7042236328125
+      },
+      "rss": {
+        "n": 2,
+        "median_mib": 206.4296875,
+        "p05_mib": 206.421875,
+        "p95_mib": 206.421875,
+        "max_mib": 206.4375,
+        "min_mib": 206.421875
+      },
+      "mark_footprint_mib": 132.6573486328125,
+      "snapshot_overlap_s": 0,
+      "mark_rss_mib": 206.375
+    },
+    {
+      "phase": "preparation",
+      "start": 1793753218.062641,
+      "seconds": 1.31954026222229,
+      "footprint": {
+        "n": 132,
+        "median_mib": 168.5636444091797,
+        "p05_mib": 137.1104736328125,
+        "p95_mib": 168.5636444091797,
+        "max_mib": 169.6573944091797,
+        "min_mib": 132.7354736328125
+      },
+      "rss": {
+        "n": 132,
+        "median_mib": 250.28125,
+        "p05_mib": 211.078125,
+        "p95_mib": 250.28125,
+        "max_mib": 251.40625,
+        "min_mib": 206.453125
+      },
+      "mark_footprint_mib": 132.7198486328125,
+      "snapshot_overlap_s": 0,
+      "mark_rss_mib": 206.4375
+    },
+    {
+      "phase": "transform_ready",
+      "start": 1793753219.3821812,
+      "seconds": 0.03570103645324707,
+      "footprint": {
+        "n": 4,
+        "median_mib": 169.1730194091797,
+        "p05_mib": 169.0636444091797,
+        "p95_mib": 169.1730194091797,
+        "max_mib": 169.1730194091797,
+        "min_mib": 169.0636444091797
+      },
+      "rss": {
+        "n": 4,
+        "median_mib": 251.0,
+        "p05_mib": 250.890625,
+        "p95_mib": 251.0,
+        "max_mib": 251.0,
+        "min_mib": 250.890625
+      },
+      "mark_footprint_mib": 168.7198944091797,
+      "snapshot_overlap_s": 0,
+      "mark_rss_mib": 250.546875
+    },
+    {
+      "phase": "startup",
+      "start": 1793753219.4178822,
+      "seconds": 0.5624547004699707,
+      "footprint": {
+        "n": 56,
+        "median_mib": 205.19652557373047,
+        "p05_mib": 169.2980194091797,
+        "p95_mib": 230.92311096191406,
+        "max_mib": 232.68873596191406,
+        "min_mib": 169.1730194091797
+      },
+      "rss": {
+        "n": 56,
+        "median_mib": 311.15625,
+        "p05_mib": 251.171875,
+        "p95_mib": 338.671875,
+        "max_mib": 340.359375,
+        "min_mib": 251.0
+      },
+      "mark_footprint_mib": 169.1730194091797,
+      "snapshot_overlap_s": 0,
+      "mark_rss_mib": 251.0
+    },
+    {
+      "phase": "viewer_ready",
+      "start": 1793753219.980337,
+      "seconds": 0.014440298080444336,
+      "footprint": {
+        "n": 1,
+        "median_mib": 232.61061096191406,
+        "p05_mib": 232.61061096191406,
+        "p95_mib": 232.61061096191406,
+        "max_mib": 232.61061096191406,
+        "min_mib": 232.61061096191406
+      },
+      "rss": {
+        "n": 1,
+        "median_mib": 340.40625,
+        "p05_mib": 340.40625,
+        "p95_mib": 340.40625,
+        "max_mib": 340.40625,
+        "min_mib": 340.40625
+      },
+      "mark_footprint_mib": 232.59498596191406,
+      "snapshot_overlap_s": 0,
+      "mark_rss_mib": 340.390625
+    },
+    {
+      "phase": "seeking",
+      "start": 1793753219.9947772,
+      "seconds": 1.3974967002868652,
+      "footprint": {
+        "n": 140,
+        "median_mib": 389.32947540283203,
+        "p05_mib": 298.98565673828125,
+        "p95_mib": 481.5014190673828,
+        "max_mib": 481.5014190673828,
+        "min_mib": 232.67311096191406
+      },
+      "rss": {
+        "n": 140,
+        "median_mib": 498.7265625,
+        "p05_mib": 408.796875,
+        "p95_mib": 590.890625,
+        "max_mib": 591.3125,
+        "min_mib": 341.28125
+      },
+      "mark_footprint_mib": 232.61061096191406,
+      "snapshot_overlap_s": 0,
+      "mark_rss_mib": 340.40625
+    },
+    {
+      "phase": "seeking_done",
+      "start": 1793753221.392274,
+      "seconds": 0.0041310787200927734,
+      "footprint": {
+        "n": 1,
+        "median_mib": 481.5014190673828,
+        "p05_mib": 481.5014190673828,
+        "p95_mib": 481.5014190673828,
+        "max_mib": 481.5014190673828,
+        "min_mib": 481.5014190673828
+      },
+      "rss": {
+        "n": 1,
+        "median_mib": 589.171875,
+        "p05_mib": 589.171875,
+        "p95_mib": 589.171875,
+        "max_mib": 589.171875,
+        "min_mib": 589.171875
+      },
+      "mark_footprint_mib": 481.4857940673828,
+      "snapshot_overlap_s": 0,
+      "mark_rss_mib": 589.15625
+    },
+    {
+      "phase": "playback_0",
+      "start": 1793753221.396405,
+      "seconds": 12.299304008483887,
+      "footprint": {
+        "n": 1229,
+        "median_mib": 481.5326690673828,
+        "p05_mib": 481.4701690673828,
+        "p95_mib": 481.5639190673828,
+        "max_mib": 481.5795440673828,
+        "min_mib": 481.4701690673828
+      },
+      "rss": {
+        "n": 1229,
+        "median_mib": 589.203125,
+        "p05_mib": 589.140625,
+        "p95_mib": 591.15625,
+        "max_mib": 591.515625,
+        "min_mib": 589.140625
+      },
+      "mark_footprint_mib": 481.5014190673828,
+      "snapshot_overlap_s": 0,
+      "mark_rss_mib": 589.171875
+    },
+    {
+      "phase": "playback_0_stop",
+      "start": 1793753233.695709,
+      "seconds": 0.004544973373413086,
+      "footprint": {
+        "n": 1,
+        "median_mib": 481.5482940673828,
+        "p05_mib": 481.5482940673828,
+        "p95_mib": 481.5482940673828,
+        "max_mib": 481.5482940673828,
+        "min_mib": 481.5482940673828
+      },
+      "rss": {
+        "n": 1,
+        "median_mib": 589.21875,
+        "p05_mib": 589.21875,
+        "p95_mib": 589.21875,
+        "max_mib": 589.21875,
+        "min_mib": 589.21875
+      },
+      "mark_footprint_mib": 481.5482940673828,
+      "snapshot_overlap_s": 0,
+      "mark_rss_mib": 589.21875
+    },
+    {
+      "phase": "playback_1",
+      "start": 1793753233.700254,
+      "seconds": 12.2921142578125,
+      "footprint": {
+        "n": 1229,
+        "median_mib": 481.5170440673828,
+        "p05_mib": 457.4076690673828,
+        "p95_mib": 481.5639190673828,
+        "max_mib": 481.5795440673828,
+        "min_mib": 457.4076690673828
+      },
+      "rss": {
+        "n": 1229,
+        "median_mib": 589.1875,
+        "p05_mib": 566.796875,
+        "p95_mib": 590.921875,
+        "max_mib": 591.5625,
+        "min_mib": 566.796875
+      },
+      "mark_footprint_mib": 481.5482940673828,
+      "snapshot_overlap_s": 0,
+      "mark_rss_mib": 589.21875
+    },
+    {
+      "phase": "playback_1_stop",
+      "start": 1793753245.9923682,
+      "seconds": 0.00431370735168457,
+      "footprint": {
+        "n": 1,
+        "median_mib": 457.4076690673828,
+        "p05_mib": 457.4076690673828,
+        "p95_mib": 457.4076690673828,
+        "max_mib": 457.4076690673828,
+        "min_mib": 457.4076690673828
+      },
+      "rss": {
+        "n": 1,
+        "median_mib": 566.796875,
+        "p05_mib": 566.796875,
+        "p95_mib": 566.796875,
+        "max_mib": 566.796875,
+        "min_mib": 566.796875
+      },
+      "mark_footprint_mib": 457.4076690673828,
+      "snapshot_overlap_s": 0,
+      "mark_rss_mib": 566.796875
+    },
+    {
+      "phase": "playback_2",
+      "start": 1793753245.996682,
+      "seconds": 12.305685997009277,
+      "footprint": {
+        "n": 1230,
+        "median_mib": 457.4389190673828,
+        "p05_mib": 457.4076690673828,
+        "p95_mib": 457.4545440673828,
+        "max_mib": 457.4545440673828,
+        "min_mib": 457.4076690673828
+      },
+      "rss": {
+        "n": 1230,
+        "median_mib": 566.828125,
+        "p05_mib": 566.796875,
+        "p95_mib": 568.796875,
+        "max_mib": 569.1875,
+        "min_mib": 566.796875
+      },
+      "mark_footprint_mib": 457.4076690673828,
+      "snapshot_overlap_s": 0,
+      "mark_rss_mib": 566.796875
+    },
+    {
+      "phase": "playback_2_stop",
+      "start": 1793753258.302368,
+      "seconds": 0.0037751197814941406,
+      "footprint": null,
+      "rss": null,
+      "mark_footprint_mib": 457.4389190673828,
+      "snapshot_overlap_s": 0,
+      "mark_rss_mib": 566.828125
+    },
+    {
+      "phase": "close_0",
+      "start": 1793753258.306143,
+      "seconds": 0.04458498954772949,
+      "footprint": {
+        "n": 5,
+        "median_mib": 457.4389190673828,
+        "p05_mib": 457.4389190673828,
+        "p95_mib": 457.4389190673828,
+        "max_mib": 457.4389190673828,
+        "min_mib": 457.4389190673828
+      },
+      "rss": {
+        "n": 5,
+        "median_mib": 566.84375,
+        "p05_mib": 566.828125,
+        "p95_mib": 566.84375,
+        "max_mib": 566.84375,
+        "min_mib": 566.828125
+      },
+      "mark_footprint_mib": 457.4389190673828,
+      "snapshot_overlap_s": 0,
+      "mark_rss_mib": 566.828125
+    },
+    {
+      "phase": "reopen_0",
+      "start": 1793753258.350728,
+      "seconds": 0.264678955078125,
+      "footprint": {
+        "n": 26,
+        "median_mib": 457.6498565673828,
+        "p05_mib": 457.4545440673828,
+        "p95_mib": 458.9232940673828,
+        "max_mib": 458.9232940673828,
+        "min_mib": 457.4545440673828
+      },
+      "rss": {
+        "n": 26,
+        "median_mib": 567.171875,
+        "p05_mib": 566.859375,
+        "p95_mib": 568.328125,
+        "max_mib": 569.125,
+        "min_mib": 566.859375
+      },
+      "mark_footprint_mib": 457.4389190673828,
+      "snapshot_overlap_s": 0,
+      "mark_rss_mib": 566.84375
+    },
+    {
+      "phase": "close_1",
+      "start": 1793753258.615407,
+      "seconds": 0.0449371337890625,
+      "footprint": {
+        "n": 5,
+        "median_mib": 458.9389190673828,
+        "p05_mib": 458.9232940673828,
+        "p95_mib": 458.9389190673828,
+        "max_mib": 458.9389190673828,
+        "min_mib": 458.9232940673828
+      },
+      "rss": {
+        "n": 5,
+        "median_mib": 568.34375,
+        "p05_mib": 568.328125,
+        "p95_mib": 568.34375,
+        "max_mib": 568.34375,
+        "min_mib": 568.328125
+      },
+      "mark_footprint_mib": 458.9232940673828,
+      "snapshot_overlap_s": 0,
+      "mark_rss_mib": 568.328125
+    },
+    {
+      "phase": "reopen_1",
+      "start": 1793753258.6603441,
+      "seconds": 0.2610816955566406,
+      "footprint": {
+        "n": 26,
+        "median_mib": 459.3217315673828,
+        "p05_mib": 458.9389190673828,
+        "p95_mib": 460.4857940673828,
+        "max_mib": 460.4857940673828,
+        "min_mib": 458.9389190673828
+      },
+      "rss": {
+        "n": 26,
+        "median_mib": 568.8203125,
+        "p05_mib": 568.34375,
+        "p95_mib": 569.890625,
+        "max_mib": 570.0625,
+        "min_mib": 568.34375
+      },
+      "mark_footprint_mib": 458.9389190673828,
+      "snapshot_overlap_s": 0,
+      "mark_rss_mib": 568.34375
+    },
+    {
+      "phase": "close_2",
+      "start": 1793753258.9214258,
+      "seconds": 0.04585599899291992,
+      "footprint": {
+        "n": 4,
+        "median_mib": 460.4857940673828,
+        "p05_mib": 460.4857940673828,
+        "p95_mib": 460.4857940673828,
+        "max_mib": 460.4857940673828,
+        "min_mib": 460.4857940673828
+      },
+      "rss": {
+        "n": 4,
+        "median_mib": 569.890625,
+        "p05_mib": 569.890625,
+        "p95_mib": 569.890625,
+        "max_mib": 569.890625,
+        "min_mib": 569.890625
+      },
+      "mark_footprint_mib": 460.4857940673828,
+      "snapshot_overlap_s": 0,
+      "mark_rss_mib": 569.890625
+    },
+    {
+      "phase": "reopen_2",
+      "start": 1793753258.9672818,
+      "seconds": 0.26143527030944824,
+      "footprint": {
+        "n": 27,
+        "median_mib": 460.7201690673828,
+        "p05_mib": 460.5014190673828,
+        "p95_mib": 461.8451919555664,
+        "max_mib": 461.8451919555664,
+        "min_mib": 460.4857940673828
+      },
+      "rss": {
+        "n": 27,
+        "median_mib": 570.25,
+        "p05_mib": 569.90625,
+        "p95_mib": 571.234375,
+        "max_mib": 571.8125,
+        "min_mib": 569.890625
+      },
+      "mark_footprint_mib": 460.4857940673828,
+      "snapshot_overlap_s": 0,
+      "mark_rss_mib": 569.890625
+    },
+    {
+      "phase": "final_close",
+      "start": 1793753259.228717,
+      "seconds": 0.03348875045776367,
+      "footprint": {
+        "n": 3,
+        "median_mib": 461.8451919555664,
+        "p05_mib": 461.8451919555664,
+        "p95_mib": 461.8451919555664,
+        "max_mib": 461.8451919555664,
+        "min_mib": 461.8451919555664
+      },
+      "rss": {
+        "n": 3,
+        "median_mib": 571.234375,
+        "p05_mib": 571.234375,
+        "p95_mib": 571.234375,
+        "max_mib": 571.234375,
+        "min_mib": 571.234375
+      },
+      "mark_footprint_mib": 461.8451919555664,
+      "snapshot_overlap_s": 0,
+      "mark_rss_mib": 571.234375
+    },
+    {
+      "phase": "after_close",
+      "start": 1793753259.2622058,
+      "seconds": 1.001664161682129,
+      "footprint": {
+        "n": 100,
+        "median_mib": 461.8451919555664,
+        "p05_mib": 461.8451919555664,
+        "p95_mib": 461.8451919555664,
+        "max_mib": 461.8451919555664,
+        "min_mib": 461.8451919555664
+      },
+      "rss": {
+        "n": 100,
+        "median_mib": 571.234375,
+        "p05_mib": 571.234375,
+        "p95_mib": 571.234375,
+        "max_mib": 571.234375,
+        "min_mib": 571.234375
+      },
+      "mark_footprint_mib": 461.8451919555664,
+      "snapshot_overlap_s": 0,
+      "mark_rss_mib": 571.234375
+    },
+    {
+      "phase": "after_close_snapshot",
+      "start": 1793753260.26387,
+      "seconds": 0.022413015365600586,
+      "footprint": {
+        "n": 2,
+        "median_mib": 461.8451919555664,
+        "p05_mib": 461.8451919555664,
+        "p95_mib": 461.8451919555664,
+        "max_mib": 461.8451919555664,
+        "min_mib": 461.8451919555664
+      },
+      "rss": {
+        "n": 2,
+        "median_mib": 571.234375,
+        "p05_mib": 571.234375,
+        "p95_mib": 571.234375,
+        "max_mib": 571.234375,
+        "min_mib": 571.234375
+      },
+      "mark_footprint_mib": 461.8451919555664,
+      "snapshot_overlap_s": 0,
+      "mark_rss_mib": 571.234375
+    },
+    {
+      "phase": "diagnostic",
+      "start": 1793753260.286283,
+      "seconds": 13.096463203430176,
+      "footprint": {
+        "n": 1310,
+        "median_mib": 1045.0798873901367,
+        "p05_mib": 818.0016021728516,
+        "p95_mib": 1273.658218383789,
+        "max_mib": 1305.455093383789,
+        "min_mib": 461.8920669555664
+      },
+      "rss": {
+        "n": 1310,
+        "median_mib": 956.125,
+        "p05_mib": 731.03125,
+        "p95_mib": 1186.625,
+        "max_mib": 1218.40625,
+        "min_mib": 571.28125
+      },
+      "mark_footprint_mib": 461.8920669555664,
+      "snapshot_overlap_s": 0,
+      "mark_rss_mib": 571.28125
+    },
+    {
+      "phase": "end",
+      "start": 1793753273.3827462,
+      "seconds": null,
+      "footprint": {
+        "n": 261,
+        "median_mib": 1065.1425704956055,
+        "p05_mib": 1060.5956954956055,
+        "p95_mib": 1275.642593383789,
+        "max_mib": 1275.642593383789,
+        "min_mib": 0.0
+      },
+      "rss": {
+        "n": 261,
+        "median_mib": 1155.25,
+        "p05_mib": 1154.796875,
+        "p95_mib": 1186.65625,
+        "max_mib": 1186.65625,
+        "min_mib": 1154.796875
+      },
+      "mark_footprint_mib": 1275.595718383789,
+      "snapshot_overlap_s": 0,
+      "mark_rss_mib": 1186.609375
+    }
+  ],
+  "events": [
+    {
+      "phase": "gate_1",
+      "time": 1793753218.051391,
+      "snapshot": null
+    },
+    {
+      "phase": "gate_2",
+      "time": 1793753219.395562,
+      "snapshot": null
+    },
+    {
+      "phase": "gate_3",
+      "time": 1793753219.9835,
+      "snapshot": null
+    },
+    {
+      "phase": "third_cycle_mid",
+      "time": 1793753252.037929,
+      "snapshot": "third_cycle"
+    },
+    {
+      "phase": "gate_4",
+      "time": 1793753258.339415,
+      "snapshot": null
+    },
+    {
+      "phase": "gate_5",
+      "time": 1793753258.6490612,
+      "snapshot": null
+    },
+    {
+      "phase": "gate_6",
+      "time": 1793753258.9559722,
+      "snapshot": null
+    }
+  ]
+}
