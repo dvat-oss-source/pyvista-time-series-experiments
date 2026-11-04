@@ -1,0 +1,50 @@
+{
+  "schema": "tornado-footprint/1",
+  "arm": "u16,crop",
+  "factors": [
+    "u16",
+    "crop"
+  ],
+  "notebook": "/Users/dylanvatanapradit/pyvista/tornado_animation.ipynb",
+  "frame_stats": "/Users/dylanvatanapradit/pyvista/exploration/tornado_footprint_data/frame-stats.json",
+  "kernel_module": "/Users/dylanvatanapradit/pyvista/exploration/footprint_kernel.py",
+  "repo": "/Users/dylanvatanapradit/pyvista",
+  "output": "/Users/dylanvatanapradit/pyvista/exploration/tornado_footprint_data/pilots-r1/u16-crop",
+  "cycles": 3,
+  "reopens": 3,
+  "peak_margin_mib": 8.0,
+  "provenance": {
+    "notebook_sha256": "e250495f2369ea02becef3197fc614b785feec1fa40b513fea077c78b9cc0072",
+    "time_series_sha256": "a9c939856dc83800ac685945f219df58b963175219b2ea3898dd1e309edfc3c9",
+    "harness_sha256": "0115f3341daa1313301c05e65d33add3b046e1f61d7ed03ade5d5bb76cd7d896",
+    "kernel_module_sha256": "e32fdcaada1753b22b961acdaecca4073cf636559d665bc997364f796e05be49",
+    "git_rev": "1ebbfd589068396540a0729f73d356f6234480c4",
+    "git_dirty": true,
+    "git_dirty_files": [
+      "M exploration/footprint_kernel.py",
+      " M exploration/footprint_tornado.py",
+      " M tornado_animation.ipynb"
+    ],
+    "interpreter": "/Library/Frameworks/Python.framework/Versions/3.13/bin/python3.13",
+    "interpreter_version": "3.13.6 (v3.13.6:4e665351082, Aug  6 2025, 11:22:35) [Clang 16.0.0 (clang-1600.0.26.6)]",
+    "versions": {
+      "pyvista": "0.50.dev0",
+      "vtk": "9.7.1",
+      "pyvista-zstd": "0.7.0",
+      "numpy": "2.2.6",
+      "trame": "4.0.0",
+      "trame-pyvista": "0.2.1",
+      "nbclient": "0.10.2"
+    }
+  },
+  "image_frames": [
+    0,
+    32,
+    64,
+    96,
+    127
+  ],
+  "sample_interval": 0.01,
+  "prewarm": null,
+  "python": "/Library/Frameworks/Python.framework/Versions/3.13/bin/python3.13"
+}

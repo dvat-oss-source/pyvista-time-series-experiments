@@ -14,6 +14,7 @@ import json
 import mmap
 import os
 from pathlib import Path
+import resource
 import sys
 import time
 import weakref
@@ -177,22 +178,39 @@ class Recorder:
         self.output = Path(output)
         self.path = self.output / 'phases.jsonl'
         self.plotter = None
+        self.probes = {}
 
     def mark(self, phase, *, kind='phase', snapshot=None, **extra):
         """Record a phase boundary (or an event) with in-kernel counters."""
         footprint, rss, lifetime = rusage(os.getpid())
+        vm = task_vm_info()
         record = dict(
             phase=phase,
             kind=kind,
             time=time.time(),
             pid=os.getpid(),
             footprint=footprint,
-            task_vm_footprint=task_vm_info().phys_footprint,
+            task_vm_footprint=vm.phys_footprint,
             rss=rss,
             lifetime_max_footprint=lifetime,
+            # macOS ru_maxrss is bytes: the OS lifetime RSS maximum.
+            lifetime_max_rss=resource.getrusage(resource.RUSAGE_SELF).ru_maxrss,
+            # Accounting that separates "freed" from "resident but not counted":
+            # reusable pages (MADV_FREE_REUSABLE) leave phys_footprint but can stay resident.
+            task_vm=dict(
+                internal=vm.internal,
+                reusable=vm.reusable,
+                reusable_peak=vm.reusable_peak,
+                compressed=vm.compressed,
+                purgeable_volatile_resident=vm.purgeable_volatile_resident,
+                resident_size=vm.resident_size,
+                resident_size_peak=vm.resident_size_peak,
+            ),
             snapshot=snapshot,
             **extra,
         )
+        for name, probe in self.probes.items():
+            record[name] = probe()
         pl = self.plotter() if self.plotter is not None else None
         if pl is not None and getattr(pl, 'ren_win', None) is not None:
             record['window_size'] = list(pl.window_size)
@@ -379,6 +397,9 @@ class FrameTransform:
                 np.rint(part, out=part)
                 np.clip(part, 0, self.levels, out=part)
                 out[start : start + chunk.size] = part
+            # Drop the float32 views before the quantized frame is handed over; the
+            # float32 source then dies by refcount (verified: VTK refcount 1, no gc).
+            del values, chunk, part, scratch
             quantized = pv.ImageData(
                 dimensions=mesh.dimensions,
                 spacing=mesh.spacing,
@@ -510,6 +531,14 @@ class MadvisePool:
         self.keep = keep
         self.idle = []
         self.stats = dict(mapped=0, reused=0, unmapped=0, reusable_calls=0)
+
+    def snapshot(self):
+        """Return counters plus the idle (MADV_FREE_REUSABLE) mappings at this moment."""
+        return dict(
+            **self.stats,
+            idle_mappings=len(self.idle),
+            idle_bytes=sum(len(m) for m in self.idle),
+        )
 
     def _release(self, mapping):
         mapping.madvise(mmap.MADV_FREE_REUSABLE)
@@ -686,30 +715,42 @@ def displayed_record(index, dataset, *, scale, original=None):
         record['nonzero'] = int(np.count_nonzero(nonzero))
     record['canonical_digest'] = canonical.hexdigest()
     if original is not None:
-        # Align the displayed extent with the original frame on its own lattice.
-        reference = np.zeros(shape[::-1], dtype=np.float32)
+        # Fidelity over the FULL uncropped source: place the dequantized display into
+        # the source frame's own lattice, so voxels a crop removed count as lost.
         offset = np.rint(
             (np.asarray(dataset.origin) - np.asarray(original.origin))
             / np.asarray(original.spacing)
         ).astype(int)
-        source = np.asarray(original.active_scalars).reshape(tuple(original.dimensions)[::-1])
+        source_shape = tuple(int(v) for v in original.dimensions)
+        source = np.asarray(original.active_scalars).reshape(source_shape[::-1])
+        shown = np.zeros(source_shape[::-1], dtype=np.float32)
         lo = np.maximum(offset, 0)
-        hi = np.minimum(offset + np.array(shape), np.array(original.dimensions))
+        hi = np.minimum(offset + np.array(shape), np.array(source_shape))
+        displayed = volume.astype(np.float32) * np.float32(scale)
+        inside = 0.0
         if np.all(hi > lo):
             d_lo = lo - offset
             d_hi = hi - offset
-            reference[d_lo[2] : d_hi[2], d_lo[1] : d_hi[1], d_lo[0] : d_hi[0]] = source[
-                lo[2] : hi[2], lo[1] : hi[1], lo[0] : hi[0]
-            ]
-        shown = volume.astype(np.float32) * np.float32(scale)
-        error = np.abs(shown - reference)
+            part = displayed[d_lo[2] : d_hi[2], d_lo[1] : d_hi[1], d_lo[0] : d_hi[0]]
+            shown[lo[2] : hi[2], lo[1] : hi[1], lo[0] : hi[0]] = part
+            inside = float(part.sum(dtype=np.float64))
+        error = np.abs(shown - source)
         record['max_abs_error'] = float(error.max())
         record['rmse'] = float(np.sqrt(np.mean(np.square(error, dtype=np.float64))))
-        # Mass the display cannot show: original nonzero voxels outside the displayed extent.
         record['original_sum'] = float(source.sum(dtype=np.float64))
-        record['displayed_sum'] = float(shown.sum(dtype=np.float64))
-        record['nonzero_lost'] = int(np.count_nonzero((reference != 0) & (shown == 0)))
+        record['displayed_sum'] = float(displayed.sum(dtype=np.float64))
+        record['mass_difference'] = record['displayed_sum'] - record['original_sum']
+        # Displayed mass outside the source extent (padding must be zero).
+        record['displayed_outside_sum'] = record['displayed_sum'] - inside
         record['original_nonzero'] = int(np.count_nonzero(source))
+        record['nonzero_lost'] = int(np.count_nonzero((source != 0) & (shown == 0)))
+        # Source nonzero voxels that fall outside the displayed extent (what a crop cut off).
+        covered = (
+            source[lo[2] : hi[2], lo[1] : hi[1], lo[0] : hi[0]] if np.all(hi > lo) else source[:0]
+        )
+        record['nonzero_outside_display'] = int(
+            np.count_nonzero(source) - np.count_nonzero(covered)
+        )
     return record
 
 

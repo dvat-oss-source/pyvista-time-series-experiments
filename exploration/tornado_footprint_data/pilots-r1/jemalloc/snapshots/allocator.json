@@ -1,0 +1,20 @@
+{
+  "name": "allocator",
+  "trigger": "start",
+  "started": 1793752400.4685628,
+  "footprint_at_start": 69354216,
+  "rss_at_start": 87097344,
+  "vmmap_full_file": "snapshots/allocator-vmmap_full.txt.gz",
+  "vmmap_full_returncode": 0,
+  "allocator_lines": [
+    "__TEXT                      1003c0000-100424000    [  400K   256K     0K     0K] r-x/rwx SM=COW          /opt/homebrew/Cellar/jemalloc/5.4.0/lib/libjemalloc.2.dylib",
+    "__DATA_CONST                100424000-10042c000    [   32K    32K     0K     0K] r--/rw- SM=COW          /opt/homebrew/Cellar/jemalloc/5.4.0/lib/libjemalloc.2.dylib",
+    "__LINKEDIT                  100538000-100558000    [  128K    80K     0K     0K] r--/rwx SM=COW          /opt/homebrew/Cellar/jemalloc/5.4.0/lib/libjemalloc.2.dylib",
+    "__DATA                      10042c000-100430000    [   16K    16K    16K     0K] rw-/rwx SM=COW          /opt/homebrew/Cellar/jemalloc/5.4.0/lib/libjemalloc.2.dylib",
+    "__DATA                      100430000-100538000    [ 1056K    32K    32K     0K] rw-/rwx SM=PRV          /opt/homebrew/Cellar/jemalloc/5.4.0/lib/libjemalloc.2.dylib",
+    "Can't examine target process's malloc zone jemalloc_zone_0x100537620, so memory analysis will be incomplete or incorrect.",
+    "Reason: failed to resolve canonical path for /opt/homebrew/Cellar/jemalloc/5.4.0/lib/libjemalloc.2.dylib in dyld shared cache."
+  ],
+  "footprint_at_end": 91603880,
+  "finished": 1793752401.086422
+}

@@ -3,7 +3,7 @@
 Commands (run with the project interpreter from the repository root)::
 
     python exploration/footprint_tornado.py run OUTPUT [--arm baseline] [--prewarm]
-        [--peak-threshold-mib MIB] [--cycles 3] [--reopens 3]
+        [--peak-margin-mib 8] [--cycles 3] [--reopens 3]
         [--notebook tornado_animation.ipynb]
         [--frame-stats exploration/tornado_footprint_data/frame-stats.json]
     python exploration/footprint_tornado.py prewarm
@@ -15,8 +15,9 @@ launched with this interpreter, drives the notebook's own Trame state callbacks
 numerical/image pass in a reopened viewer), and
 samples the kernel's ``phys_footprint`` and resident size every 10 ms from this
 supervisor through ``proc_pid_rusage(RUSAGE_INFO_V4)``. ``footprint -v`` and
-``vmmap -summary`` snapshots are taken mid third cycle, when the footprint first
-exceeds ``--peak-threshold-mib`` and after the final ``close()``. ``--arm`` is a
+``vmmap -summary`` snapshots are taken mid third cycle, at the workload's running
+maximum (re-taken whenever it grows by ``--peak-margin-mib``) and after the final
+``close()``. ``--arm`` is a
 comma list of factors applied inside the kernel at runtime; see
 ``footprint_kernel.FACTORS``. ``OUTPUT`` must not exist. The notebook, the
 PyVista sources and the data cache are never written.
@@ -34,6 +35,7 @@ import json
 import os
 from pathlib import Path
 import re
+import shutil
 import statistics
 import subprocess
 import sys
@@ -50,6 +52,9 @@ ALLOCATORS = {
     'jemalloc': '/opt/homebrew/lib/libjemalloc.dylib',
 }
 KERNEL_NAME = 'fp-tornado'
+# Headline timings; a peak snapshot (kernel suspended ~1 s) waits until they end. Other
+# phases may overlap a snapshot; summary.phases[].snapshot_overlap_s flags it.
+TIMED_PHASES = ('startup', 'seeking')
 SCHEMA = 'tornado-footprint/1'
 MIB = 2**20
 IMAGE_FRAMES = (0, 32, 64, 96, 127)
@@ -91,7 +96,15 @@ _fp.mark('start', cross_check=_fp_cross, allocator=_fp_alloc, python=sys.executa
 _fp_state = _fpk.apply_pre(_fp_factors)
 import pyvista as _fp_pv
 assert Path(_fp_pv.__file__).resolve().is_relative_to(Path(_fp_cfg['repo'])), _fp_pv.__file__
-_fp.mark('arm_ready', pyvista=_fp_pv.__file__, factors=_fp_factors)
+if 'madvise_pool' in _fp_state:
+    _fp.probes['madvise'] = _fp_state['madvise_pool'].snapshot
+import numpy as _fp_np
+from importlib import metadata as _fp_md
+_fp.mark('arm_ready', pyvista=_fp_pv.__file__, factors=_fp_factors,
+         imported_versions=dict(pyvista=_fp_pv.__version__,
+                                vtk='.'.join(map(str, _fp_pv.vtk_version_info)),
+                                pyvista_zstd=_fp_md.version('pyvista-zstd'),
+                                numpy=_fp_np.__version__, trame=_fp_md.version('trame')))
 """
 
 TRANSFORM_CELL = r"""
@@ -342,6 +355,46 @@ def write_kernelspec(output, factors):
     return spec
 
 
+def _sha256(path):
+    with Path(path).open('rb') as stream:
+        return hashlib.file_digest(stream, 'sha256').hexdigest()
+
+
+def provenance(notebook):
+    """Record exactly what was run: notebook and source hashes, git state, versions."""
+    import importlib.metadata
+
+    def git(*command):
+        result = subprocess.run(
+            [shutil.which('git') or '/usr/bin/git', '-C', str(REPO), *command],
+            capture_output=True,
+            text=True,
+            check=False,
+        )
+        return result.stdout.strip()
+
+    status = git('status', '--porcelain', '--untracked-files=no')
+    versions = {}
+    for name in ('pyvista', 'vtk', 'pyvista-zstd', 'numpy', 'trame', 'trame-pyvista', 'nbclient'):
+        try:
+            versions[name] = importlib.metadata.version(name)
+        except importlib.metadata.PackageNotFoundError:
+            versions[name] = None
+    return dict(
+        notebook_sha256=_sha256(notebook),
+        time_series_sha256=_sha256(REPO / 'pyvista' / 'plotting' / 'time_series.py'),
+        harness_sha256=_sha256(__file__),
+        kernel_module_sha256=_sha256(KERNEL_MODULE),
+        git_rev=git('rev-parse', 'HEAD'),
+        git_dirty=bool(status),
+        git_dirty_files=status.splitlines(),
+        interpreter=sys.executable,
+        interpreter_version=sys.version,
+        # Distribution metadata; the kernel also records imported module versions.
+        versions=versions,
+    )
+
+
 def prewarm(cache_root):
     """Read every display frame and the manifest once so trials start warm."""
     start = time.perf_counter()
@@ -359,6 +412,72 @@ def prewarm(cache_root):
 
 FOOTPRINT_TOTAL = re.compile(r'Footprint:\s+([\d.]+)\s*([KMG]?B)')
 UNITS = {'B': 1, 'KB': 2**10, 'MB': 2**20, 'GB': 2**30}
+_SIZE = r'[\d.]+[KMG]?'
+VMMAP_ROW = re.compile(
+    rf'^(?P<name>\S.*?)\s+(?P<virtual>{_SIZE})\s+(?P<resident>{_SIZE})\s+(?P<dirty>{_SIZE})'
+    rf'\s+(?P<swapped>{_SIZE})\s+(?P<volatile>{_SIZE})\s+(?P<nonvolatile>{_SIZE})'
+    rf'\s+(?P<empty>{_SIZE})\s+(?P<regions>\d+)\b'
+)
+VMMAP_FOOTPRINT = re.compile(r'^Physical footprint(?P<peak> \(peak\))?:\s+(?P<size>[\d.]+[KMG]?)')
+FOOTPRINT_ROW = re.compile(
+    r'^\s*(?P<dirty>[\d.]+ [KMG]?B)\s+(?P<clean>[\d.]+ [KMG]?B)\s+'
+    r'(?P<reclaimable>[\d.]+ [KMG]?B)\s+(?P<regions>\d+)\s+(?P<category>\S.*)$'
+)
+
+
+def _vmmap_bytes(token):
+    """Convert a vmmap size token (``76.3M``, ``0K``, ``824``) to bytes."""
+    scale = {'K': 2**10, 'M': 2**20, 'G': 2**30}.get(token[-1])
+    return float(token[:-1]) * scale if scale else float(token)
+
+
+def _footprint_bytes(token):
+    """Convert a footprint size token (``310 MB``, ``0 B``) to bytes."""
+    value, unit = token.split()
+    return float(value) * UNITS[unit]
+
+
+def parse_vmmap_summary(text):
+    """Return the region-type table (bytes) and the physical footprint lines."""
+    regions = {}
+    header = {}
+    for line in text.splitlines():
+        match = VMMAP_FOOTPRINT.match(line.strip())
+        if match:
+            header['peak' if match['peak'] else 'current'] = _vmmap_bytes(match['size'])
+            continue
+        match = VMMAP_ROW.match(line)
+        if match and match['name'] not in regions:
+            regions[match['name'].strip()] = {
+                key: _vmmap_bytes(match[key])
+                for key in (
+                    'virtual',
+                    'resident',
+                    'dirty',
+                    'swapped',
+                    'volatile',
+                    'nonvolatile',
+                    'empty',
+                )
+            } | {'regions': int(match['regions'])}
+    return dict(physical_footprint=header, regions=regions)
+
+
+def parse_footprint(text):
+    """Return the 40 largest footprint categories: Dirty/Clean/Reclaimable bytes."""
+    categories = {}
+    for line in text.splitlines():
+        match = FOOTPRINT_ROW.match(line)
+        if match:
+            categories[match['category'].strip()] = dict(
+                dirty=_footprint_bytes(match['dirty']),
+                clean=_footprint_bytes(match['clean']),
+                reclaimable=_footprint_bytes(match['reclaimable']),
+                regions=int(match['regions']),
+            )
+    # The full table lists every dylib; keep the largest rows (full text is in the .gz).
+    top = sorted(categories.items(), key=lambda item: -item[1]['dirty'])[:40]
+    return dict(top)
 
 
 class Snapshots:
@@ -372,10 +491,21 @@ class Snapshots:
         self.lock = threading.Lock()
         self.threads = []
         self.records = {}
+        self.peak_history = []
+        self.peak_busy = False
+
+    def peak_captured(self):
+        """Return the footprint captured by the latest finished peak snapshot."""
+        return self.peak_history[-1]['footprint_at_start'] if self.peak_history else None
 
     def take(self, name, pid, trigger):
         """Start one snapshot without blocking the sampler."""
-        if name in self.records:
+        if name == 'peak':
+            # Re-snapshots overwrite the files; each one is at a higher running max.
+            if self.peak_busy:
+                return
+            self.peak_busy = True
+        elif name in self.records:
             return
         self.records[name] = dict(name=name, trigger=trigger, pending=True)
         thread = threading.Thread(target=self._run, args=(name, pid, trigger), daemon=True)
@@ -403,6 +533,10 @@ class Snapshots:
                 record[f'{tool}_file'] = str(path.relative_to(self.folder.parent))
                 record[f'{tool}_returncode'] = result.returncode
                 if tool == 'footprint':
+                    record['footprint_categories'] = parse_footprint(text)
+                if tool == 'vmmap':
+                    record['vmmap'] = parse_vmmap_summary(text)
+                if tool == 'footprint':
                     match = FOOTPRINT_TOTAL.search(text)
                     if match:
                         record['footprint_tool_total'] = (
@@ -417,9 +551,19 @@ class Snapshots:
             after = self.kernel.rusage(pid)
             record['footprint_at_end'] = after[0] if after else None
             record['finished'] = time.time()
+            if name == 'peak':
+                self.peak_history.append(
+                    {
+                        k: record[k]
+                        for k in ('trigger', 'started', 'finished', 'footprint_at_start')
+                    }
+                )
+                record['history'] = self.peak_history
             self.records[name] = record
             (self.folder / f'{name}.json').write_text(json.dumps(record, indent=2))
             (self.folder / f'{name}.done').write_text('')
+            if name == 'peak':
+                self.peak_busy = False
 
     def join(self):
         """Wait for outstanding snapshots."""
@@ -445,7 +589,9 @@ def supervise(args):
         output=str(output),
         cycles=args.cycles,
         reopens=args.reopens,
-        peak_threshold_mib=args.peak_threshold_mib,
+        peak_margin_mib=args.peak_margin_mib,
+        peak_max_snapshots=args.peak_max_snapshots,
+        provenance=provenance(args.notebook.resolve()),
         image_frames=list(IMAGE_FRAMES),
         sample_interval=args.interval,
         prewarm=warm,
@@ -459,7 +605,19 @@ def supervise(args):
     )
     env.pop('DYLD_INSERT_LIBRARIES', None)
     command = [sys.executable, str(Path(__file__).resolve()), 'worker', str(output)]
-    threshold = None if args.peak_threshold_mib is None else args.peak_threshold_mib * MIB
+    margin = args.peak_margin_mib * MIB
+    # Peak snapshots follow the running maximum of the workload (everything before the
+    # `diagnostic` mark): a new one whenever the footprint exceeds the last peak
+    # snapshot by `margin`. Inside timed phases the snapshot (which suspends the
+    # kernel for about 1 s) is deferred to the next phase boundary.
+    # Tracking starts once the viewer exists (boot and preparation are below every
+    # later phase) and stops at the diagnostic pass.
+    tracking = False
+    timed = False
+    current = 0
+    peak_snapped = None
+    peak_deferred = False
+    peak_applied = 0
     snapshots = None
     samples = []
     marks = []
@@ -484,13 +642,39 @@ def supervise(args):
                         snapshots.take('allocator', pid, 'start')
                 if record.get('snapshot'):
                     snapshots.take(record['snapshot'], pid, record['phase'])
+                if record['kind'] == 'phase':
+                    timed = record['phase'].startswith(TIMED_PHASES)
+                    if record['phase'] == 'viewer_ready':
+                        tracking = True
+                    if record['phase'] == 'diagnostic':
+                        tracking = False
+                    if peak_deferred and not timed and not snapshots.peak_busy:
+                        snapshots.take('peak', pid, f'deferred to {record["phase"]}')
+                        # Compare later samples against what this snapshot captures.
+                        peak_snapped = current
+                        peak_deferred = False
             if pid is not None:
                 now = time.time()
                 values = kernel.rusage(pid)
                 if values is not None:
                     samples.append((now, *values))
-                    if threshold is not None and values[0] > threshold:
-                        snapshots.take('peak', pid, f'footprint>{args.peak_threshold_mib} MiB')
+                    current = values[0]
+                    if tracking:
+                        if len(snapshots.peak_history) > peak_applied and not snapshots.peak_busy:
+                            # The latest snapshot recorded the footprint when its tools
+                            # started, which can be below its trigger on an oscillating series.
+                            peak_applied = len(snapshots.peak_history)
+                            peak_snapped = snapshots.peak_captured()
+                        room = len(snapshots.peak_history) < args.peak_max_snapshots
+                        if room and (peak_snapped is None or values[0] >= peak_snapped + margin):
+                            if timed:
+                                peak_deferred = True
+                            elif not snapshots.peak_busy:
+                                snapshots.take(
+                                    'peak', pid, f'running max {values[0] / MIB:.1f} MiB'
+                                )
+                                peak_snapped = values[0]
+                                peak_deferred = False
             next_tick += args.interval
             delay = next_tick - time.perf_counter()
             if delay > 0:
@@ -524,6 +708,10 @@ def supervise(args):
         raise SystemExit(msg)
 
 
+def _difference(a, b):
+    return None if a is None or b is None else a - b
+
+
 def _stats(values):
     """Median/p95/max in MiB of a list of byte counts."""
     if not values:
@@ -555,6 +743,20 @@ def summarize(output, *, config, kernelspec, samples, marks, snapshots, returnco
         return name
 
     labelled = [(phase_of(t), t, fp, rss) for t, fp, rss, _ in samples]
+    windows = [
+        (r['started'], r['finished'])
+        for r in snapshots.values()
+        if 'started' in r and 'finished' in r
+    ]
+    for name, record in snapshots.items():
+        if name == 'peak':
+            # Earlier peak snapshots were overwritten but still suspended the kernel.
+            windows += [(h['started'], h['finished']) for h in record.get('history', [])[:-1]]
+
+    def overlap(start, end):
+        end = float('inf') if end is None else end
+        return sum(max(0.0, min(end, b) - max(start, a)) for a, b in windows)
+
     table = []
     for index, mark in enumerate(phases):
         end = phases[index + 1]['time'] if index + 1 < len(phases) else None
@@ -567,6 +769,7 @@ def summarize(output, *, config, kernelspec, samples, marks, snapshots, returnco
                 footprint=_stats([r[2] for r in rows]),
                 rss=_stats([r[3] for r in rows]),
                 mark_footprint_mib=mark['footprint'] / MIB,
+                snapshot_overlap_s=overlap(mark['time'], end),
                 mark_rss_mib=mark['rss'] / MIB,
             )
         )
@@ -581,6 +784,12 @@ def summarize(output, *, config, kernelspec, samples, marks, snapshots, returnco
             return None
         row = max(rows, key=lambda r: r[column])
         return dict(mib=row[column] / MIB, time=row[1], phase=row[0])
+
+    def phase_max(column):
+        maxima = {}
+        for row in labelled:
+            maxima[row[0]] = max(maxima.get(row[0], 0), row[column])
+        return {name: value / MIB for name, value in maxima.items()}
 
     def phase_median(name, column):
         rows = [r[column] for r in labelled if r[0] == name]
@@ -645,6 +854,13 @@ def summarize(output, *, config, kernelspec, samples, marks, snapshots, returnco
             max_abs_error=max(r.get('max_abs_error', 0.0) for r in records),
             max_rmse=max(r.get('rmse', 0.0) for r in records),
             nonzero_lost_total=sum(r.get('nonzero_lost', 0) for r in records),
+            nonzero_outside_display_total=sum(
+                r.get('nonzero_outside_display', 0) for r in records
+            ),
+            max_abs_mass_difference=max(abs(r.get('mass_difference', 0.0)) for r in records),
+            max_displayed_outside_sum=max(
+                abs(r.get('displayed_outside_sum', 0.0)) for r in records
+            ),
             displayed_bytes_max=max(
                 r['shape'][0]
                 * r['shape'][1]
@@ -682,12 +898,45 @@ def summarize(output, *, config, kernelspec, samples, marks, snapshots, returnco
             after_close_mib=phase_median('after_close', 2),
             startup_max_mib=max((r[2] for r in labelled if r[0] == 'startup'), default=0) / MIB,
             peak_phase_p95_mib=_stats(peak_phase_rows)['p95_mib'] if peak_phase_rows else None,
+            phase_max_mib=phase_max(2),
+            peak_snapshot_footprint_mib=(
+                snapshots['peak']['footprint_at_start'] / MIB
+                if snapshots.get('peak', {}).get('footprint_at_start')
+                else None
+            ),
+            peak_snapshot_gap_mib=(
+                footprint_peak['mib'] - snapshots['peak']['footprint_at_start'] / MIB
+                if footprint_peak and snapshots.get('peak', {}).get('footprint_at_start')
+                else None
+            ),
         ),
         rss=dict(
             peak=rss_peak,
+            workload_lifetime_max_mib=(
+                by_name['diagnostic']['lifetime_max_rss'] / MIB
+                if 'diagnostic' in by_name
+                else None
+            ),
             steady_mib=phase_median('playback_2', 3),
             after_close_mib=phase_median('after_close', 3),
+            phase_max_mib=phase_max(3),
         ),
+        footprint_minus_rss_mib=dict(
+            steady=_difference(phase_median('playback_2', 2), phase_median('playback_2', 3)),
+            after_close=_difference(
+                phase_median('after_close', 2), phase_median('after_close', 3)
+            ),
+        ),
+        accounting={
+            name: dict(
+                footprint_mib=by_name[name]['footprint'] / MIB,
+                rss_mib=by_name[name]['rss'] / MIB,
+                **{f'{k}_mib': v / MIB for k, v in by_name[name].get('task_vm', {}).items()},
+                madvise=by_name[name].get('madvise'),
+            )
+            for name in ('third_cycle_mid', 'after_close', 'after_close_snapshot', 'diagnostic')
+            if name in by_name
+        },
         times=dict(
             preparation_s=seconds_between('preparation', 'startup'),
             startup_s=seconds_between('startup', 'viewer_ready'),
@@ -695,7 +944,11 @@ def summarize(output, *, config, kernelspec, samples, marks, snapshots, returnco
             reopen_s=reopen,
             diagnostic_s=seconds_between('diagnostic', 'end'),
         ),
-        peak_threshold_mib=config['peak_threshold_mib'],
+        peak_margin_mib=config['peak_margin_mib'],
+        provenance=dict(
+            **config['provenance'],
+            imported_versions=by_name.get('arm_ready', {}).get('imported_versions'),
+        ),
         snapshots=snapshots,
         cross_check=dict(
             in_kernel=start_mark.get('cross_check'),
@@ -742,6 +995,11 @@ def headline(summary):
         arm=summary['arm'],
         peak_footprint_mib=fp['peak'] and round(fp['peak']['mib'], 1),
         peak_phase=fp['peak'] and fp['peak']['phase'],
+        peak_snapshot_gap_mib=fp['peak_snapshot_gap_mib']
+        and round(fp['peak_snapshot_gap_mib'], 1),
+        peak_rss_mib=summary['rss']['peak'] and round(summary['rss']['peak']['mib'], 1),
+        lifetime_max_rss_mib=summary['rss']['workload_lifetime_max_mib']
+        and round(summary['rss']['workload_lifetime_max_mib'], 1),
         workload_lifetime_max_mib=fp['workload_lifetime_max_mib']
         and round(fp['workload_lifetime_max_mib'], 1),
         steady_footprint_mib=fp['steady_mib'] and round(fp['steady_mib'], 1),
@@ -783,6 +1041,9 @@ def compare(run_a, run_b):
         raw_equal=raw,
         b_max_abs_error=max(r.get('max_abs_error', 0.0) for r in frames_b),
         b_max_rmse=max(r.get('rmse', 0.0) for r in frames_b),
+        b_nonzero_lost=sum(r.get('nonzero_lost', 0) for r in frames_b),
+        b_nonzero_outside_display=sum(r.get('nonzero_outside_display', 0) for r in frames_b),
+        b_max_abs_mass_difference=max(abs(r.get('mass_difference', 0.0)) for r in frames_b),
         image_error=images,
         image_error_max=max(images.values()),
         pixel_difference=pixels,
@@ -805,7 +1066,18 @@ def main():
     run.add_argument('--notebook', type=Path, default=REPO / 'tornado_animation.ipynb')
     run.add_argument('--frame-stats', type=Path, default=DEFAULT_STATS)
     run.add_argument('--cache-root', type=Path, default=CACHE_ROOT)
-    run.add_argument('--peak-threshold-mib', type=float, default=None)
+    run.add_argument(
+        '--peak-margin-mib',
+        type=float,
+        default=8.0,
+        help='re-take the peak snapshot when footprint exceeds the last one by this much',
+    )
+    run.add_argument(
+        '--peak-max-snapshots',
+        type=int,
+        default=8,
+        help='bound on peak re-snapshots (each suspends the kernel about 1 s)',
+    )
     run.add_argument('--cycles', type=int, default=3)
     run.add_argument('--reopens', type=int, default=3)
     run.add_argument('--interval', type=float, default=0.01, help=argparse.SUPPRESS)

@@ -1,0 +1,415 @@
+{
+  "kernel_pid": 73910,
+  "process_peak_rss": {
+    "73909": 100302848,
+    "73910": 682606592,
+    "73913": 18972672,
+    "73914": 32751616,
+    "73915": 1605632
+  },
+  "phases": [
+    {
+      "phase": "start",
+      "time": 1793751963.139379,
+      "pid": 73910,
+      "rss": 77496320,
+      "traced_current": 0,
+      "traced_peak": 0,
+      "lifetime_peak_rss": 77496320
+    },
+    {
+      "phase": "preparation_start",
+      "time": 1793751963.142154,
+      "pid": 73910,
+      "rss": 77496320,
+      "traced_current": 0,
+      "traced_peak": 0,
+      "lifetime_peak_rss": 77496320
+    },
+    {
+      "phase": "conversion_start",
+      "time": 1793751965.011332,
+      "pid": 73910,
+      "rss": 261636096,
+      "traced_current": 0,
+      "traced_peak": 0,
+      "lifetime_peak_rss": 263684096
+    },
+    {
+      "phase": "preparation_end",
+      "time": 1793751965.023037,
+      "pid": 73910,
+      "rss": 262291456,
+      "traced_current": 0,
+      "traced_peak": 0,
+      "lifetime_peak_rss": 263684096
+    },
+    {
+      "phase": "viewer_start",
+      "time": 1793751965.034956,
+      "pid": 73910,
+      "rss": 262520832,
+      "traced_current": 0,
+      "traced_peak": 0,
+      "lifetime_peak_rss": 263684096
+    },
+    {
+      "phase": "viewer_ready",
+      "time": 1793751965.578341,
+      "pid": 73910,
+      "rss": 356302848,
+      "traced_current": 0,
+      "traced_peak": 0,
+      "lifetime_peak_rss": 356302848
+    },
+    {
+      "phase": "numerical_start",
+      "time": 1793751965.578679,
+      "pid": 73910,
+      "rss": 356302848,
+      "traced_current": 0,
+      "traced_peak": 0,
+      "lifetime_peak_rss": 356302848
+    },
+    {
+      "phase": "numerical_end",
+      "time": 1793751967.9823942,
+      "pid": 73910,
+      "rss": 571031552,
+      "traced_current": 0,
+      "traced_peak": 0,
+      "lifetime_peak_rss": 573390848
+    },
+    {
+      "phase": "seeking_start",
+      "time": 1793751967.982523,
+      "pid": 73910,
+      "rss": 571031552,
+      "traced_current": 0,
+      "traced_peak": 0,
+      "lifetime_peak_rss": 573390848
+    },
+    {
+      "phase": "seeking_end",
+      "time": 1793751972.1154811,
+      "pid": 73910,
+      "rss": 628178944,
+      "traced_current": 0,
+      "traced_peak": 0,
+      "lifetime_peak_rss": 661504000
+    },
+    {
+      "phase": "playback_0_start",
+      "time": 1793751972.119194,
+      "pid": 73910,
+      "rss": 628195328,
+      "traced_current": 0,
+      "traced_peak": 0,
+      "lifetime_peak_rss": 661504000
+    },
+    {
+      "phase": "playback_0_end",
+      "time": 1793751984.41471,
+      "pid": 73910,
+      "rss": 649248768,
+      "traced_current": 0,
+      "traced_peak": 0,
+      "lifetime_peak_rss": 661602304
+    },
+    {
+      "phase": "playback_1_start",
+      "time": 1793751984.4187121,
+      "pid": 73910,
+      "rss": 649265152,
+      "traced_current": 0,
+      "traced_peak": 0,
+      "lifetime_peak_rss": 661602304
+    },
+    {
+      "phase": "playback_1_end",
+      "time": 1793751996.737584,
+      "pid": 73910,
+      "rss": 649084928,
+      "traced_current": 0,
+      "traced_peak": 0,
+      "lifetime_peak_rss": 682606592
+    },
+    {
+      "phase": "playback_2_start",
+      "time": 1793751996.7412422,
+      "pid": 73910,
+      "rss": 649084928,
+      "traced_current": 0,
+      "traced_peak": 0,
+      "lifetime_peak_rss": 682606592
+    },
+    {
+      "phase": "playback_2_end",
+      "time": 1793752009.04787,
+      "pid": 73910,
+      "rss": 649068544,
+      "traced_current": 0,
+      "traced_peak": 0,
+      "lifetime_peak_rss": 682606592
+    },
+    {
+      "phase": "closed_0",
+      "time": 1793752009.0856562,
+      "pid": 73910,
+      "rss": 649281536,
+      "traced_current": 0,
+      "traced_peak": 0,
+      "lifetime_peak_rss": 682606592
+    },
+    {
+      "phase": "reopened_0",
+      "time": 1793752009.3489778,
+      "pid": 73910,
+      "rss": 617611264,
+      "traced_current": 0,
+      "traced_peak": 0,
+      "lifetime_peak_rss": 682606592
+    },
+    {
+      "phase": "closed_1",
+      "time": 1793752009.386104,
+      "pid": 73910,
+      "rss": 617611264,
+      "traced_current": 0,
+      "traced_peak": 0,
+      "lifetime_peak_rss": 682606592
+    },
+    {
+      "phase": "reopened_1",
+      "time": 1793752009.6456242,
+      "pid": 73910,
+      "rss": 619134976,
+      "traced_current": 0,
+      "traced_peak": 0,
+      "lifetime_peak_rss": 682606592
+    },
+    {
+      "phase": "closed_2",
+      "time": 1793752009.683102,
+      "pid": 73910,
+      "rss": 619134976,
+      "traced_current": 0,
+      "traced_peak": 0,
+      "lifetime_peak_rss": 682606592
+    },
+    {
+      "phase": "reopened_2",
+      "time": 1793752009.941248,
+      "pid": 73910,
+      "rss": 620560384,
+      "traced_current": 0,
+      "traced_peak": 0,
+      "lifetime_peak_rss": 682606592
+    },
+    {
+      "phase": "closed_callback_retained",
+      "time": 1793752009.978484,
+      "pid": 73910,
+      "rss": 620560384,
+      "traced_current": 0,
+      "traced_peak": 0,
+      "lifetime_peak_rss": 682606592
+    },
+    {
+      "phase": "closed_callback_deleted",
+      "time": 1793752010.013448,
+      "pid": 73910,
+      "rss": 620560384,
+      "traced_current": 0,
+      "traced_peak": 0,
+      "lifetime_peak_rss": 682606592
+    }
+  ],
+  "intervals": [
+    {
+      "phase": "start",
+      "seconds": 0.002774953842163086,
+      "kernel_peak_rss": 78036992,
+      "kernel_median_rss": 78036992,
+      "tree_peak_summed_rss": 178044928,
+      "tree_median_summed_rss": 178044928
+    },
+    {
+      "phase": "preparation_start",
+      "seconds": 1.869178056716919,
+      "kernel_peak_rss": 262389760,
+      "kernel_median_rss": 262160384,
+      "tree_peak_summed_rss": 413483008,
+      "tree_median_summed_rss": 362184704
+    },
+    {
+      "phase": "conversion_start",
+      "seconds": 0.01170492172241211,
+      "kernel_peak_rss": 262127616,
+      "kernel_median_rss": 262127616,
+      "tree_peak_summed_rss": 381337600,
+      "tree_median_summed_rss": 381337600
+    },
+    {
+      "phase": "preparation_end",
+      "seconds": 0.011919021606445312,
+      "kernel_peak_rss": 262520832,
+      "kernel_median_rss": 262520832,
+      "tree_peak_summed_rss": 381763584,
+      "tree_median_summed_rss": 381763584
+    },
+    {
+      "phase": "viewer_start",
+      "seconds": 0.5433850288391113,
+      "kernel_peak_rss": 358105088,
+      "kernel_median_rss": 325582848,
+      "tree_peak_summed_rss": 477380608,
+      "tree_median_summed_rss": 444825600
+    },
+    {
+      "phase": "viewer_ready",
+      "seconds": 0.0003380775451660156,
+      "kernel_peak_rss": 0,
+      "kernel_median_rss": 0,
+      "tree_peak_summed_rss": 0,
+      "tree_median_summed_rss": 0
+    },
+    {
+      "phase": "numerical_start",
+      "seconds": 2.403715133666992,
+      "kernel_peak_rss": 573390848,
+      "kernel_median_rss": 487276544,
+      "tree_peak_summed_rss": 645414912,
+      "tree_median_summed_rss": 595427328
+    },
+    {
+      "phase": "numerical_end",
+      "seconds": 0.00012874603271484375,
+      "kernel_peak_rss": 0,
+      "kernel_median_rss": 0,
+      "tree_peak_summed_rss": 0,
+      "tree_median_summed_rss": 0
+    },
+    {
+      "phase": "seeking_start",
+      "seconds": 4.132958173751831,
+      "kernel_peak_rss": 661225472,
+      "kernel_median_rss": 628129792.0,
+      "tree_peak_summed_rss": 733249536,
+      "tree_median_summed_rss": 700153856.0
+    },
+    {
+      "phase": "seeking_end",
+      "seconds": 0.003712892532348633,
+      "kernel_peak_rss": 0,
+      "kernel_median_rss": 0,
+      "tree_peak_summed_rss": 0,
+      "tree_median_summed_rss": 0
+    },
+    {
+      "phase": "playback_0_start",
+      "seconds": 12.295516014099121,
+      "kernel_peak_rss": 658735104,
+      "kernel_median_rss": 617758720,
+      "tree_peak_summed_rss": 730808320,
+      "tree_median_summed_rss": 682852352
+    },
+    {
+      "phase": "playback_0_end",
+      "seconds": 0.004002094268798828,
+      "kernel_peak_rss": 0,
+      "kernel_median_rss": 0,
+      "tree_peak_summed_rss": 0,
+      "tree_median_summed_rss": 0
+    },
+    {
+      "phase": "playback_1_start",
+      "seconds": 12.318871974945068,
+      "kernel_peak_rss": 682606592,
+      "kernel_median_rss": 649265152,
+      "tree_peak_summed_rss": 747700224,
+      "tree_median_summed_rss": 714358784
+    },
+    {
+      "phase": "playback_1_end",
+      "seconds": 0.0036580562591552734,
+      "kernel_peak_rss": 0,
+      "kernel_median_rss": 0,
+      "tree_peak_summed_rss": 0,
+      "tree_median_summed_rss": 0
+    },
+    {
+      "phase": "playback_2_start",
+      "seconds": 12.306627750396729,
+      "kernel_peak_rss": 682393600,
+      "kernel_median_rss": 649068544.0,
+      "tree_peak_summed_rss": 747487232,
+      "tree_median_summed_rss": 714162176.0
+    },
+    {
+      "phase": "playback_2_end",
+      "seconds": 0.037786245346069336,
+      "kernel_peak_rss": 649281536,
+      "kernel_median_rss": 649281536.0,
+      "tree_peak_summed_rss": 714407936,
+      "tree_median_summed_rss": 714407936.0
+    },
+    {
+      "phase": "closed_0",
+      "seconds": 0.2633216381072998,
+      "kernel_peak_rss": 651165696,
+      "kernel_median_rss": 649347072,
+      "tree_peak_summed_rss": 716292096,
+      "tree_median_summed_rss": 714473472
+    },
+    {
+      "phase": "reopened_0",
+      "seconds": 0.03712630271911621,
+      "kernel_peak_rss": 619413504,
+      "kernel_median_rss": 618512384.0,
+      "tree_peak_summed_rss": 684556288,
+      "tree_median_summed_rss": 683655168.0
+    },
+    {
+      "phase": "closed_1",
+      "seconds": 0.2595200538635254,
+      "kernel_peak_rss": 619134976,
+      "kernel_median_rss": 617914368.0,
+      "tree_peak_summed_rss": 684277760,
+      "tree_median_summed_rss": 683057152.0
+    },
+    {
+      "phase": "reopened_1",
+      "seconds": 0.037477731704711914,
+      "kernel_peak_rss": 619134976,
+      "kernel_median_rss": 619134976.0,
+      "tree_peak_summed_rss": 684277760,
+      "tree_median_summed_rss": 684277760.0
+    },
+    {
+      "phase": "closed_2",
+      "seconds": 0.2581460475921631,
+      "kernel_peak_rss": 620560384,
+      "kernel_median_rss": 619446272,
+      "tree_peak_summed_rss": 685703168,
+      "tree_median_summed_rss": 684589056
+    },
+    {
+      "phase": "reopened_2",
+      "seconds": 0.03723597526550293,
+      "kernel_peak_rss": 620560384,
+      "kernel_median_rss": 620560384.0,
+      "tree_peak_summed_rss": 685719552,
+      "tree_median_summed_rss": 685719552.0
+    },
+    {
+      "phase": "closed_callback_retained",
+      "seconds": 0.03496408462524414,
+      "kernel_peak_rss": 620560384,
+      "kernel_median_rss": 620560384,
+      "tree_peak_summed_rss": 685719552,
+      "tree_median_summed_rss": 685719552
+    }
+  ],
+  "note": "Tree RSS sums include shared pages; 10 ms sampling can miss short peaks."
+}

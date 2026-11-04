@@ -1,0 +1,15 @@
+{
+  "argv": [
+    "/Library/Frameworks/Python.framework/Versions/3.13/bin/python3.13",
+    "-m",
+    "ipykernel_launcher",
+    "-f",
+    "{connection_file}"
+  ],
+  "display_name": "footprint tornado",
+  "language": "python",
+  "env": {
+    "PYTHONPATH": "/Users/dylanvatanapradit/pyvista",
+    "DYLD_INSERT_LIBRARIES": "/opt/homebrew/lib/libmimalloc.dylib"
+  }
+}

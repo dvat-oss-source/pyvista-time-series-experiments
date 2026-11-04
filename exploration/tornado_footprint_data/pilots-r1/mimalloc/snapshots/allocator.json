@@ -1,0 +1,19 @@
+{
+  "name": "allocator",
+  "trigger": "start",
+  "started": 1793752339.158304,
+  "footprint_at_start": 68649704,
+  "rss_at_start": 85999616,
+  "vmmap_full_file": "snapshots/allocator-vmmap_full.txt.gz",
+  "vmmap_full_returncode": 0,
+  "allocator_lines": [
+    "__TEXT                      10259c000-1025c0000    [  144K   128K     0K     0K] r-x/rwx SM=COW          /opt/homebrew/Cellar/mimalloc/3.6.1/lib/libmimalloc.3.6.dylib",
+    "__DATA_CONST                1025c0000-1025c4000    [   16K    16K     0K     0K] r--/rw- SM=COW          /opt/homebrew/Cellar/mimalloc/3.6.1/lib/libmimalloc.3.6.dylib",
+    "__LINKEDIT                  1025d4000-1025e0000    [   48K    32K     0K     0K] r--/rwx SM=COW          /opt/homebrew/Cellar/mimalloc/3.6.1/lib/libmimalloc.3.6.dylib",
+    "__DATA                      1025c4000-1025d4000    [   64K    48K    48K     0K] rw-/rwx SM=COW          /opt/homebrew/Cellar/mimalloc/3.6.1/lib/libmimalloc.3.6.dylib",
+    "Can't examine target process's malloc zone mimalloc_0x1025c4128, so memory analysis will be incomplete or incorrect.",
+    "Reason: failed to resolve canonical path for /opt/homebrew/Cellar/mimalloc/3.6.1/lib/libmimalloc.3.6.dylib in dyld shared cache."
+  ],
+  "footprint_at_end": 90669968,
+  "finished": 1793752339.7695382
+}

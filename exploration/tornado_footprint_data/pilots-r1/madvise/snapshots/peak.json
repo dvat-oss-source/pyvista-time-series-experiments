@@ -1,0 +1,658 @@
+{
+  "name": "peak",
+  "trigger": "running max 235.8 MiB",
+  "started": 1793752565.9491699,
+  "footprint_at_start": 247252240,
+  "rss_at_start": 362332160,
+  "footprint_file": "snapshots/peak-footprint.txt.gz",
+  "footprint_returncode": 0,
+  "footprint_categories": {
+    "TOTAL": {
+      "dirty": 223346688.0,
+      "clean": 88080384.0,
+      "reclaimable": 24117248.0,
+      "regions": 6121
+    },
+    "Untagged": {
+      "dirty": 115343360.0,
+      "clean": 0.0,
+      "reclaimable": 24117248.0,
+      "regions": 114
+    },
+    "Malloc Small": {
+      "dirty": 61865984.0,
+      "clean": 0.0,
+      "reclaimable": 0.0,
+      "regions": 22
+    },
+    "Malloc Large": {
+      "dirty": 18874368.0,
+      "clean": 0.0,
+      "reclaimable": 0.0,
+      "regions": 5
+    },
+    "__DATA_CONST .../libvtkCommonCore.dylib": {
+      "dirty": 2818048.0,
+      "clean": 0.0,
+      "reclaimable": 0.0,
+      "regions": 1
+    },
+    "Dyld Private Memory": {
+      "dirty": 1343488.0,
+      "clean": 0.0,
+      "reclaimable": 0.0,
+      "regions": 18
+    },
+    "Malloc Metadata": {
+      "dirty": 1196032.0,
+      "clean": 0.0,
+      "reclaimable": 0.0,
+      "regions": 11
+    },
+    "page table": {
+      "dirty": 902144.0,
+      "clean": 0.0,
+      "reclaimable": 0.0,
+      "regions": 1
+    },
+    "__DATA .../libvtkRenderingVolume.dylib": {
+      "dirty": 802816.0,
+      "clean": 0.0,
+      "reclaimable": 0.0,
+      "regions": 2
+    },
+    "__DATA_CONST .../libvtkFiltersCore.dylib": {
+      "dirty": 786432.0,
+      "clean": 0.0,
+      "reclaimable": 0.0,
+      "regions": 1
+    },
+    "__DATA .../vtkCommonCore.cpython-313-darwin.so": {
+      "dirty": 720896.0,
+      "clean": 0.0,
+      "reclaimable": 0.0,
+      "regions": 2
+    },
+    "__DATA_CONST .../libvtkFiltersGeneral.dylib": {
+      "dirty": 638976.0,
+      "clean": 0.0,
+      "reclaimable": 0.0,
+      "regions": 1
+    },
+    "Stack": {
+      "dirty": 557056.0,
+      "clean": 0.0,
+      "reclaimable": 0.0,
+      "regions": 40
+    },
+    "__DATA .../vtkCommonDataModel.cpython-313-darwin.so": {
+      "dirty": 557056.0,
+      "clean": 0.0,
+      "reclaimable": 0.0,
+      "regions": 2
+    },
+    "__DATA_CONST .../libvtkCommonMisc.dylib": {
+      "dirty": 409600.0,
+      "clean": 0.0,
+      "reclaimable": 0.0,
+      "regions": 1
+    },
+    "__DATA .../vtkInteractionWidgets.cpython-313-darwin.so": {
+      "dirty": 393216.0,
+      "clean": 0.0,
+      "reclaimable": 0.0,
+      "regions": 2
+    },
+    "__DATA_CONST .../libcrypto.3.dylib": {
+      "dirty": 360448.0,
+      "clean": 0.0,
+      "reclaimable": 0.0,
+      "regions": 1
+    },
+    "__DATA .../vtkRenderingCore.cpython-313-darwin.so": {
+      "dirty": 344064.0,
+      "clean": 0.0,
+      "reclaimable": 0.0,
+      "regions": 2
+    },
+    "__DATA_CONST .../libvtkFiltersHybrid.dylib": {
+      "dirty": 327680.0,
+      "clean": 0.0,
+      "reclaimable": 0.0,
+      "regions": 1
+    },
+    "unused dyld shared cache area": {
+      "dirty": 282624.0,
+      "clean": 0.0,
+      "reclaimable": 0.0,
+      "regions": 1675
+    },
+    "__DATA .../vtkFiltersCore.cpython-313-darwin.so": {
+      "dirty": 278528.0,
+      "clean": 0.0,
+      "reclaimable": 0.0,
+      "regions": 2
+    },
+    "Malloc Tiny": {
+      "dirty": 245760.0,
+      "clean": 0.0,
+      "reclaimable": 0.0,
+      "regions": 1
+    },
+    "__DATA_CONST .../libvtkCommonDataModel.dylib": {
+      "dirty": 229376.0,
+      "clean": 0.0,
+      "reclaimable": 0.0,
+      "regions": 1
+    },
+    "__DATA .../_multiarray_umath.cpython-313-darwin.so": {
+      "dirty": 212992.0,
+      "clean": 0.0,
+      "reclaimable": 0.0,
+      "regions": 2
+    },
+    "__DATA .../vtkFiltersGeneral.cpython-313-darwin.so": {
+      "dirty": 212992.0,
+      "clean": 0.0,
+      "reclaimable": 0.0,
+      "regions": 2
+    },
+    "__DATA .../vtkRenderingOpenGL2.cpython-313-darwin.so": {
+      "dirty": 196608.0,
+      "clean": 0.0,
+      "reclaimable": 0.0,
+      "regions": 2
+    },
+    "__DATA_CONST .../libvtkInteractionWidgets.dylib": {
+      "dirty": 196608.0,
+      "clean": 0.0,
+      "reclaimable": 0.0,
+      "regions": 1
+    },
+    "__DATA_CONST .../libvtkRenderingVolume.dylib": {
+      "dirty": 196608.0,
+      "clean": 0.0,
+      "reclaimable": 0.0,
+      "regions": 1
+    },
+    "__DATA .../vtkRenderingAnnotation.cpython-313-darwin.so": {
+      "dirty": 147456.0,
+      "clean": 0.0,
+      "reclaimable": 0.0,
+      "regions": 2
+    },
+    "__DATA_CONST .../libvtkRenderingOpenGL2.dylib": {
+      "dirty": 147456.0,
+      "clean": 0.0,
+      "reclaimable": 0.0,
+      "regions": 1
+    },
+    "__DATA_CONST .../libvtkRenderingCore.dylib": {
+      "dirty": 131072.0,
+      "clean": 0.0,
+      "reclaimable": 0.0,
+      "regions": 1
+    },
+    "__TPRO_CONST .../dyld": {
+      "dirty": 131072.0,
+      "clean": 0.0,
+      "reclaimable": 0.0,
+      "regions": 1
+    },
+    "__DATA .../vtkChartsCore.cpython-313-darwin.so": {
+      "dirty": 114688.0,
+      "clean": 0.0,
+      "reclaimable": 0.0,
+      "regions": 2
+    },
+    "__DATA_CONST .../libvtkFiltersReduction.dylib": {
+      "dirty": 114688.0,
+      "clean": 0.0,
+      "reclaimable": 0.0,
+      "regions": 1
+    },
+    "__DATA .../vtkFiltersSources.cpython-313-darwin.so": {
+      "dirty": 98304.0,
+      "clean": 0.0,
+      "reclaimable": 0.0,
+      "regions": 2
+    },
+    "__DATA .../vtkCommonExecutionModel.cpython-313-darwin.so": {
+      "dirty": 98304.0,
+      "clean": 0.0,
+      "reclaimable": 0.0,
+      "regions": 2
+    },
+    "__DATA_DIRTY .../AppKit": {
+      "dirty": 97280.0,
+      "clean": 0.0,
+      "reclaimable": 0.0,
+      "regions": 1
+    },
+    "__DATA_DIRTY .../Foundation": {
+      "dirty": 86016.0,
+      "clean": 0.0,
+      "reclaimable": 0.0,
+      "regions": 1
+    },
+    "__DATA .../vtkIOImage.cpython-313-darwin.so": {
+      "dirty": 81920.0,
+      "clean": 0.0,
+      "reclaimable": 0.0,
+      "regions": 2
+    },
+    "__DATA_CONST .../libvtkFiltersGeometry.dylib": {
+      "dirty": 81920.0,
+      "clean": 0.0,
+      "reclaimable": 0.0,
+      "regions": 1
+    }
+  },
+  "footprint_tool_total": 223346688.0,
+  "vmmap_file": "snapshots/peak-vmmap.txt.gz",
+  "vmmap_returncode": 0,
+  "vmmap": {
+    "physical_footprint": {
+      "current": 223032115.2,
+      "peak": 247254220.8
+    },
+    "regions": {
+      "Activity Tracing": {
+        "virtual": 262144.0,
+        "resident": 32768.0,
+        "dirty": 32768.0,
+        "swapped": 0.0,
+        "volatile": 0.0,
+        "nonvolatile": 32768.0,
+        "empty": 0.0,
+        "regions": 1
+      },
+      "Deferred Reclaim": {
+        "virtual": 67108864.0,
+        "resident": 16384.0,
+        "dirty": 16384.0,
+        "swapped": 0.0,
+        "volatile": 0.0,
+        "nonvolatile": 0.0,
+        "empty": 0.0,
+        "regions": 1
+      },
+      "Dyld Private Memory": {
+        "virtual": 1998848.0,
+        "resident": 1343488.0,
+        "dirty": 1343488.0,
+        "swapped": 0.0,
+        "volatile": 0.0,
+        "nonvolatile": 0.0,
+        "empty": 0.0,
+        "regions": 18
+      },
+      "Guard": {
+        "virtual": 413390602240.0,
+        "resident": 0.0,
+        "dirty": 0.0,
+        "swapped": 0.0,
+        "volatile": 0.0,
+        "nonvolatile": 0.0,
+        "empty": 0.0,
+        "regions": 1
+      },
+      "Malloc Guard Page": {
+        "virtual": 3407872.0,
+        "resident": 0.0,
+        "dirty": 0.0,
+        "swapped": 0.0,
+        "volatile": 0.0,
+        "nonvolatile": 0.0,
+        "empty": 0.0,
+        "regions": 4
+      },
+      "Malloc Large": {
+        "virtual": 8110080.0,
+        "resident": 8093696.0,
+        "dirty": 8093696.0,
+        "swapped": 0.0,
+        "volatile": 0.0,
+        "nonvolatile": 0.0,
+        "empty": 0.0,
+        "regions": 2
+      },
+      "Malloc Large (empty)": {
+        "virtual": 78223769.6,
+        "resident": 11010048.0,
+        "dirty": 11010048.0,
+        "swapped": 0.0,
+        "volatile": 0.0,
+        "nonvolatile": 0.0,
+        "empty": 0.0,
+        "regions": 3
+      },
+      "Malloc Metadata": {
+        "virtual": 524288.0,
+        "resident": 524288.0,
+        "dirty": 524288.0,
+        "swapped": 0.0,
+        "volatile": 0.0,
+        "nonvolatile": 0.0,
+        "empty": 0.0,
+        "regions": 5
+      },
+      "Malloc Metadata metadata": {
+        "virtual": 1245184.0,
+        "resident": 671744.0,
+        "dirty": 671744.0,
+        "swapped": 0.0,
+        "volatile": 0.0,
+        "nonvolatile": 0.0,
+        "empty": 0.0,
+        "regions": 2
+      },
+      "Malloc Nano metadata": {
+        "virtual": 65536.0,
+        "resident": 49152.0,
+        "dirty": 49152.0,
+        "swapped": 0.0,
+        "volatile": 0.0,
+        "nonvolatile": 0.0,
+        "empty": 0.0,
+        "regions": 2
+      },
+      "Malloc Small": {
+        "virtual": 87975526.4,
+        "resident": 62075699.2,
+        "dirty": 62075699.2,
+        "swapped": 0.0,
+        "volatile": 0.0,
+        "nonvolatile": 0.0,
+        "empty": 0.0,
+        "regions": 28
+      },
+      "Malloc Small (empty)": {
+        "virtual": 4292608.0,
+        "resident": 131072.0,
+        "dirty": 131072.0,
+        "swapped": 0.0,
+        "volatile": 0.0,
+        "nonvolatile": 0.0,
+        "empty": 0.0,
+        "regions": 3
+      },
+      "Malloc Tiny": {
+        "virtual": 4194304.0,
+        "resident": 245760.0,
+        "dirty": 245760.0,
+        "swapped": 0.0,
+        "volatile": 0.0,
+        "nonvolatile": 0.0,
+        "empty": 0.0,
+        "regions": 1
+      },
+      "OS Alloc Once": {
+        "virtual": 32768.0,
+        "resident": 16384.0,
+        "dirty": 16384.0,
+        "swapped": 0.0,
+        "volatile": 0.0,
+        "nonvolatile": 0.0,
+        "empty": 0.0,
+        "regions": 1
+      },
+      "Stack": {
+        "virtual": 157391257.6,
+        "resident": 557056.0,
+        "dirty": 557056.0,
+        "swapped": 0.0,
+        "volatile": 0.0,
+        "nonvolatile": 0.0,
+        "empty": 0.0,
+        "regions": 20
+      },
+      "Stack Guard": {
+        "virtual": 327680.0,
+        "resident": 0.0,
+        "dirty": 0.0,
+        "swapped": 0.0,
+        "volatile": 0.0,
+        "nonvolatile": 0.0,
+        "empty": 0.0,
+        "regions": 20
+      },
+      "Untagged": {
+        "virtual": 158544691.2,
+        "resident": 139355750.4,
+        "dirty": 115238502.4,
+        "swapped": 0.0,
+        "volatile": 0.0,
+        "nonvolatile": 0.0,
+        "empty": 0.0,
+        "regions": 96
+      },
+      "__AUTH": {
+        "virtual": 3631104.0,
+        "resident": 1010688.0,
+        "dirty": 189440.0,
+        "swapped": 0.0,
+        "volatile": 0.0,
+        "nonvolatile": 0.0,
+        "empty": 0.0,
+        "regions": 353
+      },
+      "__AUTH_CONST": {
+        "virtual": 59559116.8,
+        "resident": 16357785.6,
+        "dirty": 0.0,
+        "swapped": 0.0,
+        "volatile": 0.0,
+        "nonvolatile": 0.0,
+        "empty": 0.0,
+        "regions": 583
+      },
+      "__CTF": {
+        "virtual": 824.0,
+        "resident": 824.0,
+        "dirty": 0.0,
+        "swapped": 0.0,
+        "volatile": 0.0,
+        "nonvolatile": 0.0,
+        "empty": 0.0,
+        "regions": 1
+      },
+      "__DATA": {
+        "virtual": 30723276.8,
+        "resident": 12792627.2,
+        "dirty": 9167872.0,
+        "swapped": 0.0,
+        "volatile": 0.0,
+        "nonvolatile": 0.0,
+        "empty": 0.0,
+        "regions": 827
+      },
+      "__DATA_CONST": {
+        "virtual": 40579891.2,
+        "resident": 21286092.8,
+        "dirty": 11010048.0,
+        "swapped": 0.0,
+        "volatile": 0.0,
+        "nonvolatile": 0.0,
+        "empty": 0.0,
+        "regions": 805
+      },
+      "__DATA_DIRTY": {
+        "virtual": 3987456.0,
+        "resident": 1502208.0,
+        "dirty": 1027072.0,
+        "swapped": 0.0,
+        "volatile": 0.0,
+        "nonvolatile": 0.0,
+        "empty": 0.0,
+        "regions": 521
+      },
+      "__FONT_DATA": {
+        "virtual": 2352.0,
+        "resident": 2352.0,
+        "dirty": 0.0,
+        "swapped": 0.0,
+        "volatile": 0.0,
+        "nonvolatile": 0.0,
+        "empty": 0.0,
+        "regions": 1
+      },
+      "__LINKEDIT": {
+        "virtual": 1825361100.8,
+        "resident": 34812723.2,
+        "dirty": 0.0,
+        "swapped": 0.0,
+        "volatile": 0.0,
+        "nonvolatile": 0.0,
+        "empty": 0.0,
+        "regions": 224
+      },
+      "__OBJC_RO": {
+        "virtual": 123731968.0,
+        "resident": 42677043.2,
+        "dirty": 0.0,
+        "swapped": 0.0,
+        "volatile": 0.0,
+        "nonvolatile": 0.0,
+        "empty": 0.0,
+        "regions": 1
+      },
+      "__OBJC_RW": {
+        "virtual": 2800640.0,
+        "resident": 1522688.0,
+        "dirty": 64512.0,
+        "swapped": 0.0,
+        "volatile": 0.0,
+        "nonvolatile": 0.0,
+        "empty": 0.0,
+        "regions": 1
+      },
+      "__TEXT": {
+        "virtual": 966996787.2,
+        "resident": 373502771.2,
+        "dirty": 0.0,
+        "swapped": 0.0,
+        "volatile": 0.0,
+        "nonvolatile": 0.0,
+        "empty": 0.0,
+        "regions": 882
+      },
+      "__TPRO_CONST": {
+        "virtual": 135168.0,
+        "resident": 135168.0,
+        "dirty": 131072.0,
+        "swapped": 0.0,
+        "volatile": 0.0,
+        "nonvolatile": 0.0,
+        "empty": 0.0,
+        "regions": 4
+      },
+      "mapped file": {
+        "virtual": 64906854.4,
+        "resident": 2818048.0,
+        "dirty": 0.0,
+        "swapped": 0.0,
+        "volatile": 0.0,
+        "nonvolatile": 0.0,
+        "empty": 0.0,
+        "regions": 11
+      },
+      "page table in kernel": {
+        "virtual": 902144.0,
+        "resident": 902144.0,
+        "dirty": 902144.0,
+        "swapped": 0.0,
+        "volatile": 0.0,
+        "nonvolatile": 0.0,
+        "empty": 0.0,
+        "regions": 1
+      },
+      "shared memory": {
+        "virtual": 1425408.0,
+        "resident": 262144.0,
+        "dirty": 262144.0,
+        "swapped": 0.0,
+        "volatile": 0.0,
+        "nonvolatile": 0.0,
+        "empty": 0.0,
+        "regions": 16
+      },
+      "unused but dirty shlib __DATA": {
+        "virtual": 299008.0,
+        "resident": 299008.0,
+        "dirty": 299008.0,
+        "swapped": 0.0,
+        "volatile": 0.0,
+        "nonvolatile": 0.0,
+        "empty": 0.0,
+        "regions": 198
+      },
+      "TOTAL": {
+        "virtual": 417041324441.6,
+        "resident": 734212915.2,
+        "dirty": 223136972.8,
+        "swapped": 0.0,
+        "volatile": 0.0,
+        "nonvolatile": 32768.0,
+        "empty": 0.0,
+        "regions": 4637
+      },
+      "DefaultMallocZone_0x104e90000": {
+        "virtual": 105696460.8,
+        "resident": 71093452.8,
+        "dirty": 71093452.8,
+        "swapped": 0.0,
+        "volatile": 89309.0,
+        "nonvolatile": 61341696.0,
+        "empty": 9718784.0,
+        "regions": 14
+      },
+      "LSBindingEvaluator_0x121bd4000": {
+        "virtual": 98304.0,
+        "resident": 98304.0,
+        "dirty": 98304.0,
+        "swapped": 0.0,
+        "volatile": 0.0,
+        "nonvolatile": 0.0,
+        "empty": 98304.0,
+        "regions": 100
+      },
+      "objc-class_rw_t_0x104f44000": {
+        "virtual": 65536.0,
+        "resident": 65536.0,
+        "dirty": 65536.0,
+        "swapped": 0.0,
+        "volatile": 1182.0,
+        "nonvolatile": 28672.0,
+        "empty": 36864.0,
+        "regions": 57
+      },
+      "QuartzCore_0x120e30000": {
+        "virtual": 16384.0,
+        "resident": 16384.0,
+        "dirty": 16384.0,
+        "swapped": 0.0,
+        "volatile": 1.0,
+        "nonvolatile": 384.0,
+        "empty": 16384.0,
+        "regions": 98
+      }
+    }
+  },
+  "footprint_at_end": 247252240,
+  "finished": 1793752566.762342,
+  "history": [
+    {
+      "trigger": "deferred to playback_0",
+      "started": 1793752564.998157,
+      "finished": 1793752565.910669,
+      "footprint_at_start": 223069456
+    },
+    {
+      "trigger": "running max 235.8 MiB",
+      "started": 1793752565.9491699,
+      "finished": 1793752566.762342,
+      "footprint_at_start": 247252240
+    }
+  ]
+}

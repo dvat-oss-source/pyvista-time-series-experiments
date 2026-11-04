@@ -1,0 +1,3060 @@
+{
+  "schema": "tornado-footprint/1",
+  "status": "ok",
+  "returncode": 0,
+  "arm": "baseline",
+  "factors": [],
+  "kernel_pid": 73955,
+  "launched": 1793752031.009535,
+  "python": "/Library/Frameworks/Python.framework/Versions/3.13/bin/python3.13",
+  "python_version": "3.13.6 (v3.13.6:4e665351082, Aug  6 2025, 11:22:35) [Clang 16.0.0 (clang-1600.0.26.6)]",
+  "pyvista": "/Users/dylanvatanapradit/pyvista/pyvista/__init__.py",
+  "kernel_env": {
+    "PYTHONPATH": "/Users/dylanvatanapradit/pyvista"
+  },
+  "prewarm": null,
+  "footprint": {
+    "peak": {
+      "mib": 481.0951461791992,
+      "time": 1793752039.2211468,
+      "phase": "playback_0"
+    },
+    "workload_lifetime_max_mib": 481.1107711791992,
+    "diagnostic_peak": {
+      "mib": 1239.2987976074219,
+      "time": 1793752087.483056,
+      "phase": "diagnostic"
+    },
+    "steady_mib": 456.3138961791992,
+    "steady": {
+      "n": 1231,
+      "median_mib": 456.3138961791992,
+      "p05_mib": 456.2826461791992,
+      "p95_mib": 481.0795211791992,
+      "max_mib": 481.0951461791992,
+      "min_mib": 456.2826461791992
+    },
+    "after_close_mib": 460.8295211791992,
+    "startup_max_mib": 232.06371307373047,
+    "peak_phase_p95_mib": 481.0795211791992,
+    "phase_max_mib": {
+      "start": 133.2667007446289,
+      "arm_ready": 132.7354507446289,
+      "preparation": 168.5792465209961,
+      "transform_ready": 169.0636215209961,
+      "startup": 232.06371307373047,
+      "seeking": 481.0170211791992,
+      "seeking_done": 481.0013961791992,
+      "playback_0": 481.0951461791992,
+      "playback_1": 481.0951461791992,
+      "playback_1_stop": 481.0638961791992,
+      "playback_2": 481.0951461791992,
+      "close_0": 456.3138961791992,
+      "reopen_0": 458.0170211791992,
+      "close_1": 458.0326461791992,
+      "reopen_1": 459.5326461791992,
+      "close_2": 459.5326461791992,
+      "reopen_2": 460.8295211791992,
+      "final_close": 460.8295211791992,
+      "after_close": 460.8295211791992,
+      "after_close_snapshot": 460.8295211791992,
+      "diagnostic": 1239.2987976074219,
+      "end": 1207.5019226074219
+    },
+    "peak_snapshot_footprint_mib": 481.0013961791992,
+    "peak_snapshot_gap_mib": 0.09375
+  },
+  "rss": {
+    "peak": {
+      "mib": 569.140625,
+      "time": 1793752055.323052,
+      "phase": "playback_1"
+    },
+    "workload_lifetime_max_mib": 569.1875,
+    "steady_mib": 543.75,
+    "after_close_mib": 549.171875,
+    "phase_max_mib": {
+      "start": 205.3125,
+      "arm_ready": 205.5625,
+      "preparation": 247.578125,
+      "transform_ready": 246.34375,
+      "startup": 328.828125,
+      "seeking": 564.015625,
+      "seeking_done": 561.796875,
+      "playback_0": 564.0625,
+      "playback_1": 569.140625,
+      "playback_1_stop": 566.796875,
+      "playback_2": 569.125,
+      "close_0": 544.140625,
+      "reopen_0": 546.359375,
+      "close_1": 546.375,
+      "reopen_1": 548.265625,
+      "close_2": 547.875,
+      "reopen_2": 550.078125,
+      "final_close": 549.171875,
+      "after_close": 549.171875,
+      "after_close_snapshot": 549.171875,
+      "diagnostic": 1133.234375,
+      "end": 1101.53125
+    }
+  },
+  "footprint_minus_rss_mib": {
+    "steady": -87.43610382080078,
+    "after_close": -88.34235382080078
+  },
+  "accounting": {
+    "third_cycle_mid": {
+      "footprint_mib": 456.3138961791992,
+      "rss_mib": 543.75,
+      "internal_mib": 434.40625,
+      "reusable_mib": 0.734375,
+      "reusable_peak_mib": 0.734375,
+      "compressed_mib": 20.9375,
+      "purgeable_volatile_resident_mib": 0.0,
+      "resident_size_mib": 543.75,
+      "resident_size_peak_mib": 569.1875,
+      "madvise": null
+    },
+    "after_close": {
+      "footprint_mib": 460.8295211791992,
+      "rss_mib": 549.171875,
+      "internal_mib": 439.796875,
+      "reusable_mib": 0.75,
+      "reusable_peak_mib": 0.75,
+      "compressed_mib": 20.0625,
+      "purgeable_volatile_resident_mib": 0.0,
+      "resident_size_mib": 549.171875,
+      "resident_size_peak_mib": 569.1875,
+      "madvise": null
+    },
+    "after_close_snapshot": {
+      "footprint_mib": 460.8295211791992,
+      "rss_mib": 549.171875,
+      "internal_mib": 439.796875,
+      "reusable_mib": 0.75,
+      "reusable_peak_mib": 0.75,
+      "compressed_mib": 20.0625,
+      "purgeable_volatile_resident_mib": 0.0,
+      "resident_size_mib": 549.171875,
+      "resident_size_peak_mib": 569.1875,
+      "madvise": null
+    },
+    "diagnostic": {
+      "footprint_mib": 460.8920211791992,
+      "rss_mib": 549.25,
+      "internal_mib": 439.875,
+      "reusable_mib": 0.75,
+      "reusable_peak_mib": 0.75,
+      "compressed_mib": 20.046875,
+      "purgeable_volatile_resident_mib": 0.0,
+      "resident_size_mib": 549.25,
+      "resident_size_peak_mib": 569.1875,
+      "madvise": null
+    }
+  },
+  "times": {
+    "preparation_s": 1.3106942176818848,
+    "startup_s": 0.6087007522583008,
+    "seek_s": 1.0322119589836802,
+    "reopen_s": [
+      0.2666611671447754,
+      0.26136088371276855,
+      0.2628798484802246
+    ],
+    "diagnostic_s": 12.919246912002563
+  },
+  "peak_margin_mib": 8.0,
+  "provenance": {
+    "notebook_sha256": "e250495f2369ea02becef3197fc614b785feec1fa40b513fea077c78b9cc0072",
+    "time_series_sha256": "a9c939856dc83800ac685945f219df58b963175219b2ea3898dd1e309edfc3c9",
+    "harness_sha256": "0115f3341daa1313301c05e65d33add3b046e1f61d7ed03ade5d5bb76cd7d896",
+    "kernel_module_sha256": "e32fdcaada1753b22b961acdaecca4073cf636559d665bc997364f796e05be49",
+    "git_rev": "1ebbfd589068396540a0729f73d356f6234480c4",
+    "git_dirty": true,
+    "git_dirty_files": [
+      "M exploration/footprint_kernel.py",
+      " M exploration/footprint_tornado.py",
+      " M tornado_animation.ipynb"
+    ],
+    "interpreter": "/Library/Frameworks/Python.framework/Versions/3.13/bin/python3.13",
+    "interpreter_version": "3.13.6 (v3.13.6:4e665351082, Aug  6 2025, 11:22:35) [Clang 16.0.0 (clang-1600.0.26.6)]",
+    "versions": {
+      "pyvista": "0.50.dev0",
+      "vtk": "9.7.1",
+      "pyvista-zstd": "0.7.0",
+      "numpy": "2.2.6",
+      "trame": "4.0.0",
+      "trame-pyvista": "0.2.1",
+      "nbclient": "0.10.2"
+    },
+    "imported_versions": {
+      "pyvista": "0.50.dev0",
+      "vtk": "9.7.1",
+      "pyvista_zstd": "0.7.0",
+      "numpy": "2.2.6",
+      "trame": "4.0.0"
+    }
+  },
+  "snapshots": {
+    "peak": {
+      "name": "peak",
+      "trigger": "deferred to playback_0",
+      "started": 1793752036.313693,
+      "footprint_at_start": 504366520,
+      "rss_at_start": 589103104,
+      "footprint_file": "snapshots/peak-footprint.txt.gz",
+      "footprint_returncode": 0,
+      "footprint_categories": {
+        "TOTAL": {
+          "dirty": 504365056.0,
+          "clean": 88080384.0,
+          "reclaimable": 0.0,
+          "regions": 6138
+        },
+        "Malloc Large": {
+          "dirty": 325058560.0,
+          "clean": 0.0,
+          "reclaimable": 0.0,
+          "regions": 18
+        },
+        "Untagged": {
+          "dirty": 91226112.0,
+          "clean": 0.0,
+          "reclaimable": 0.0,
+          "regions": 112
+        },
+        "Malloc Small": {
+          "dirty": 61865984.0,
+          "clean": 0.0,
+          "reclaimable": 0.0,
+          "regions": 21
+        },
+        "__DATA_CONST .../libvtkCommonCore.dylib": {
+          "dirty": 2818048.0,
+          "clean": 0.0,
+          "reclaimable": 0.0,
+          "regions": 1
+        },
+        "Malloc Metadata": {
+          "dirty": 1392640.0,
+          "clean": 0.0,
+          "reclaimable": 0.0,
+          "regions": 12
+        },
+        "Dyld Private Memory": {
+          "dirty": 1343488.0,
+          "clean": 0.0,
+          "reclaimable": 0.0,
+          "regions": 18
+        },
+        "page table": {
+          "dirty": 1016832.0,
+          "clean": 0.0,
+          "reclaimable": 0.0,
+          "regions": 1
+        },
+        "__DATA .../libvtkRenderingVolume.dylib": {
+          "dirty": 802816.0,
+          "clean": 0.0,
+          "reclaimable": 0.0,
+          "regions": 2
+        },
+        "__DATA_CONST .../libvtkFiltersCore.dylib": {
+          "dirty": 786432.0,
+          "clean": 0.0,
+          "reclaimable": 0.0,
+          "regions": 1
+        },
+        "__DATA .../vtkCommonCore.cpython-313-darwin.so": {
+          "dirty": 720896.0,
+          "clean": 0.0,
+          "reclaimable": 0.0,
+          "regions": 2
+        },
+        "__DATA_CONST .../libvtkFiltersGeneral.dylib": {
+          "dirty": 638976.0,
+          "clean": 0.0,
+          "reclaimable": 0.0,
+          "regions": 1
+        },
+        "__DATA .../vtkCommonDataModel.cpython-313-darwin.so": {
+          "dirty": 557056.0,
+          "clean": 0.0,
+          "reclaimable": 0.0,
+          "regions": 2
+        },
+        "Stack": {
+          "dirty": 507904.0,
+          "clean": 0.0,
+          "reclaimable": 0.0,
+          "regions": 46
+        },
+        "__DATA_CONST .../libvtkCommonMisc.dylib": {
+          "dirty": 409600.0,
+          "clean": 0.0,
+          "reclaimable": 0.0,
+          "regions": 1
+        },
+        "__DATA .../vtkInteractionWidgets.cpython-313-darwin.so": {
+          "dirty": 393216.0,
+          "clean": 0.0,
+          "reclaimable": 0.0,
+          "regions": 2
+        },
+        "__DATA_CONST .../libcrypto.3.dylib": {
+          "dirty": 360448.0,
+          "clean": 0.0,
+          "reclaimable": 0.0,
+          "regions": 1
+        },
+        "__DATA .../vtkRenderingCore.cpython-313-darwin.so": {
+          "dirty": 344064.0,
+          "clean": 0.0,
+          "reclaimable": 0.0,
+          "regions": 2
+        },
+        "__DATA_CONST .../libvtkFiltersHybrid.dylib": {
+          "dirty": 327680.0,
+          "clean": 0.0,
+          "reclaimable": 0.0,
+          "regions": 1
+        },
+        "unused dyld shared cache area": {
+          "dirty": 282624.0,
+          "clean": 0.0,
+          "reclaimable": 0.0,
+          "regions": 1675
+        },
+        "__DATA .../vtkFiltersCore.cpython-313-darwin.so": {
+          "dirty": 278528.0,
+          "clean": 0.0,
+          "reclaimable": 0.0,
+          "regions": 2
+        },
+        "Malloc Tiny": {
+          "dirty": 245760.0,
+          "clean": 0.0,
+          "reclaimable": 0.0,
+          "regions": 1
+        },
+        "__DATA_CONST .../libvtkCommonDataModel.dylib": {
+          "dirty": 229376.0,
+          "clean": 0.0,
+          "reclaimable": 0.0,
+          "regions": 1
+        },
+        "__DATA .../_multiarray_umath.cpython-313-darwin.so": {
+          "dirty": 212992.0,
+          "clean": 0.0,
+          "reclaimable": 0.0,
+          "regions": 2
+        },
+        "__DATA .../vtkFiltersGeneral.cpython-313-darwin.so": {
+          "dirty": 212992.0,
+          "clean": 0.0,
+          "reclaimable": 0.0,
+          "regions": 2
+        },
+        "__DATA .../vtkRenderingOpenGL2.cpython-313-darwin.so": {
+          "dirty": 196608.0,
+          "clean": 0.0,
+          "reclaimable": 0.0,
+          "regions": 2
+        },
+        "__DATA_CONST .../libvtkInteractionWidgets.dylib": {
+          "dirty": 196608.0,
+          "clean": 0.0,
+          "reclaimable": 0.0,
+          "regions": 1
+        },
+        "__DATA_CONST .../libvtkRenderingVolume.dylib": {
+          "dirty": 196608.0,
+          "clean": 0.0,
+          "reclaimable": 0.0,
+          "regions": 1
+        },
+        "__DATA .../vtkRenderingAnnotation.cpython-313-darwin.so": {
+          "dirty": 147456.0,
+          "clean": 0.0,
+          "reclaimable": 0.0,
+          "regions": 2
+        },
+        "__DATA_CONST .../libvtkRenderingOpenGL2.dylib": {
+          "dirty": 147456.0,
+          "clean": 0.0,
+          "reclaimable": 0.0,
+          "regions": 1
+        },
+        "__DATA_CONST .../libvtkRenderingCore.dylib": {
+          "dirty": 131072.0,
+          "clean": 0.0,
+          "reclaimable": 0.0,
+          "regions": 1
+        },
+        "__TPRO_CONST .../dyld": {
+          "dirty": 131072.0,
+          "clean": 0.0,
+          "reclaimable": 0.0,
+          "regions": 1
+        },
+        "__DATA .../vtkChartsCore.cpython-313-darwin.so": {
+          "dirty": 114688.0,
+          "clean": 0.0,
+          "reclaimable": 0.0,
+          "regions": 2
+        },
+        "__DATA_CONST .../libvtkFiltersReduction.dylib": {
+          "dirty": 114688.0,
+          "clean": 0.0,
+          "reclaimable": 0.0,
+          "regions": 1
+        },
+        "__DATA .../vtkFiltersSources.cpython-313-darwin.so": {
+          "dirty": 98304.0,
+          "clean": 0.0,
+          "reclaimable": 0.0,
+          "regions": 2
+        },
+        "__DATA .../vtkCommonExecutionModel.cpython-313-darwin.so": {
+          "dirty": 98304.0,
+          "clean": 0.0,
+          "reclaimable": 0.0,
+          "regions": 2
+        },
+        "__DATA_DIRTY .../AppKit": {
+          "dirty": 97280.0,
+          "clean": 0.0,
+          "reclaimable": 0.0,
+          "regions": 1
+        },
+        "__DATA_DIRTY .../Foundation": {
+          "dirty": 86016.0,
+          "clean": 0.0,
+          "reclaimable": 0.0,
+          "regions": 1
+        },
+        "__DATA .../vtkIOImage.cpython-313-darwin.so": {
+          "dirty": 81920.0,
+          "clean": 0.0,
+          "reclaimable": 0.0,
+          "regions": 2
+        },
+        "__DATA_CONST .../libvtkFiltersGeometry.dylib": {
+          "dirty": 81920.0,
+          "clean": 0.0,
+          "reclaimable": 0.0,
+          "regions": 1
+        }
+      },
+      "footprint_tool_total": 504365056.0,
+      "vmmap_file": "snapshots/peak-vmmap.txt.gz",
+      "vmmap_returncode": 0,
+      "vmmap": {
+        "physical_footprint": {
+          "current": 504365056.0,
+          "peak": 504365056.0
+        },
+        "regions": {
+          "Activity Tracing": {
+            "virtual": 262144.0,
+            "resident": 32768.0,
+            "dirty": 32768.0,
+            "swapped": 0.0,
+            "volatile": 0.0,
+            "nonvolatile": 32768.0,
+            "empty": 0.0,
+            "regions": 1
+          },
+          "Deferred Reclaim": {
+            "virtual": 67108864.0,
+            "resident": 16384.0,
+            "dirty": 16384.0,
+            "swapped": 0.0,
+            "volatile": 0.0,
+            "nonvolatile": 0.0,
+            "empty": 0.0,
+            "regions": 1
+          },
+          "Dyld Private Memory": {
+            "virtual": 1998848.0,
+            "resident": 983040.0,
+            "dirty": 983040.0,
+            "swapped": 360448.0,
+            "volatile": 0.0,
+            "nonvolatile": 0.0,
+            "empty": 0.0,
+            "regions": 18
+          },
+          "Guard": {
+            "virtual": 413390602240.0,
+            "resident": 0.0,
+            "dirty": 0.0,
+            "swapped": 0.0,
+            "volatile": 0.0,
+            "nonvolatile": 0.0,
+            "empty": 0.0,
+            "regions": 1
+          },
+          "Malloc Guard Page": {
+            "virtual": 3997696.0,
+            "resident": 0.0,
+            "dirty": 0.0,
+            "swapped": 0.0,
+            "volatile": 0.0,
+            "nonvolatile": 0.0,
+            "empty": 0.0,
+            "regions": 4
+          },
+          "Malloc Large": {
+            "virtual": 31562137.6,
+            "resident": 30828134.4,
+            "dirty": 30828134.4,
+            "swapped": 540672.0,
+            "volatile": 0.0,
+            "nonvolatile": 0.0,
+            "empty": 0.0,
+            "regions": 3
+          },
+          "Malloc Large (empty)": {
+            "virtual": 362492723.2,
+            "resident": 267701452.8,
+            "dirty": 267701452.8,
+            "swapped": 25585254.4,
+            "volatile": 0.0,
+            "nonvolatile": 0.0,
+            "empty": 0.0,
+            "regions": 15
+          },
+          "Malloc Metadata": {
+            "virtual": 524288.0,
+            "resident": 196608.0,
+            "dirty": 196608.0,
+            "swapped": 327680.0,
+            "volatile": 0.0,
+            "nonvolatile": 0.0,
+            "empty": 0.0,
+            "regions": 5
+          },
+          "Malloc Metadata metadata": {
+            "virtual": 1769472.0,
+            "resident": 851968.0,
+            "dirty": 851968.0,
+            "swapped": 16384.0,
+            "volatile": 0.0,
+            "nonvolatile": 0.0,
+            "empty": 0.0,
+            "regions": 3
+          },
+          "Malloc Nano metadata": {
+            "virtual": 65536.0,
+            "resident": 49152.0,
+            "dirty": 49152.0,
+            "swapped": 0.0,
+            "volatile": 0.0,
+            "nonvolatile": 0.0,
+            "empty": 0.0,
+            "regions": 2
+          },
+          "Malloc Small": {
+            "virtual": 83781222.4,
+            "resident": 49597644.8,
+            "dirty": 49597644.8,
+            "swapped": 12163481.6,
+            "volatile": 0.0,
+            "nonvolatile": 0.0,
+            "empty": 0.0,
+            "regions": 28
+          },
+          "Malloc Small (empty)": {
+            "virtual": 4292608.0,
+            "resident": 32768.0,
+            "dirty": 32768.0,
+            "swapped": 98304.0,
+            "volatile": 0.0,
+            "nonvolatile": 0.0,
+            "empty": 0.0,
+            "regions": 3
+          },
+          "Malloc Tiny": {
+            "virtual": 4194304.0,
+            "resident": 245760.0,
+            "dirty": 245760.0,
+            "swapped": 0.0,
+            "volatile": 0.0,
+            "nonvolatile": 0.0,
+            "empty": 0.0,
+            "regions": 1
+          },
+          "OS Alloc Once": {
+            "virtual": 32768.0,
+            "resident": 16384.0,
+            "dirty": 16384.0,
+            "swapped": 0.0,
+            "volatile": 0.0,
+            "nonvolatile": 0.0,
+            "empty": 0.0,
+            "regions": 1
+          },
+          "Stack": {
+            "virtual": 157391257.6,
+            "resident": 491520.0,
+            "dirty": 491520.0,
+            "swapped": 16384.0,
+            "volatile": 0.0,
+            "nonvolatile": 0.0,
+            "empty": 0.0,
+            "regions": 20
+          },
+          "Stack (reserved)": {
+            "virtual": 1671168.0,
+            "resident": 0.0,
+            "dirty": 0.0,
+            "swapped": 0.0,
+            "volatile": 0.0,
+            "nonvolatile": 0.0,
+            "empty": 0.0,
+            "regions": 3
+          },
+          "Stack Guard": {
+            "virtual": 376832.0,
+            "resident": 0.0,
+            "dirty": 0.0,
+            "swapped": 0.0,
+            "volatile": 0.0,
+            "nonvolatile": 0.0,
+            "empty": 0.0,
+            "regions": 23
+          },
+          "Untagged": {
+            "virtual": 91435827.2,
+            "resident": 87241523.2,
+            "dirty": 87241523.2,
+            "swapped": 3637248.0,
+            "volatile": 0.0,
+            "nonvolatile": 0.0,
+            "empty": 0.0,
+            "regions": 94
+          },
+          "__AUTH": {
+            "virtual": 3631104.0,
+            "resident": 1057792.0,
+            "dirty": 128000.0,
+            "swapped": 62464.0,
+            "volatile": 0.0,
+            "nonvolatile": 0.0,
+            "empty": 0.0,
+            "regions": 353
+          },
+          "__AUTH_CONST": {
+            "virtual": 59559116.8,
+            "resident": 14994636.8,
+            "dirty": 0.0,
+            "swapped": 0.0,
+            "volatile": 0.0,
+            "nonvolatile": 0.0,
+            "empty": 0.0,
+            "regions": 583
+          },
+          "__CTF": {
+            "virtual": 824.0,
+            "resident": 824.0,
+            "dirty": 0.0,
+            "swapped": 0.0,
+            "volatile": 0.0,
+            "nonvolatile": 0.0,
+            "empty": 0.0,
+            "regions": 1
+          },
+          "__DATA": {
+            "virtual": 30723276.8,
+            "resident": 10905190.4,
+            "dirty": 7176192.0,
+            "swapped": 1991680.0,
+            "volatile": 0.0,
+            "nonvolatile": 0.0,
+            "empty": 0.0,
+            "regions": 827
+          },
+          "__DATA_CONST": {
+            "virtual": 40579891.2,
+            "resident": 12373196.8,
+            "dirty": 2572288.0,
+            "swapped": 8470528.0,
+            "volatile": 0.0,
+            "nonvolatile": 0.0,
+            "empty": 0.0,
+            "regions": 805
+          },
+          "__DATA_DIRTY": {
+            "virtual": 3987456.0,
+            "resident": 1158144.0,
+            "dirty": 614400.0,
+            "swapped": 412672.0,
+            "volatile": 0.0,
+            "nonvolatile": 0.0,
+            "empty": 0.0,
+            "regions": 521
+          },
+          "__FONT_DATA": {
+            "virtual": 2352.0,
+            "resident": 2352.0,
+            "dirty": 0.0,
+            "swapped": 0.0,
+            "volatile": 0.0,
+            "nonvolatile": 0.0,
+            "empty": 0.0,
+            "regions": 1
+          },
+          "__LINKEDIT": {
+            "virtual": 1825361100.8,
+            "resident": 26948403.2,
+            "dirty": 0.0,
+            "swapped": 0.0,
+            "volatile": 0.0,
+            "nonvolatile": 0.0,
+            "empty": 0.0,
+            "regions": 224
+          },
+          "__OBJC_RO": {
+            "virtual": 123731968.0,
+            "resident": 45613056.0,
+            "dirty": 0.0,
+            "swapped": 0.0,
+            "volatile": 0.0,
+            "nonvolatile": 0.0,
+            "empty": 0.0,
+            "regions": 1
+          },
+          "__OBJC_RW": {
+            "virtual": 2800640.0,
+            "resident": 1506304.0,
+            "dirty": 48128.0,
+            "swapped": 16384.0,
+            "volatile": 0.0,
+            "nonvolatile": 0.0,
+            "empty": 0.0,
+            "regions": 1
+          },
+          "__TEXT": {
+            "virtual": 966996787.2,
+            "resident": 379689369.6,
+            "dirty": 0.0,
+            "swapped": 0.0,
+            "volatile": 0.0,
+            "nonvolatile": 0.0,
+            "empty": 0.0,
+            "regions": 882
+          },
+          "__TPRO_CONST": {
+            "virtual": 135168.0,
+            "resident": 118784.0,
+            "dirty": 114688.0,
+            "swapped": 16384.0,
+            "volatile": 0.0,
+            "nonvolatile": 0.0,
+            "empty": 0.0,
+            "regions": 4
+          },
+          "mapped file": {
+            "virtual": 64906854.4,
+            "resident": 2818048.0,
+            "dirty": 0.0,
+            "swapped": 0.0,
+            "volatile": 0.0,
+            "nonvolatile": 0.0,
+            "empty": 0.0,
+            "regions": 11
+          },
+          "page table in kernel": {
+            "virtual": 1016832.0,
+            "resident": 1016832.0,
+            "dirty": 1016832.0,
+            "swapped": 0.0,
+            "volatile": 0.0,
+            "nonvolatile": 0.0,
+            "empty": 0.0,
+            "regions": 1
+          },
+          "shared memory": {
+            "virtual": 901120.0,
+            "resident": 196608.0,
+            "dirty": 196608.0,
+            "swapped": 65536.0,
+            "volatile": 0.0,
+            "nonvolatile": 0.0,
+            "empty": 0.0,
+            "regions": 15
+          },
+          "unused but dirty shlib __DATA": {
+            "virtual": 299008.0,
+            "resident": 78848.0,
+            "dirty": 78848.0,
+            "swapped": 220160.0,
+            "volatile": 0.0,
+            "nonvolatile": 0.0,
+            "empty": 0.0,
+            "regions": 198
+          },
+          "TOTAL": {
+            "virtual": 417363446988.8,
+            "resident": 936797798.4,
+            "dirty": 450363392.0,
+            "swapped": 54106521.6,
+            "volatile": 0.0,
+            "nonvolatile": 32768.0,
+            "empty": 0.0,
+            "regions": 4654
+          },
+          "TOTAL, minus reserved VM space": {
+            "virtual": 417363446988.8,
+            "resident": 936797798.4,
+            "dirty": 450363392.0,
+            "swapped": 54106521.6,
+            "volatile": 0.0,
+            "nonvolatile": 32768.0,
+            "empty": 0.0,
+            "regions": 4654
+          },
+          "DefaultMallocZone_0x104e04000": {
+            "virtual": 125514547.2,
+            "resident": 81684070.4,
+            "dirty": 81684070.4,
+            "swapped": 12687769.6,
+            "volatile": 89302.0,
+            "nonvolatile": 84620083.2,
+            "empty": 9728000.0,
+            "regions": 11
+          },
+          "LSBindingEvaluator_0x1236a0000": {
+            "virtual": 98304.0,
+            "resident": 0.0,
+            "dirty": 0.0,
+            "swapped": 98304.0,
+            "volatile": 0.0,
+            "nonvolatile": 0.0,
+            "empty": 98304.0,
+            "regions": 100
+          },
+          "objc-class_rw_t_0x104eb8000": {
+            "virtual": 65536.0,
+            "resident": 32768.0,
+            "dirty": 32768.0,
+            "swapped": 32768.0,
+            "volatile": 1182.0,
+            "nonvolatile": 28672.0,
+            "empty": 36864.0,
+            "regions": 57
+          },
+          "QuartzCore_0x12301c000": {
+            "virtual": 16384.0,
+            "resident": 0.0,
+            "dirty": 0.0,
+            "swapped": 16384.0,
+            "volatile": 1.0,
+            "nonvolatile": 384.0,
+            "empty": 16384.0,
+            "regions": 98
+          }
+        }
+      },
+      "footprint_at_end": 504382904,
+      "finished": 1793752037.2870421,
+      "history": [
+        {
+          "trigger": "deferred to playback_0",
+          "started": 1793752036.313693,
+          "finished": 1793752037.2870421,
+          "footprint_at_start": 504366520
+        }
+      ]
+    },
+    "third_cycle": {
+      "name": "third_cycle",
+      "trigger": "third_cycle_mid",
+      "started": 1793752066.963231,
+      "footprint_at_start": 478479800,
+      "rss_at_start": 570163200,
+      "footprint_file": "snapshots/third_cycle-footprint.txt.gz",
+      "footprint_returncode": 0,
+      "footprint_categories": {
+        "TOTAL": {
+          "dirty": 478150656.0,
+          "clean": 88080384.0,
+          "reclaimable": 770048.0,
+          "regions": 6130
+        },
+        "Malloc Large": {
+          "dirty": 300941312.0,
+          "clean": 0.0,
+          "reclaimable": 0.0,
+          "regions": 16
+        },
+        "Untagged": {
+          "dirty": 91226112.0,
+          "clean": 0.0,
+          "reclaimable": 0.0,
+          "regions": 112
+        },
+        "Malloc Small": {
+          "dirty": 60817408.0,
+          "clean": 0.0,
+          "reclaimable": 770048.0,
+          "regions": 21
+        },
+        "__DATA_CONST .../libvtkCommonCore.dylib": {
+          "dirty": 2818048.0,
+          "clean": 0.0,
+          "reclaimable": 0.0,
+          "regions": 1
+        },
+        "Malloc Metadata": {
+          "dirty": 1392640.0,
+          "clean": 0.0,
+          "reclaimable": 0.0,
+          "regions": 12
+        },
+        "Dyld Private Memory": {
+          "dirty": 1343488.0,
+          "clean": 0.0,
+          "reclaimable": 0.0,
+          "regions": 18
+        },
+        "page table": {
+          "dirty": 1016832.0,
+          "clean": 0.0,
+          "reclaimable": 0.0,
+          "regions": 1
+        },
+        "__DATA .../libvtkRenderingVolume.dylib": {
+          "dirty": 802816.0,
+          "clean": 0.0,
+          "reclaimable": 0.0,
+          "regions": 2
+        },
+        "__DATA_CONST .../libvtkFiltersCore.dylib": {
+          "dirty": 786432.0,
+          "clean": 0.0,
+          "reclaimable": 0.0,
+          "regions": 1
+        },
+        "__DATA .../vtkCommonCore.cpython-313-darwin.so": {
+          "dirty": 720896.0,
+          "clean": 0.0,
+          "reclaimable": 0.0,
+          "regions": 2
+        },
+        "__DATA_CONST .../libvtkFiltersGeneral.dylib": {
+          "dirty": 638976.0,
+          "clean": 0.0,
+          "reclaimable": 0.0,
+          "regions": 1
+        },
+        "__DATA .../vtkCommonDataModel.cpython-313-darwin.so": {
+          "dirty": 557056.0,
+          "clean": 0.0,
+          "reclaimable": 0.0,
+          "regions": 2
+        },
+        "Stack": {
+          "dirty": 425984.0,
+          "clean": 0.0,
+          "reclaimable": 0.0,
+          "regions": 40
+        },
+        "__DATA_CONST .../libvtkCommonMisc.dylib": {
+          "dirty": 409600.0,
+          "clean": 0.0,
+          "reclaimable": 0.0,
+          "regions": 1
+        },
+        "__DATA .../vtkInteractionWidgets.cpython-313-darwin.so": {
+          "dirty": 393216.0,
+          "clean": 0.0,
+          "reclaimable": 0.0,
+          "regions": 2
+        },
+        "__DATA_CONST .../libcrypto.3.dylib": {
+          "dirty": 360448.0,
+          "clean": 0.0,
+          "reclaimable": 0.0,
+          "regions": 1
+        },
+        "__DATA .../vtkRenderingCore.cpython-313-darwin.so": {
+          "dirty": 344064.0,
+          "clean": 0.0,
+          "reclaimable": 0.0,
+          "regions": 2
+        },
+        "__DATA_CONST .../libvtkFiltersHybrid.dylib": {
+          "dirty": 327680.0,
+          "clean": 0.0,
+          "reclaimable": 0.0,
+          "regions": 1
+        },
+        "unused dyld shared cache area": {
+          "dirty": 282624.0,
+          "clean": 0.0,
+          "reclaimable": 0.0,
+          "regions": 1675
+        },
+        "__DATA .../vtkFiltersCore.cpython-313-darwin.so": {
+          "dirty": 278528.0,
+          "clean": 0.0,
+          "reclaimable": 0.0,
+          "regions": 2
+        },
+        "Malloc Tiny": {
+          "dirty": 245760.0,
+          "clean": 0.0,
+          "reclaimable": 0.0,
+          "regions": 1
+        },
+        "__DATA_CONST .../libvtkCommonDataModel.dylib": {
+          "dirty": 229376.0,
+          "clean": 0.0,
+          "reclaimable": 0.0,
+          "regions": 1
+        },
+        "__DATA .../_multiarray_umath.cpython-313-darwin.so": {
+          "dirty": 212992.0,
+          "clean": 0.0,
+          "reclaimable": 0.0,
+          "regions": 2
+        },
+        "__DATA .../vtkFiltersGeneral.cpython-313-darwin.so": {
+          "dirty": 212992.0,
+          "clean": 0.0,
+          "reclaimable": 0.0,
+          "regions": 2
+        },
+        "__DATA .../vtkRenderingOpenGL2.cpython-313-darwin.so": {
+          "dirty": 196608.0,
+          "clean": 0.0,
+          "reclaimable": 0.0,
+          "regions": 2
+        },
+        "__DATA_CONST .../libvtkInteractionWidgets.dylib": {
+          "dirty": 196608.0,
+          "clean": 0.0,
+          "reclaimable": 0.0,
+          "regions": 1
+        },
+        "__DATA_CONST .../libvtkRenderingVolume.dylib": {
+          "dirty": 196608.0,
+          "clean": 0.0,
+          "reclaimable": 0.0,
+          "regions": 1
+        },
+        "__DATA .../vtkRenderingAnnotation.cpython-313-darwin.so": {
+          "dirty": 147456.0,
+          "clean": 0.0,
+          "reclaimable": 0.0,
+          "regions": 2
+        },
+        "__DATA_CONST .../libvtkRenderingOpenGL2.dylib": {
+          "dirty": 147456.0,
+          "clean": 0.0,
+          "reclaimable": 0.0,
+          "regions": 1
+        },
+        "__DATA_CONST .../libvtkRenderingCore.dylib": {
+          "dirty": 131072.0,
+          "clean": 0.0,
+          "reclaimable": 0.0,
+          "regions": 1
+        },
+        "__TPRO_CONST .../dyld": {
+          "dirty": 131072.0,
+          "clean": 0.0,
+          "reclaimable": 0.0,
+          "regions": 1
+        },
+        "__DATA .../vtkChartsCore.cpython-313-darwin.so": {
+          "dirty": 114688.0,
+          "clean": 0.0,
+          "reclaimable": 0.0,
+          "regions": 2
+        },
+        "__DATA_CONST .../libvtkFiltersReduction.dylib": {
+          "dirty": 114688.0,
+          "clean": 0.0,
+          "reclaimable": 0.0,
+          "regions": 1
+        },
+        "__DATA .../vtkFiltersSources.cpython-313-darwin.so": {
+          "dirty": 98304.0,
+          "clean": 0.0,
+          "reclaimable": 0.0,
+          "regions": 2
+        },
+        "__DATA .../vtkCommonExecutionModel.cpython-313-darwin.so": {
+          "dirty": 98304.0,
+          "clean": 0.0,
+          "reclaimable": 0.0,
+          "regions": 2
+        },
+        "__DATA_DIRTY .../AppKit": {
+          "dirty": 97280.0,
+          "clean": 0.0,
+          "reclaimable": 0.0,
+          "regions": 1
+        },
+        "__DATA_DIRTY .../Foundation": {
+          "dirty": 86016.0,
+          "clean": 0.0,
+          "reclaimable": 0.0,
+          "regions": 1
+        },
+        "__DATA .../vtkIOImage.cpython-313-darwin.so": {
+          "dirty": 81920.0,
+          "clean": 0.0,
+          "reclaimable": 0.0,
+          "regions": 2
+        },
+        "__DATA_CONST .../libvtkFiltersGeometry.dylib": {
+          "dirty": 81920.0,
+          "clean": 0.0,
+          "reclaimable": 0.0,
+          "regions": 1
+        }
+      },
+      "footprint_tool_total": 478150656.0,
+      "vmmap_file": "snapshots/third_cycle-vmmap.txt.gz",
+      "vmmap_returncode": 0,
+      "vmmap": {
+        "physical_footprint": {
+          "current": 478465228.8,
+          "peak": 504469913.6
+        },
+        "regions": {
+          "Activity Tracing": {
+            "virtual": 262144.0,
+            "resident": 32768.0,
+            "dirty": 32768.0,
+            "swapped": 0.0,
+            "volatile": 0.0,
+            "nonvolatile": 32768.0,
+            "empty": 0.0,
+            "regions": 1
+          },
+          "Deferred Reclaim": {
+            "virtual": 67108864.0,
+            "resident": 16384.0,
+            "dirty": 16384.0,
+            "swapped": 0.0,
+            "volatile": 0.0,
+            "nonvolatile": 0.0,
+            "empty": 0.0,
+            "regions": 1
+          },
+          "Dyld Private Memory": {
+            "virtual": 1998848.0,
+            "resident": 983040.0,
+            "dirty": 983040.0,
+            "swapped": 360448.0,
+            "volatile": 0.0,
+            "nonvolatile": 0.0,
+            "empty": 0.0,
+            "regions": 18
+          },
+          "Guard": {
+            "virtual": 413390602240.0,
+            "resident": 0.0,
+            "dirty": 0.0,
+            "swapped": 0.0,
+            "volatile": 0.0,
+            "nonvolatile": 0.0,
+            "empty": 0.0,
+            "regions": 1
+          },
+          "Malloc Guard Page": {
+            "virtual": 3997696.0,
+            "resident": 0.0,
+            "dirty": 0.0,
+            "swapped": 0.0,
+            "volatile": 0.0,
+            "nonvolatile": 0.0,
+            "empty": 0.0,
+            "regions": 4
+          },
+          "Malloc Large": {
+            "virtual": 31562137.6,
+            "resident": 30828134.4,
+            "dirty": 30828134.4,
+            "swapped": 540672.0,
+            "volatile": 0.0,
+            "nonvolatile": 0.0,
+            "empty": 0.0,
+            "regions": 3
+          },
+          "Malloc Large (empty)": {
+            "virtual": 270952038.4,
+            "resident": 266967449.6,
+            "dirty": 266967449.6,
+            "swapped": 2097152.0,
+            "volatile": 0.0,
+            "nonvolatile": 0.0,
+            "empty": 0.0,
+            "regions": 13
+          },
+          "Malloc Metadata": {
+            "virtual": 524288.0,
+            "resident": 196608.0,
+            "dirty": 196608.0,
+            "swapped": 327680.0,
+            "volatile": 0.0,
+            "nonvolatile": 0.0,
+            "empty": 0.0,
+            "regions": 5
+          },
+          "Malloc Metadata metadata": {
+            "virtual": 1769472.0,
+            "resident": 868352.0,
+            "dirty": 868352.0,
+            "swapped": 0.0,
+            "volatile": 0.0,
+            "nonvolatile": 0.0,
+            "empty": 0.0,
+            "regions": 3
+          },
+          "Malloc Nano metadata": {
+            "virtual": 65536.0,
+            "resident": 49152.0,
+            "dirty": 49152.0,
+            "swapped": 0.0,
+            "volatile": 0.0,
+            "nonvolatile": 0.0,
+            "empty": 0.0,
+            "regions": 2
+          },
+          "Malloc Small": {
+            "virtual": 83781222.4,
+            "resident": 54525952.0,
+            "dirty": 53791948.8,
+            "swapped": 6438912.0,
+            "volatile": 0.0,
+            "nonvolatile": 0.0,
+            "empty": 0.0,
+            "regions": 28
+          },
+          "Malloc Small (empty)": {
+            "virtual": 4292608.0,
+            "resident": 32768.0,
+            "dirty": 0.0,
+            "swapped": 98304.0,
+            "volatile": 0.0,
+            "nonvolatile": 0.0,
+            "empty": 0.0,
+            "regions": 3
+          },
+          "Malloc Tiny": {
+            "virtual": 4194304.0,
+            "resident": 245760.0,
+            "dirty": 245760.0,
+            "swapped": 0.0,
+            "volatile": 0.0,
+            "nonvolatile": 0.0,
+            "empty": 0.0,
+            "regions": 1
+          },
+          "OS Alloc Once": {
+            "virtual": 32768.0,
+            "resident": 16384.0,
+            "dirty": 16384.0,
+            "swapped": 0.0,
+            "volatile": 0.0,
+            "nonvolatile": 0.0,
+            "empty": 0.0,
+            "regions": 1
+          },
+          "Stack": {
+            "virtual": 156237824.0,
+            "resident": 409600.0,
+            "dirty": 409600.0,
+            "swapped": 16384.0,
+            "volatile": 0.0,
+            "nonvolatile": 0.0,
+            "empty": 0.0,
+            "regions": 18
+          },
+          "Stack (reserved)": {
+            "virtual": 1114112.0,
+            "resident": 0.0,
+            "dirty": 0.0,
+            "swapped": 0.0,
+            "volatile": 0.0,
+            "nonvolatile": 0.0,
+            "empty": 0.0,
+            "regions": 2
+          },
+          "Stack Guard": {
+            "virtual": 327680.0,
+            "resident": 0.0,
+            "dirty": 0.0,
+            "swapped": 0.0,
+            "volatile": 0.0,
+            "nonvolatile": 0.0,
+            "empty": 0.0,
+            "regions": 20
+          },
+          "Untagged": {
+            "virtual": 91435827.2,
+            "resident": 89862963.2,
+            "dirty": 89862963.2,
+            "swapped": 1163264.0,
+            "volatile": 0.0,
+            "nonvolatile": 0.0,
+            "empty": 0.0,
+            "regions": 94
+          },
+          "__AUTH": {
+            "virtual": 3631104.0,
+            "resident": 1074176.0,
+            "dirty": 128000.0,
+            "swapped": 62464.0,
+            "volatile": 0.0,
+            "nonvolatile": 0.0,
+            "empty": 0.0,
+            "regions": 353
+          },
+          "__AUTH_CONST": {
+            "virtual": 59559116.8,
+            "resident": 16148070.4,
+            "dirty": 0.0,
+            "swapped": 0.0,
+            "volatile": 0.0,
+            "nonvolatile": 0.0,
+            "empty": 0.0,
+            "regions": 583
+          },
+          "__CTF": {
+            "virtual": 824.0,
+            "resident": 824.0,
+            "dirty": 0.0,
+            "swapped": 0.0,
+            "volatile": 0.0,
+            "nonvolatile": 0.0,
+            "empty": 0.0,
+            "regions": 1
+          },
+          "__DATA": {
+            "virtual": 30723276.8,
+            "resident": 11219763.2,
+            "dirty": 7520256.0,
+            "swapped": 1647616.0,
+            "volatile": 0.0,
+            "nonvolatile": 0.0,
+            "empty": 0.0,
+            "regions": 827
+          },
+          "__DATA_CONST": {
+            "virtual": 40579891.2,
+            "resident": 12373196.8,
+            "dirty": 2572288.0,
+            "swapped": 8470528.0,
+            "volatile": 0.0,
+            "nonvolatile": 0.0,
+            "empty": 0.0,
+            "regions": 805
+          },
+          "__DATA_DIRTY": {
+            "virtual": 3987456.0,
+            "resident": 1190912.0,
+            "dirty": 614400.0,
+            "swapped": 412672.0,
+            "volatile": 0.0,
+            "nonvolatile": 0.0,
+            "empty": 0.0,
+            "regions": 521
+          },
+          "__FONT_DATA": {
+            "virtual": 2352.0,
+            "resident": 2352.0,
+            "dirty": 0.0,
+            "swapped": 0.0,
+            "volatile": 0.0,
+            "nonvolatile": 0.0,
+            "empty": 0.0,
+            "regions": 1
+          },
+          "__LINKEDIT": {
+            "virtual": 1825361100.8,
+            "resident": 27892121.6,
+            "dirty": 0.0,
+            "swapped": 0.0,
+            "volatile": 0.0,
+            "nonvolatile": 0.0,
+            "empty": 0.0,
+            "regions": 224
+          },
+          "__OBJC_RO": {
+            "virtual": 123731968.0,
+            "resident": 43515904.0,
+            "dirty": 0.0,
+            "swapped": 0.0,
+            "volatile": 0.0,
+            "nonvolatile": 0.0,
+            "empty": 0.0,
+            "regions": 1
+          },
+          "__OBJC_RW": {
+            "virtual": 2800640.0,
+            "resident": 1506304.0,
+            "dirty": 48128.0,
+            "swapped": 16384.0,
+            "volatile": 0.0,
+            "nonvolatile": 0.0,
+            "empty": 0.0,
+            "regions": 1
+          },
+          "__TEXT": {
+            "virtual": 966996787.2,
+            "resident": 379689369.6,
+            "dirty": 0.0,
+            "swapped": 0.0,
+            "volatile": 0.0,
+            "nonvolatile": 0.0,
+            "empty": 0.0,
+            "regions": 882
+          },
+          "__TPRO_CONST": {
+            "virtual": 135168.0,
+            "resident": 118784.0,
+            "dirty": 114688.0,
+            "swapped": 16384.0,
+            "volatile": 0.0,
+            "nonvolatile": 0.0,
+            "empty": 0.0,
+            "regions": 4
+          },
+          "mapped file": {
+            "virtual": 64906854.4,
+            "resident": 2818048.0,
+            "dirty": 0.0,
+            "swapped": 0.0,
+            "volatile": 0.0,
+            "nonvolatile": 0.0,
+            "empty": 0.0,
+            "regions": 11
+          },
+          "page table in kernel": {
+            "virtual": 1016832.0,
+            "resident": 1016832.0,
+            "dirty": 1016832.0,
+            "swapped": 0.0,
+            "volatile": 0.0,
+            "nonvolatile": 0.0,
+            "empty": 0.0,
+            "regions": 1
+          },
+          "shared memory": {
+            "virtual": 901120.0,
+            "resident": 196608.0,
+            "dirty": 196608.0,
+            "swapped": 65536.0,
+            "volatile": 0.0,
+            "nonvolatile": 0.0,
+            "empty": 0.0,
+            "regions": 15
+          },
+          "unused but dirty shlib __DATA": {
+            "virtual": 299008.0,
+            "resident": 78848.0,
+            "dirty": 78848.0,
+            "swapped": 220160.0,
+            "volatile": 0.0,
+            "nonvolatile": 0.0,
+            "empty": 0.0,
+            "regions": 198
+          },
+          "TOTAL": {
+            "virtual": 417256072806.4,
+            "resident": 943823257.6,
+            "dirty": 456549990.4,
+            "swapped": 21915238.4,
+            "volatile": 0.0,
+            "nonvolatile": 32768.0,
+            "empty": 0.0,
+            "regions": 4646
+          },
+          "TOTAL, minus reserved VM space": {
+            "virtual": 417256072806.4,
+            "resident": 943823257.6,
+            "dirty": 456549990.4,
+            "swapped": 21915238.4,
+            "volatile": 0.0,
+            "nonvolatile": 32768.0,
+            "empty": 0.0,
+            "regions": 4646
+          },
+          "DefaultMallocZone_0x104e04000": {
+            "virtual": 125409689.6,
+            "resident": 86507520.0,
+            "dirty": 85773516.8,
+            "swapped": 6930432.0,
+            "volatile": 87832.0,
+            "nonvolatile": 84515225.6,
+            "empty": 8201216.0,
+            "regions": 9
+          },
+          "LSBindingEvaluator_0x1236a0000": {
+            "virtual": 98304.0,
+            "resident": 0.0,
+            "dirty": 0.0,
+            "swapped": 98304.0,
+            "volatile": 0.0,
+            "nonvolatile": 0.0,
+            "empty": 98304.0,
+            "regions": 100
+          },
+          "objc-class_rw_t_0x104eb8000": {
+            "virtual": 65536.0,
+            "resident": 32768.0,
+            "dirty": 32768.0,
+            "swapped": 32768.0,
+            "volatile": 1182.0,
+            "nonvolatile": 28672.0,
+            "empty": 36864.0,
+            "regions": 57
+          },
+          "QuartzCore_0x12301c000": {
+            "virtual": 16384.0,
+            "resident": 0.0,
+            "dirty": 0.0,
+            "swapped": 16384.0,
+            "volatile": 1.0,
+            "nonvolatile": 384.0,
+            "empty": 16384.0,
+            "regions": 98
+          }
+        }
+      },
+      "footprint_at_end": 478496184,
+      "finished": 1793752067.857527
+    },
+    "after_close": {
+      "name": "after_close",
+      "trigger": "after_close_snapshot",
+      "started": 1793752075.162071,
+      "footprint_at_start": 483214776,
+      "rss_at_start": 575848448,
+      "footprint_file": "snapshots/after_close-footprint.txt.gz",
+      "footprint_returncode": 0,
+      "footprint_categories": {
+        "TOTAL": {
+          "dirty": 483393536.0,
+          "clean": 88080384.0,
+          "reclaimable": 786432.0,
+          "regions": 6149
+        },
+        "Malloc Large": {
+          "dirty": 300941312.0,
+          "clean": 0.0,
+          "reclaimable": 0.0,
+          "regions": 16
+        },
+        "Untagged": {
+          "dirty": 92274688.0,
+          "clean": 0.0,
+          "reclaimable": 0.0,
+          "regions": 113
+        },
+        "Malloc Small": {
+          "dirty": 63963136.0,
+          "clean": 0.0,
+          "reclaimable": 770048.0,
+          "regions": 23
+        },
+        "__DATA_CONST .../libvtkCommonCore.dylib": {
+          "dirty": 2818048.0,
+          "clean": 0.0,
+          "reclaimable": 0.0,
+          "regions": 1
+        },
+        "Malloc Metadata": {
+          "dirty": 1392640.0,
+          "clean": 0.0,
+          "reclaimable": 16384.0,
+          "regions": 12
+        },
+        "Dyld Private Memory": {
+          "dirty": 1343488.0,
+          "clean": 0.0,
+          "reclaimable": 0.0,
+          "regions": 18
+        },
+        "page table": {
+          "dirty": 1016832.0,
+          "clean": 0.0,
+          "reclaimable": 0.0,
+          "regions": 1
+        },
+        "__DATA .../libvtkRenderingVolume.dylib": {
+          "dirty": 802816.0,
+          "clean": 0.0,
+          "reclaimable": 0.0,
+          "regions": 2
+        },
+        "__DATA_CONST .../libvtkFiltersCore.dylib": {
+          "dirty": 786432.0,
+          "clean": 0.0,
+          "reclaimable": 0.0,
+          "regions": 1
+        },
+        "__DATA .../vtkCommonCore.cpython-313-darwin.so": {
+          "dirty": 720896.0,
+          "clean": 0.0,
+          "reclaimable": 0.0,
+          "regions": 2
+        },
+        "__DATA_CONST .../libvtkFiltersGeneral.dylib": {
+          "dirty": 638976.0,
+          "clean": 0.0,
+          "reclaimable": 0.0,
+          "regions": 1
+        },
+        "Stack": {
+          "dirty": 557056.0,
+          "clean": 0.0,
+          "reclaimable": 0.0,
+          "regions": 56
+        },
+        "__DATA .../vtkCommonDataModel.cpython-313-darwin.so": {
+          "dirty": 557056.0,
+          "clean": 0.0,
+          "reclaimable": 0.0,
+          "regions": 2
+        },
+        "__DATA_CONST .../libvtkCommonMisc.dylib": {
+          "dirty": 409600.0,
+          "clean": 0.0,
+          "reclaimable": 0.0,
+          "regions": 1
+        },
+        "__DATA .../vtkInteractionWidgets.cpython-313-darwin.so": {
+          "dirty": 393216.0,
+          "clean": 0.0,
+          "reclaimable": 0.0,
+          "regions": 2
+        },
+        "__DATA_CONST .../libcrypto.3.dylib": {
+          "dirty": 360448.0,
+          "clean": 0.0,
+          "reclaimable": 0.0,
+          "regions": 1
+        },
+        "__DATA .../vtkRenderingCore.cpython-313-darwin.so": {
+          "dirty": 344064.0,
+          "clean": 0.0,
+          "reclaimable": 0.0,
+          "regions": 2
+        },
+        "__DATA_CONST .../libvtkFiltersHybrid.dylib": {
+          "dirty": 327680.0,
+          "clean": 0.0,
+          "reclaimable": 0.0,
+          "regions": 1
+        },
+        "unused dyld shared cache area": {
+          "dirty": 282624.0,
+          "clean": 0.0,
+          "reclaimable": 0.0,
+          "regions": 1675
+        },
+        "__DATA .../vtkFiltersCore.cpython-313-darwin.so": {
+          "dirty": 278528.0,
+          "clean": 0.0,
+          "reclaimable": 0.0,
+          "regions": 2
+        },
+        "Malloc Tiny": {
+          "dirty": 245760.0,
+          "clean": 0.0,
+          "reclaimable": 0.0,
+          "regions": 1
+        },
+        "__DATA_CONST .../libvtkCommonDataModel.dylib": {
+          "dirty": 229376.0,
+          "clean": 0.0,
+          "reclaimable": 0.0,
+          "regions": 1
+        },
+        "__DATA .../_multiarray_umath.cpython-313-darwin.so": {
+          "dirty": 212992.0,
+          "clean": 0.0,
+          "reclaimable": 0.0,
+          "regions": 2
+        },
+        "__DATA .../vtkFiltersGeneral.cpython-313-darwin.so": {
+          "dirty": 212992.0,
+          "clean": 0.0,
+          "reclaimable": 0.0,
+          "regions": 2
+        },
+        "__DATA .../vtkRenderingOpenGL2.cpython-313-darwin.so": {
+          "dirty": 196608.0,
+          "clean": 0.0,
+          "reclaimable": 0.0,
+          "regions": 2
+        },
+        "__DATA_CONST .../libvtkInteractionWidgets.dylib": {
+          "dirty": 196608.0,
+          "clean": 0.0,
+          "reclaimable": 0.0,
+          "regions": 1
+        },
+        "__DATA_CONST .../libvtkRenderingVolume.dylib": {
+          "dirty": 196608.0,
+          "clean": 0.0,
+          "reclaimable": 0.0,
+          "regions": 1
+        },
+        "__DATA .../vtkRenderingAnnotation.cpython-313-darwin.so": {
+          "dirty": 147456.0,
+          "clean": 0.0,
+          "reclaimable": 0.0,
+          "regions": 2
+        },
+        "__DATA_CONST .../libvtkRenderingOpenGL2.dylib": {
+          "dirty": 147456.0,
+          "clean": 0.0,
+          "reclaimable": 0.0,
+          "regions": 1
+        },
+        "__DATA_CONST .../libvtkRenderingCore.dylib": {
+          "dirty": 131072.0,
+          "clean": 0.0,
+          "reclaimable": 0.0,
+          "regions": 1
+        },
+        "__TPRO_CONST .../dyld": {
+          "dirty": 131072.0,
+          "clean": 0.0,
+          "reclaimable": 0.0,
+          "regions": 1
+        },
+        "__DATA .../vtkChartsCore.cpython-313-darwin.so": {
+          "dirty": 114688.0,
+          "clean": 0.0,
+          "reclaimable": 0.0,
+          "regions": 2
+        },
+        "__DATA_CONST .../libvtkFiltersReduction.dylib": {
+          "dirty": 114688.0,
+          "clean": 0.0,
+          "reclaimable": 0.0,
+          "regions": 1
+        },
+        "__DATA .../vtkFiltersSources.cpython-313-darwin.so": {
+          "dirty": 98304.0,
+          "clean": 0.0,
+          "reclaimable": 0.0,
+          "regions": 2
+        },
+        "__DATA .../vtkCommonExecutionModel.cpython-313-darwin.so": {
+          "dirty": 98304.0,
+          "clean": 0.0,
+          "reclaimable": 0.0,
+          "regions": 2
+        },
+        "__DATA_DIRTY .../AppKit": {
+          "dirty": 97280.0,
+          "clean": 0.0,
+          "reclaimable": 0.0,
+          "regions": 1
+        },
+        "__DATA_DIRTY .../Foundation": {
+          "dirty": 86016.0,
+          "clean": 0.0,
+          "reclaimable": 0.0,
+          "regions": 1
+        },
+        "__DATA .../vtkIOImage.cpython-313-darwin.so": {
+          "dirty": 81920.0,
+          "clean": 0.0,
+          "reclaimable": 0.0,
+          "regions": 2
+        },
+        "__DATA_CONST .../libvtkFiltersGeometry.dylib": {
+          "dirty": 81920.0,
+          "clean": 0.0,
+          "reclaimable": 0.0,
+          "regions": 1
+        }
+      },
+      "footprint_tool_total": 483393536.0,
+      "vmmap_file": "snapshots/after_close-vmmap.txt.gz",
+      "vmmap_returncode": 0,
+      "vmmap": {
+        "physical_footprint": {
+          "current": 483183820.8,
+          "peak": 504469913.6
+        },
+        "regions": {
+          "Activity Tracing": {
+            "virtual": 262144.0,
+            "resident": 32768.0,
+            "dirty": 32768.0,
+            "swapped": 0.0,
+            "volatile": 0.0,
+            "nonvolatile": 32768.0,
+            "empty": 0.0,
+            "regions": 1
+          },
+          "Deferred Reclaim": {
+            "virtual": 67108864.0,
+            "resident": 16384.0,
+            "dirty": 16384.0,
+            "swapped": 0.0,
+            "volatile": 0.0,
+            "nonvolatile": 0.0,
+            "empty": 0.0,
+            "regions": 1
+          },
+          "Dyld Private Memory": {
+            "virtual": 1998848.0,
+            "resident": 983040.0,
+            "dirty": 983040.0,
+            "swapped": 360448.0,
+            "volatile": 0.0,
+            "nonvolatile": 0.0,
+            "empty": 0.0,
+            "regions": 18
+          },
+          "Guard": {
+            "virtual": 413390602240.0,
+            "resident": 0.0,
+            "dirty": 0.0,
+            "swapped": 0.0,
+            "volatile": 0.0,
+            "nonvolatile": 0.0,
+            "empty": 0.0,
+            "regions": 1
+          },
+          "Malloc Guard Page": {
+            "virtual": 3997696.0,
+            "resident": 0.0,
+            "dirty": 0.0,
+            "swapped": 0.0,
+            "volatile": 0.0,
+            "nonvolatile": 0.0,
+            "empty": 0.0,
+            "regions": 4
+          },
+          "Malloc Large": {
+            "virtual": 3866624.0,
+            "resident": 3325952.0,
+            "dirty": 3325952.0,
+            "swapped": 524288.0,
+            "volatile": 0.0,
+            "nonvolatile": 0.0,
+            "empty": 0.0,
+            "regions": 1
+          },
+          "Malloc Large (empty)": {
+            "virtual": 298634444.8,
+            "resident": 294544998.4,
+            "dirty": 294544998.4,
+            "swapped": 2113536.0,
+            "volatile": 0.0,
+            "nonvolatile": 0.0,
+            "empty": 0.0,
+            "regions": 15
+          },
+          "Malloc Metadata": {
+            "virtual": 524288.0,
+            "resident": 196608.0,
+            "dirty": 196608.0,
+            "swapped": 327680.0,
+            "volatile": 0.0,
+            "nonvolatile": 0.0,
+            "empty": 0.0,
+            "regions": 5
+          },
+          "Malloc Metadata metadata": {
+            "virtual": 1769472.0,
+            "resident": 884736.0,
+            "dirty": 884736.0,
+            "swapped": 0.0,
+            "volatile": 0.0,
+            "nonvolatile": 0.0,
+            "empty": 0.0,
+            "regions": 3
+          },
+          "Malloc Nano metadata": {
+            "virtual": 65536.0,
+            "resident": 49152.0,
+            "dirty": 49152.0,
+            "swapped": 0.0,
+            "volatile": 0.0,
+            "nonvolatile": 0.0,
+            "empty": 0.0,
+            "regions": 2
+          },
+          "Malloc Small": {
+            "virtual": 92169830.4,
+            "resident": 58300825.6,
+            "dirty": 57566822.4,
+            "swapped": 5832704.0,
+            "volatile": 0.0,
+            "nonvolatile": 0.0,
+            "empty": 0.0,
+            "regions": 30
+          },
+          "Malloc Small (empty)": {
+            "virtual": 4292608.0,
+            "resident": 32768.0,
+            "dirty": 0.0,
+            "swapped": 98304.0,
+            "volatile": 0.0,
+            "nonvolatile": 0.0,
+            "empty": 0.0,
+            "regions": 3
+          },
+          "Malloc Tiny": {
+            "virtual": 4194304.0,
+            "resident": 245760.0,
+            "dirty": 245760.0,
+            "swapped": 0.0,
+            "volatile": 0.0,
+            "nonvolatile": 0.0,
+            "empty": 0.0,
+            "regions": 1
+          },
+          "OS Alloc Once": {
+            "virtual": 32768.0,
+            "resident": 16384.0,
+            "dirty": 16384.0,
+            "swapped": 0.0,
+            "volatile": 0.0,
+            "nonvolatile": 0.0,
+            "empty": 0.0,
+            "regions": 1
+          },
+          "Stack": {
+            "virtual": 160746700.8,
+            "resident": 540672.0,
+            "dirty": 540672.0,
+            "swapped": 16384.0,
+            "volatile": 0.0,
+            "nonvolatile": 0.0,
+            "empty": 0.0,
+            "regions": 26
+          },
+          "Stack (reserved)": {
+            "virtual": 1114112.0,
+            "resident": 0.0,
+            "dirty": 0.0,
+            "swapped": 0.0,
+            "volatile": 0.0,
+            "nonvolatile": 0.0,
+            "empty": 0.0,
+            "regions": 2
+          },
+          "Stack Guard": {
+            "virtual": 458752.0,
+            "resident": 0.0,
+            "dirty": 0.0,
+            "swapped": 0.0,
+            "volatile": 0.0,
+            "nonvolatile": 0.0,
+            "empty": 0.0,
+            "regions": 28
+          },
+          "Untagged": {
+            "virtual": 92484403.2,
+            "resident": 91226112.0,
+            "dirty": 91226112.0,
+            "swapped": 1163264.0,
+            "volatile": 0.0,
+            "nonvolatile": 0.0,
+            "empty": 0.0,
+            "regions": 95
+          },
+          "__AUTH": {
+            "virtual": 3631104.0,
+            "resident": 1074176.0,
+            "dirty": 128000.0,
+            "swapped": 62464.0,
+            "volatile": 0.0,
+            "nonvolatile": 0.0,
+            "empty": 0.0,
+            "regions": 353
+          },
+          "__AUTH_CONST": {
+            "virtual": 59559116.8,
+            "resident": 16148070.4,
+            "dirty": 0.0,
+            "swapped": 0.0,
+            "volatile": 0.0,
+            "nonvolatile": 0.0,
+            "empty": 0.0,
+            "regions": 583
+          },
+          "__CTF": {
+            "virtual": 824.0,
+            "resident": 824.0,
+            "dirty": 0.0,
+            "swapped": 0.0,
+            "volatile": 0.0,
+            "nonvolatile": 0.0,
+            "empty": 0.0,
+            "regions": 1
+          },
+          "__DATA": {
+            "virtual": 30723276.8,
+            "resident": 11324620.8,
+            "dirty": 7584768.0,
+            "swapped": 1583104.0,
+            "volatile": 0.0,
+            "nonvolatile": 0.0,
+            "empty": 0.0,
+            "regions": 827
+          },
+          "__DATA_CONST": {
+            "virtual": 40579891.2,
+            "resident": 12582912.0,
+            "dirty": 2801664.0,
+            "swapped": 8241152.0,
+            "volatile": 0.0,
+            "nonvolatile": 0.0,
+            "empty": 0.0,
+            "regions": 805
+          },
+          "__DATA_DIRTY": {
+            "virtual": 3987456.0,
+            "resident": 1207296.0,
+            "dirty": 630784.0,
+            "swapped": 396288.0,
+            "volatile": 0.0,
+            "nonvolatile": 0.0,
+            "empty": 0.0,
+            "regions": 521
+          },
+          "__FONT_DATA": {
+            "virtual": 2352.0,
+            "resident": 2352.0,
+            "dirty": 0.0,
+            "swapped": 0.0,
+            "volatile": 0.0,
+            "nonvolatile": 0.0,
+            "empty": 0.0,
+            "regions": 1
+          },
+          "__LINKEDIT": {
+            "virtual": 1825361100.8,
+            "resident": 27996979.2,
+            "dirty": 0.0,
+            "swapped": 0.0,
+            "volatile": 0.0,
+            "nonvolatile": 0.0,
+            "empty": 0.0,
+            "regions": 224
+          },
+          "__OBJC_RO": {
+            "virtual": 123731968.0,
+            "resident": 43515904.0,
+            "dirty": 0.0,
+            "swapped": 0.0,
+            "volatile": 0.0,
+            "nonvolatile": 0.0,
+            "empty": 0.0,
+            "regions": 1
+          },
+          "__OBJC_RW": {
+            "virtual": 2800640.0,
+            "resident": 1506304.0,
+            "dirty": 48128.0,
+            "swapped": 16384.0,
+            "volatile": 0.0,
+            "nonvolatile": 0.0,
+            "empty": 0.0,
+            "regions": 1
+          },
+          "__TEXT": {
+            "virtual": 966996787.2,
+            "resident": 380003942.4,
+            "dirty": 0.0,
+            "swapped": 0.0,
+            "volatile": 0.0,
+            "nonvolatile": 0.0,
+            "empty": 0.0,
+            "regions": 882
+          },
+          "__TPRO_CONST": {
+            "virtual": 135168.0,
+            "resident": 118784.0,
+            "dirty": 114688.0,
+            "swapped": 16384.0,
+            "volatile": 0.0,
+            "nonvolatile": 0.0,
+            "empty": 0.0,
+            "regions": 4
+          },
+          "mapped file": {
+            "virtual": 64906854.4,
+            "resident": 2818048.0,
+            "dirty": 0.0,
+            "swapped": 0.0,
+            "volatile": 0.0,
+            "nonvolatile": 0.0,
+            "empty": 0.0,
+            "regions": 11
+          },
+          "page table in kernel": {
+            "virtual": 1016832.0,
+            "resident": 1016832.0,
+            "dirty": 1016832.0,
+            "swapped": 0.0,
+            "volatile": 0.0,
+            "nonvolatile": 0.0,
+            "empty": 0.0,
+            "regions": 1
+          },
+          "shared memory": {
+            "virtual": 901120.0,
+            "resident": 196608.0,
+            "dirty": 196608.0,
+            "swapped": 65536.0,
+            "volatile": 0.0,
+            "nonvolatile": 0.0,
+            "empty": 0.0,
+            "regions": 15
+          },
+          "unused but dirty shlib __DATA": {
+            "virtual": 299008.0,
+            "resident": 78848.0,
+            "dirty": 78848.0,
+            "swapped": 219136.0,
+            "volatile": 0.0,
+            "nonvolatile": 0.0,
+            "empty": 0.0,
+            "regions": 198
+          },
+          "TOTAL": {
+            "virtual": 417256072806.4,
+            "resident": 950009856.0,
+            "dirty": 462212300.8,
+            "swapped": 21076377.6,
+            "volatile": 0.0,
+            "nonvolatile": 32768.0,
+            "empty": 0.0,
+            "regions": 4665
+          },
+          "TOTAL, minus reserved VM space": {
+            "virtual": 417256072806.4,
+            "resident": 950009856.0,
+            "dirty": 462212300.8,
+            "swapped": 21076377.6,
+            "volatile": 0.0,
+            "nonvolatile": 32768.0,
+            "empty": 0.0,
+            "regions": 4665
+          },
+          "DefaultMallocZone_0x104e04000": {
+            "virtual": 106220748.8,
+            "resident": 62809702.4,
+            "dirty": 62075699.2,
+            "swapped": 6324224.0,
+            "volatile": 85023.0,
+            "nonvolatile": 58510540.8,
+            "empty": 9871360.0,
+            "regions": 15
+          },
+          "LSBindingEvaluator_0x1236a0000": {
+            "virtual": 98304.0,
+            "resident": 0.0,
+            "dirty": 0.0,
+            "swapped": 98304.0,
+            "volatile": 0.0,
+            "nonvolatile": 0.0,
+            "empty": 98304.0,
+            "regions": 100
+          },
+          "objc-class_rw_t_0x104eb8000": {
+            "virtual": 65536.0,
+            "resident": 49152.0,
+            "dirty": 49152.0,
+            "swapped": 16384.0,
+            "volatile": 1182.0,
+            "nonvolatile": 28672.0,
+            "empty": 36864.0,
+            "regions": 57
+          },
+          "QuartzCore_0x12301c000": {
+            "virtual": 16384.0,
+            "resident": 0.0,
+            "dirty": 0.0,
+            "swapped": 16384.0,
+            "volatile": 1.0,
+            "nonvolatile": 384.0,
+            "empty": 16384.0,
+            "regions": 98
+          }
+        }
+      },
+      "footprint_at_end": 483214776,
+      "finished": 1793752076.016614
+    }
+  },
+  "cross_check": {
+    "in_kernel": {
+      "repeats": 50,
+      "exact_equal": 50,
+      "bracketed": 50,
+      "max_abs_difference_bytes": 0,
+      "example": {
+        "rusage_before": 68125416,
+        "task_vm_info": 68125416,
+        "rusage_after": 68125416
+      }
+    },
+    "supervisor_vs_task_vm_info": [
+      {
+        "phase": "start",
+        "dt_ms": 6.880998611450195,
+        "task_vm_info_mib": 65.0319595336914,
+        "in_kernel_rusage_mib": 65.0319595336914,
+        "supervisor_mib": 65.813232421875
+      },
+      {
+        "phase": "arm_ready",
+        "dt_ms": 1.4910697937011719,
+        "task_vm_info_mib": 132.7042007446289,
+        "in_kernel_rusage_mib": 132.7042007446289,
+        "supervisor_mib": 132.7354507446289
+      },
+      {
+        "phase": "preparation",
+        "dt_ms": -2.8939247131347656,
+        "task_vm_info_mib": 132.7667007446289,
+        "in_kernel_rusage_mib": 132.7667007446289,
+        "supervisor_mib": 132.7354507446289
+      },
+      {
+        "phase": "transform_ready",
+        "dt_ms": -1.0271072387695312,
+        "task_vm_info_mib": 168.5792465209961,
+        "in_kernel_rusage_mib": 168.5792465209961,
+        "supervisor_mib": 168.4854965209961
+      },
+      {
+        "phase": "startup",
+        "dt_ms": -3.977060317993164,
+        "task_vm_info_mib": 169.0792465209961,
+        "in_kernel_rusage_mib": 169.0792465209961,
+        "supervisor_mib": 169.0636215209961
+      },
+      {
+        "phase": "viewer_ready",
+        "dt_ms": -3.2498836517333984,
+        "task_vm_info_mib": 232.09496307373047,
+        "in_kernel_rusage_mib": 232.09496307373047,
+        "supervisor_mib": 232.06371307373047
+      },
+      {
+        "phase": "seeking",
+        "dt_ms": 5.964756011962891,
+        "task_vm_info_mib": 232.11058807373047,
+        "in_kernel_rusage_mib": 232.11058807373047,
+        "supervisor_mib": 247.00123596191406
+      },
+      {
+        "phase": "seeking_done",
+        "dt_ms": 1.0921955108642578,
+        "task_vm_info_mib": 481.0013961791992,
+        "in_kernel_rusage_mib": 481.0013961791992,
+        "supervisor_mib": 481.0013961791992
+      },
+      {
+        "phase": "playback_0",
+        "dt_ms": -2.953767776489258,
+        "task_vm_info_mib": 481.0013961791992,
+        "in_kernel_rusage_mib": 481.0013961791992,
+        "supervisor_mib": 481.0013961791992
+      },
+      {
+        "phase": "playback_0_stop",
+        "dt_ms": -3.4198760986328125,
+        "task_vm_info_mib": 481.0795211791992,
+        "in_kernel_rusage_mib": 481.0795211791992,
+        "supervisor_mib": 481.0795211791992
+      },
+      {
+        "phase": "playback_1",
+        "dt_ms": 2.407073974609375,
+        "task_vm_info_mib": 481.0795211791992,
+        "in_kernel_rusage_mib": 481.0795211791992,
+        "supervisor_mib": 481.0795211791992
+      },
+      {
+        "phase": "playback_1_stop",
+        "dt_ms": 0.8971691131591797,
+        "task_vm_info_mib": 481.0638961791992,
+        "in_kernel_rusage_mib": 481.0638961791992,
+        "supervisor_mib": 481.0638961791992
+      },
+      {
+        "phase": "playback_2",
+        "dt_ms": -3.7419795989990234,
+        "task_vm_info_mib": 481.0638961791992,
+        "in_kernel_rusage_mib": 481.0638961791992,
+        "supervisor_mib": 481.0638961791992
+      },
+      {
+        "phase": "third_cycle_mid",
+        "dt_ms": -0.7240772247314453,
+        "task_vm_info_mib": 456.3138961791992,
+        "in_kernel_rusage_mib": 456.3138961791992,
+        "supervisor_mib": 456.3138961791992
+      },
+      {
+        "phase": "playback_2_stop",
+        "dt_ms": -1.9478797912597656,
+        "task_vm_info_mib": 456.2826461791992,
+        "in_kernel_rusage_mib": 456.2826461791992,
+        "supervisor_mib": 456.2826461791992
+      },
+      {
+        "phase": "close_0",
+        "dt_ms": 4.017829895019531,
+        "task_vm_info_mib": 456.2982711791992,
+        "in_kernel_rusage_mib": 456.2982711791992,
+        "supervisor_mib": 456.3138961791992
+      },
+      {
+        "phase": "reopen_0",
+        "dt_ms": 0.5538463592529297,
+        "task_vm_info_mib": 456.3138961791992,
+        "in_kernel_rusage_mib": 456.3138961791992,
+        "supervisor_mib": 456.3138961791992
+      },
+      {
+        "phase": "close_1",
+        "dt_ms": 3.919839859008789,
+        "task_vm_info_mib": 458.0170211791992,
+        "in_kernel_rusage_mib": 458.0170211791992,
+        "supervisor_mib": 458.0326461791992
+      },
+      {
+        "phase": "reopen_1",
+        "dt_ms": 0.8718967437744141,
+        "task_vm_info_mib": 458.0326461791992,
+        "in_kernel_rusage_mib": 458.0326461791992,
+        "supervisor_mib": 458.0482711791992
+      },
+      {
+        "phase": "close_2",
+        "dt_ms": -2.4728775024414062,
+        "task_vm_info_mib": 459.5326461791992,
+        "in_kernel_rusage_mib": 459.5326461791992,
+        "supervisor_mib": 459.5326461791992
+      },
+      {
+        "phase": "reopen_2",
+        "dt_ms": -3.946065902709961,
+        "task_vm_info_mib": 459.5326461791992,
+        "in_kernel_rusage_mib": 459.5326461791992,
+        "supervisor_mib": 459.5326461791992
+      },
+      {
+        "phase": "final_close",
+        "dt_ms": 3.2520294189453125,
+        "task_vm_info_mib": 460.8295211791992,
+        "in_kernel_rusage_mib": 460.8295211791992,
+        "supervisor_mib": 460.8295211791992
+      },
+      {
+        "phase": "after_close",
+        "dt_ms": -3.2677650451660156,
+        "task_vm_info_mib": 460.8295211791992,
+        "in_kernel_rusage_mib": 460.8295211791992,
+        "supervisor_mib": 460.8295211791992
+      },
+      {
+        "phase": "after_close_snapshot",
+        "dt_ms": 4.312038421630859,
+        "task_vm_info_mib": 460.8295211791992,
+        "in_kernel_rusage_mib": 460.8295211791992,
+        "supervisor_mib": 460.8295211791992
+      },
+      {
+        "phase": "diagnostic",
+        "dt_ms": 4.707813262939453,
+        "task_vm_info_mib": 460.8920211791992,
+        "in_kernel_rusage_mib": 460.8920211791992,
+        "supervisor_mib": 334.3919982910156
+      },
+      {
+        "phase": "end",
+        "dt_ms": 3.448009490966797,
+        "task_vm_info_mib": 1207.5019226074219,
+        "in_kernel_rusage_mib": 1207.5019226074219,
+        "supervisor_mib": 1207.5019226074219
+      }
+    ],
+    "max_abs_diff_mib_within_10ms": 126.5000228881836
+  },
+  "allocator": {
+    "registered_zones": [
+      [
+        "DefaultMallocZone",
+        "/usr/lib/system/libsystem_malloc.dylib"
+      ],
+      [
+        "objc-class_rw_t",
+        "/usr/lib/system/libsystem_malloc.dylib"
+      ]
+    ],
+    "zone_small": "DefaultMallocZone",
+    "zone_large": "DefaultMallocZone",
+    "zone_small_impl": "/usr/lib/system/libsystem_malloc.dylib",
+    "zone_large_impl": "/usr/lib/system/libsystem_malloc.dylib",
+    "allocator_images": []
+  },
+  "arm_state": {
+    "transform": {
+      "density_clim": [
+        0.0,
+        0.4541015625
+      ],
+      "scale": 1.0,
+      "crop_box": null,
+      "persistent_shape": [
+        168,
+        168,
+        226
+      ]
+    },
+    "end": {
+      "lazy": {
+        "requests": "loaded",
+        "filelock": "loaded"
+      }
+    },
+    "lazy_at_start": {
+      "requests": "absent",
+      "filelock": "absent"
+    },
+    "lazy_finder_installed": false,
+    "window_sizes": [
+      [
+        1100,
+        760
+      ]
+    ]
+  },
+  "playback": [
+    {
+      "cycle": 0,
+      "polls": 115,
+      "distinct_frames": 107
+    },
+    {
+      "cycle": 1,
+      "polls": 120,
+      "distinct_frames": 111
+    },
+    {
+      "cycle": 2,
+      "polls": 115,
+      "distinct_frames": 108
+    }
+  ],
+  "frames": {
+    "count": 128,
+    "canonical_digest": "9ac0e3c9a23b1564aba53209822354cf32ab7b99147ff853f79b02908861612f",
+    "raw_digest": "11fe3d8898362ea44ac44e1bda1424824c3b76ddc7fe048efb8ac0355d842252",
+    "dtypes": [
+      "float32"
+    ],
+    "shapes_distinct": 97,
+    "max_abs_error": 0.0,
+    "max_rmse": 0.0,
+    "nonzero_lost_total": 0,
+    "nonzero_outside_display_total": 0,
+    "max_abs_mass_difference": 0.0,
+    "max_displayed_outside_sum": 0.0,
+    "displayed_bytes_max": 24343200
+  },
+  "images": [
+    "frame-000.png",
+    "frame-032.png",
+    "frame-064.png",
+    "frame-096.png",
+    "frame-127.png"
+  ],
+  "sampling": {
+    "interval_target_s": 0.01,
+    "samples": 5900,
+    "interval_median_ms": 9.998798370361328,
+    "interval_max_ms": 15.055179595947266
+  },
+  "phases": [
+    {
+      "phase": "start",
+      "start": 1793752032.586472,
+      "seconds": 0.7541749477386475,
+      "footprint": {
+        "n": 75,
+        "median_mib": 96.53225708007812,
+        "p05_mib": 69.42265319824219,
+        "p95_mib": 127.95417785644531,
+        "max_mib": 133.2667007446289,
+        "min_mib": 65.813232421875
+      },
+      "rss": {
+        "n": 75,
+        "median_mib": 157.8125,
+        "p05_mib": 86.875,
+        "p95_mib": 196.984375,
+        "max_mib": 205.3125,
+        "min_mib": 82.359375
+      },
+      "mark_footprint_mib": 65.0319595336914,
+      "snapshot_overlap_s": 0.0,
+      "mark_rss_mib": 81.546875
+    },
+    {
+      "phase": "arm_ready",
+      "start": 1793752033.340647,
+      "seconds": 0.0043849945068359375,
+      "footprint": {
+        "n": 1,
+        "median_mib": 132.7354507446289,
+        "p05_mib": 132.7354507446289,
+        "p95_mib": 132.7354507446289,
+        "max_mib": 132.7354507446289,
+        "min_mib": 132.7354507446289
+      },
+      "rss": {
+        "n": 1,
+        "median_mib": 205.5625,
+        "p05_mib": 205.5625,
+        "p95_mib": 205.5625,
+        "max_mib": 205.5625,
+        "min_mib": 205.5625
+      },
+      "mark_footprint_mib": 132.7042007446289,
+      "snapshot_overlap_s": 0.0,
+      "mark_rss_mib": 205.53125
+    },
+    {
+      "phase": "preparation",
+      "start": 1793752033.345032,
+      "seconds": 1.2976710796356201,
+      "footprint": {
+        "n": 130,
+        "median_mib": 168.5792465209961,
+        "p05_mib": 137.0948257446289,
+        "p95_mib": 168.5792465209961,
+        "max_mib": 168.5792465209961,
+        "min_mib": 132.9698257446289
+      },
+      "rss": {
+        "n": 130,
+        "median_mib": 247.375,
+        "p05_mib": 209.28125,
+        "p95_mib": 247.578125,
+        "max_mib": 247.578125,
+        "min_mib": 205.796875
+      },
+      "mark_footprint_mib": 132.7667007446289,
+      "snapshot_overlap_s": 0.0,
+      "mark_rss_mib": 205.59375
+    },
+    {
+      "phase": "transform_ready",
+      "start": 1793752034.642703,
+      "seconds": 0.013023138046264648,
+      "footprint": {
+        "n": 1,
+        "median_mib": 169.0636215209961,
+        "p05_mib": 169.0636215209961,
+        "p95_mib": 169.0636215209961,
+        "max_mib": 169.0636215209961,
+        "min_mib": 169.0636215209961
+      },
+      "rss": {
+        "n": 1,
+        "median_mib": 246.34375,
+        "p05_mib": 246.34375,
+        "p95_mib": 246.34375,
+        "max_mib": 246.34375,
+        "min_mib": 246.34375
+      },
+      "mark_footprint_mib": 168.5792465209961,
+      "snapshot_overlap_s": 0.0,
+      "mark_rss_mib": 245.859375
+    },
+    {
+      "phase": "startup",
+      "start": 1793752034.6557262,
+      "seconds": 0.6087007522583008,
+      "footprint": {
+        "n": 61,
+        "median_mib": 204.81369018554688,
+        "p05_mib": 176.3917465209961,
+        "p95_mib": 230.39183807373047,
+        "max_mib": 232.06371307373047,
+        "min_mib": 169.0792465209961
+      },
+      "rss": {
+        "n": 61,
+        "median_mib": 301.671875,
+        "p05_mib": 255.859375,
+        "p95_mib": 326.96875,
+        "max_mib": 328.828125,
+        "min_mib": 246.375
+      },
+      "mark_footprint_mib": 169.0792465209961,
+      "snapshot_overlap_s": 0.0,
+      "mark_rss_mib": 246.375
+    },
+    {
+      "phase": "viewer_ready",
+      "start": 1793752035.264427,
+      "seconds": 0.0031931400299072266,
+      "footprint": null,
+      "rss": null,
+      "mark_footprint_mib": 232.09496307373047,
+      "snapshot_overlap_s": 0.0,
+      "mark_rss_mib": 328.859375
+    },
+    {
+      "phase": "seeking",
+      "start": 1793752035.26762,
+      "seconds": 1.0324208736419678,
+      "footprint": {
+        "n": 103,
+        "median_mib": 388.82945251464844,
+        "p05_mib": 320.87628173828125,
+        "p95_mib": 481.0170211791992,
+        "max_mib": 481.0170211791992,
+        "min_mib": 247.00123596191406
+      },
+      "rss": {
+        "n": 103,
+        "median_mib": 477.671875,
+        "p05_mib": 412.71875,
+        "p95_mib": 563.640625,
+        "max_mib": 564.015625,
+        "min_mib": 345.375
+      },
+      "mark_footprint_mib": 232.11058807373047,
+      "snapshot_overlap_s": 0.0,
+      "mark_rss_mib": 328.6875
+    },
+    {
+      "phase": "seeking_done",
+      "start": 1793752036.300041,
+      "seconds": 0.004045963287353516,
+      "footprint": {
+        "n": 1,
+        "median_mib": 481.0013961791992,
+        "p05_mib": 481.0013961791992,
+        "p95_mib": 481.0013961791992,
+        "max_mib": 481.0013961791992,
+        "min_mib": 481.0013961791992
+      },
+      "rss": {
+        "n": 1,
+        "median_mib": 561.796875,
+        "p05_mib": 561.796875,
+        "p95_mib": 561.796875,
+        "max_mib": 561.796875,
+        "min_mib": 561.796875
+      },
+      "mark_footprint_mib": 481.0013961791992,
+      "snapshot_overlap_s": 0.0,
+      "mark_rss_mib": 561.796875
+    },
+    {
+      "phase": "playback_0",
+      "start": 1793752036.304087,
+      "seconds": 12.302372932434082,
+      "footprint": {
+        "n": 1230,
+        "median_mib": 481.0326461791992,
+        "p05_mib": 481.0013961791992,
+        "p95_mib": 481.0795211791992,
+        "max_mib": 481.0951461791992,
+        "min_mib": 481.0013961791992
+      },
+      "rss": {
+        "n": 1230,
+        "median_mib": 537.28125,
+        "p05_mib": 537.234375,
+        "p95_mib": 556.828125,
+        "max_mib": 564.0625,
+        "min_mib": 537.078125
+      },
+      "mark_footprint_mib": 481.0013961791992,
+      "snapshot_overlap_s": 0.9733490943908691,
+      "mark_rss_mib": 561.8125
+    },
+    {
+      "phase": "playback_0_stop",
+      "start": 1793752048.6064599,
+      "seconds": 0.004204988479614258,
+      "footprint": null,
+      "rss": null,
+      "mark_footprint_mib": 481.0795211791992,
+      "snapshot_overlap_s": 0.0,
+      "mark_rss_mib": 544.390625
+    },
+    {
+      "phase": "playback_1",
+      "start": 1793752048.6106648,
+      "seconds": 12.300724029541016,
+      "footprint": {
+        "n": 1230,
+        "median_mib": 481.0638961791992,
+        "p05_mib": 481.0638961791992,
+        "p95_mib": 481.0795211791992,
+        "max_mib": 481.0951461791992,
+        "min_mib": 481.0638961791992
+      },
+      "rss": {
+        "n": 1230,
+        "median_mib": 566.796875,
+        "p05_mib": 563.625,
+        "p95_mib": 568.71875,
+        "max_mib": 569.140625,
+        "min_mib": 544.390625
+      },
+      "mark_footprint_mib": 481.0795211791992,
+      "snapshot_overlap_s": 0.0,
+      "mark_rss_mib": 544.390625
+    },
+    {
+      "phase": "playback_1_stop",
+      "start": 1793752060.9113889,
+      "seconds": 0.004639148712158203,
+      "footprint": {
+        "n": 1,
+        "median_mib": 481.0638961791992,
+        "p05_mib": 481.0638961791992,
+        "p95_mib": 481.0638961791992,
+        "max_mib": 481.0638961791992,
+        "min_mib": 481.0638961791992
+      },
+      "rss": {
+        "n": 1,
+        "median_mib": 566.796875,
+        "p05_mib": 566.796875,
+        "p95_mib": 566.796875,
+        "max_mib": 566.796875,
+        "min_mib": 566.796875
+      },
+      "mark_footprint_mib": 481.0638961791992,
+      "snapshot_overlap_s": 0.0,
+      "mark_rss_mib": 566.796875
+    },
+    {
+      "phase": "playback_2",
+      "start": 1793752060.916028,
+      "seconds": 12.308939933776855,
+      "footprint": {
+        "n": 1231,
+        "median_mib": 456.3138961791992,
+        "p05_mib": 456.2826461791992,
+        "p95_mib": 481.0795211791992,
+        "max_mib": 481.0951461791992,
+        "min_mib": 456.2826461791992
+      },
+      "rss": {
+        "n": 1231,
+        "median_mib": 543.75,
+        "p05_mib": 543.734375,
+        "p95_mib": 568.484375,
+        "max_mib": 569.125,
+        "min_mib": 543.734375
+      },
+      "mark_footprint_mib": 481.0638961791992,
+      "snapshot_overlap_s": 0.8942959308624268,
+      "mark_rss_mib": 566.796875
+    },
+    {
+      "phase": "playback_2_stop",
+      "start": 1793752073.224968,
+      "seconds": 0.0040340423583984375,
+      "footprint": null,
+      "rss": null,
+      "mark_footprint_mib": 456.2826461791992,
+      "snapshot_overlap_s": 0.0,
+      "mark_rss_mib": 543.734375
+    },
+    {
+      "phase": "close_0",
+      "start": 1793752073.229002,
+      "seconds": 0.03343796730041504,
+      "footprint": {
+        "n": 3,
+        "median_mib": 456.3138961791992,
+        "p05_mib": 456.3138961791992,
+        "p95_mib": 456.3138961791992,
+        "max_mib": 456.3138961791992,
+        "min_mib": 456.3138961791992
+      },
+      "rss": {
+        "n": 3,
+        "median_mib": 544.140625,
+        "p05_mib": 544.140625,
+        "p95_mib": 544.140625,
+        "max_mib": 544.140625,
+        "min_mib": 544.140625
+      },
+      "mark_footprint_mib": 456.2982711791992,
+      "snapshot_overlap_s": 0.0,
+      "mark_rss_mib": 543.75
+    },
+    {
+      "phase": "reopen_0",
+      "start": 1793752073.26244,
+      "seconds": 0.2666611671447754,
+      "footprint": {
+        "n": 27,
+        "median_mib": 456.5951461791992,
+        "p05_mib": 456.3451461791992,
+        "p95_mib": 458.0170211791992,
+        "max_mib": 458.0170211791992,
+        "min_mib": 456.3138961791992
+      },
+      "rss": {
+        "n": 27,
+        "median_mib": 544.96875,
+        "p05_mib": 544.3125,
+        "p95_mib": 546.359375,
+        "max_mib": 546.359375,
+        "min_mib": 544.171875
+      },
+      "mark_footprint_mib": 456.3138961791992,
+      "snapshot_overlap_s": 0.0,
+      "mark_rss_mib": 544.140625
+    },
+    {
+      "phase": "close_1",
+      "start": 1793752073.5291011,
+      "seconds": 0.03301596641540527,
+      "footprint": {
+        "n": 3,
+        "median_mib": 458.0326461791992,
+        "p05_mib": 458.0326461791992,
+        "p95_mib": 458.0326461791992,
+        "max_mib": 458.0326461791992,
+        "min_mib": 458.0326461791992
+      },
+      "rss": {
+        "n": 3,
+        "median_mib": 546.375,
+        "p05_mib": 546.375,
+        "p95_mib": 546.375,
+        "max_mib": 546.375,
+        "min_mib": 546.375
+      },
+      "mark_footprint_mib": 458.0170211791992,
+      "snapshot_overlap_s": 0.0,
+      "mark_rss_mib": 546.359375
+    },
+    {
+      "phase": "reopen_1",
+      "start": 1793752073.562117,
+      "seconds": 0.26136088371276855,
+      "footprint": {
+        "n": 27,
+        "median_mib": 458.2670211791992,
+        "p05_mib": 458.0482711791992,
+        "p95_mib": 459.5326461791992,
+        "max_mib": 459.5326461791992,
+        "min_mib": 458.0482711791992
+      },
+      "rss": {
+        "n": 27,
+        "median_mib": 546.84375,
+        "p05_mib": 546.390625,
+        "p95_mib": 547.875,
+        "max_mib": 548.265625,
+        "min_mib": 546.390625
+      },
+      "mark_footprint_mib": 458.0326461791992,
+      "snapshot_overlap_s": 0.0,
+      "mark_rss_mib": 546.375
+    },
+    {
+      "phase": "close_2",
+      "start": 1793752073.823478,
+      "seconds": 0.033399105072021484,
+      "footprint": {
+        "n": 3,
+        "median_mib": 459.5326461791992,
+        "p05_mib": 459.5326461791992,
+        "p95_mib": 459.5326461791992,
+        "max_mib": 459.5326461791992,
+        "min_mib": 459.5326461791992
+      },
+      "rss": {
+        "n": 3,
+        "median_mib": 547.875,
+        "p05_mib": 547.875,
+        "p95_mib": 547.875,
+        "max_mib": 547.875,
+        "min_mib": 547.875
+      },
+      "mark_footprint_mib": 459.5326461791992,
+      "snapshot_overlap_s": 0.0,
+      "mark_rss_mib": 547.875
+    },
+    {
+      "phase": "reopen_2",
+      "start": 1793752073.856877,
+      "seconds": 0.2628798484802246,
+      "footprint": {
+        "n": 26,
+        "median_mib": 459.7748336791992,
+        "p05_mib": 459.5326461791992,
+        "p95_mib": 460.8295211791992,
+        "max_mib": 460.8295211791992,
+        "min_mib": 459.5326461791992
+      },
+      "rss": {
+        "n": 26,
+        "median_mib": 548.1953125,
+        "p05_mib": 547.875,
+        "p95_mib": 549.171875,
+        "max_mib": 550.078125,
+        "min_mib": 547.875
+      },
+      "mark_footprint_mib": 459.5326461791992,
+      "snapshot_overlap_s": 0.0,
+      "mark_rss_mib": 547.875
+    },
+    {
+      "phase": "final_close",
+      "start": 1793752074.119757,
+      "seconds": 0.03649497032165527,
+      "footprint": {
+        "n": 4,
+        "median_mib": 460.8295211791992,
+        "p05_mib": 460.8295211791992,
+        "p95_mib": 460.8295211791992,
+        "max_mib": 460.8295211791992,
+        "min_mib": 460.8295211791992
+      },
+      "rss": {
+        "n": 4,
+        "median_mib": 549.171875,
+        "p05_mib": 549.171875,
+        "p95_mib": 549.171875,
+        "max_mib": 549.171875,
+        "min_mib": 549.171875
+      },
+      "mark_footprint_mib": 460.8295211791992,
+      "snapshot_overlap_s": 0.0,
+      "mark_rss_mib": 549.171875
+    },
+    {
+      "phase": "after_close",
+      "start": 1793752074.156252,
+      "seconds": 1.0015389919281006,
+      "footprint": {
+        "n": 100,
+        "median_mib": 460.8295211791992,
+        "p05_mib": 460.8295211791992,
+        "p95_mib": 460.8295211791992,
+        "max_mib": 460.8295211791992,
+        "min_mib": 460.8295211791992
+      },
+      "rss": {
+        "n": 100,
+        "median_mib": 549.171875,
+        "p05_mib": 549.171875,
+        "p95_mib": 549.171875,
+        "max_mib": 549.171875,
+        "min_mib": 549.171875
+      },
+      "mark_footprint_mib": 460.8295211791992,
+      "snapshot_overlap_s": 0.0,
+      "mark_rss_mib": 549.171875
+    },
+    {
+      "phase": "after_close_snapshot",
+      "start": 1793752075.157791,
+      "seconds": 0.91050124168396,
+      "footprint": {
+        "n": 91,
+        "median_mib": 460.8295211791992,
+        "p05_mib": 460.8295211791992,
+        "p95_mib": 460.8295211791992,
+        "max_mib": 460.8295211791992,
+        "min_mib": 460.8295211791992
+      },
+      "rss": {
+        "n": 91,
+        "median_mib": 549.171875,
+        "p05_mib": 549.171875,
+        "p95_mib": 549.171875,
+        "max_mib": 549.171875,
+        "min_mib": 549.171875
+      },
+      "mark_footprint_mib": 460.8295211791992,
+      "snapshot_overlap_s": 0.8545429706573486,
+      "mark_rss_mib": 549.171875
+    },
+    {
+      "phase": "diagnostic",
+      "start": 1793752076.0682921,
+      "seconds": 12.919246912002563,
+      "footprint": {
+        "n": 1292,
+        "median_mib": 953.5954437255859,
+        "p05_mib": 703.9859085083008,
+        "p95_mib": 1207.3300247192383,
+        "max_mib": 1239.2987976074219,
+        "min_mib": 334.37635040283203
+      },
+      "rss": {
+        "n": 1292,
+        "median_mib": 847.890625,
+        "p05_mib": 602.0,
+        "p95_mib": 1101.453125,
+        "max_mib": 1133.234375,
+        "min_mib": 426.125
+      },
+      "mark_footprint_mib": 460.8920211791992,
+      "snapshot_overlap_s": 0.0,
+      "mark_rss_mib": 549.25
+    },
+    {
+      "phase": "end",
+      "start": 1793752088.987539,
+      "seconds": null,
+      "footprint": {
+        "n": 260,
+        "median_mib": 997.0018768310547,
+        "p05_mib": 992.1581268310547,
+        "p95_mib": 1158.8768768310547,
+        "max_mib": 1207.5019226074219,
+        "min_mib": 0.0
+      },
+      "rss": {
+        "n": 260,
+        "median_mib": 1070.140625,
+        "p05_mib": 1069.671875,
+        "p95_mib": 1070.140625,
+        "max_mib": 1101.53125,
+        "min_mib": 1069.671875
+      },
+      "mark_footprint_mib": 1207.5019226074219,
+      "snapshot_overlap_s": 0.0,
+      "mark_rss_mib": 1101.4375
+    }
+  ],
+  "events": [
+    {
+      "phase": "third_cycle_mid",
+      "time": 1793752066.953772,
+      "snapshot": "third_cycle"
+    }
+  ]
+}
