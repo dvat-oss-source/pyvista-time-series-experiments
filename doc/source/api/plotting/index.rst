@@ -49,6 +49,8 @@ Cameras and lights are documented on their own pages: :ref:`cameras_api` and
    Renderer
    RenderWindowInteractor
    Timer
+   TimeSeriesPlayer
+   TimeReaderSource
 
 .. seealso::
 
@@ -60,6 +62,9 @@ Cameras and lights are documented on their own pages: :ref:`cameras_api` and
 
    :ref:`movie_example`
       Write frames to a movie.
+
+   :ref:`time_series_example`
+       Display and play discrete time-series samples.
 
 
 Actors and Mappers
